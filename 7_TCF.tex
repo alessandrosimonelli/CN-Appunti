@@ -1271,7 +1271,7 @@
                 }
                 \caption{Modulazione generica di una $A rect\left(\frac{t}{T}\right)$ con $\cos(2\pi f_0t+\frac{\pi}{3})$}
             \end{figure}
-        % É legale cosa ho scritto sopra della modulazione generica?
+        % È legale cosa ho scritto sopra della modulazione generica?
         \subsubsection{Th. Modulazione con Esponenziale Complesso}\label{Modulazione con Esponenziale Complesso}
             $Ip: \begin{cases}
                 y_{(t)}= x_{(t)}e^{j2\pi f_0t}\\        
@@ -2019,7 +2019,7 @@
                     \begin{align}
                         Y_k &= \frac{1}{T_0} \int_{-\frac{T_0}{2}}^{\frac{T_0}{2}} y_{(t)} e^{j2\pi kf_0t} dt =\frac{1}{T_0} \int_{-\frac{T_0}{2}}^{\frac{T_0}{2}} \overunderset{+\infty}{n = -\infty}{\sum}x_{(t-nT_0)} e^{j2\pi kf_0t} dt \nonumber \\
                                 &= \frac{1}{T_0} \overunderset{+\infty}{n = -\infty}{\sum} \int_{-\frac{T_0}{2}}^{\frac{T_0}{2}} x_{(t-nT_0)} e^{j2\pi kf_0t} dt \overset{t^\prime = t-nT_0}{=} \frac{1}{T_0} \overunderset{+\infty}{n = -\infty}{\sum} \int_{-\frac{T_0}{2}-nT_0}^{\frac{T_0}{2}-nT_0} x_{(t^\prime)} e^{j2\pi kf_0(t^\prime+nT_0)} dt^\prime  \nonumber \\
-                                &= \frac{1}{T_0} \overunderset{+\infty}{n = -\infty}{\sum} \int_{-\frac{T_0}{2}-nT_0}^{\frac{T_0}{2}-nT_0} x_{(t^\prime)} e^{j2\pi kf_0t^\prime} \underset{\substack{\downarrow \forall nk=1 \\\text{é la fase di un numero sempre intero nk}}\in\mathbb{N}}{e^{j2\pi nkf_0T_0}} dt^\prime\nonumber \\
+                                &= \frac{1}{T_0} \overunderset{+\infty}{n = -\infty}{\sum} \int_{-\frac{T_0}{2}-nT_0}^{\frac{T_0}{2}-nT_0} x_{(t^\prime)} e^{j2\pi kf_0t^\prime} \underset{\substack{\downarrow \forall nk=1 \\\text{è la fase di un numero sempre intero nk}}\in\mathbb{N}}{e^{j2\pi nkf_0T_0}} dt^\prime\nonumber \\
                                 &= \frac{1}{T_0} \overunderset{+\infty}{n = -\infty}{\sum} \int_{-\frac{T_0}{2}-nT_0}^{\frac{T_0}{2}-nT_0} x_{(t^\prime)} e^{j2\pi kf_0t^\prime}dt^\prime \rightarrow \text{$TCF$ con intervalli disgiunti e adiacenti in $kf_0$}\nonumber 
                     \end{align}
                     \begin{figure}[H]

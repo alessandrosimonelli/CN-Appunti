@@ -147,7 +147,7 @@
             \end{itemize}
 
         \subsubsection{Esempio codici a blocco: codici a ripetizione}
-            É un esempio di codice a correzione d'errore: il funzionamento si basa sulla ripetizione dell'informazione più volte. Il destinatario
+            È un esempio di codice a correzione d'errore: il funzionamento si basa sulla ripetizione dell'informazione più volte. Il destinatario
             si accorge di un errore di trasmissione poiché il flusso di dati ricevuto non è la ripetizione di un singolo messaggio e, inoltre, 
             il destinatario può recuperare il messaggio originale guardando il messaggio ricevuto nel flusso di dati che si verifica più spesso.
 
@@ -222,7 +222,7 @@
                 \[
                     p_{e,W} = \sum_{j=1}^{11} \binom{11}{j}p_{e,b}^j (1-p_{e,b})^{11-j} = 11 p_{e,b} (1-p_{e,b})^{10} \simeq 11p_{e,b}
                 \]
-                ed il rate di parole sbagliate al secondo é:
+                ed il rate di parole sbagliate al secondo è:
                 \[
                     R_{e,W} = \frac{R_b}{11}\dotproduct p_{e,W} \simeq \frac{10^7}{11}\dotproduct 11p_{e,b} = 0.1_\frac{w}{s}
                 \]
@@ -233,7 +233,7 @@
                 \[
                     p_{e,W} = \sum_{j=2}^{12} \binom{12}{j}p_{e,b}^j (1-p_{e,b})^{12-j} = 66 p_{e,b}^2 (1-p_{e,b})^{10} \simeq 66p_{e,b}^2
                 \]
-                ed il rate (frequenza) di parole sbagliate al secondo é:
+                ed il rate (frequenza) di parole sbagliate al secondo è:
                 \[
                     R_{e,W} = \frac{R_b}{12}\dotproduct p_{e,W} \simeq \frac{10^7}{12}\dotproduct 66p_{e,b}^2 = 5.5\dotproduct 10^{-9} \frac{w}{s}
                 \]
@@ -413,7 +413,7 @@
                 }
             \end{itemize}
             \paragraph{Peso di Hamming:}\label{Peso di Hamming}\index{Peso di Hamming} Il peso di Hamming,$w(x)$, di una stringa i lunghezza $n$ è la sua distanza di Hamming dal vettore di $n$ zeri,
-            $x_0\in \mathcal{V}_n$ é:
+            $x_0\in \mathcal{V}_n$ è:
             \[
                 w(x_0) = d(x_0,0_n)
             \]
@@ -707,7 +707,7 @@
                                  0  & 1 & 1 & 1 & | & 0  & 0 & 1
                             \end{bmatrix} 
         \]
-        La cui matrice generatrice con $I \in k \times k$ é:
+        La cui matrice generatrice con $I \in k \times k$ è:
         \[
             G = [I_{k},P] =\begin{bmatrix}
                                  1  & 0 & 0 & 0 & | & 1  & 1 & 0\\
@@ -1280,7 +1280,7 @@
                 \[
                     g_0=1,\ g_1=1,\ g_2=0,\ g_3=1,\
                 \]
-                la matrice generatrice é
+                la matrice generatrice è
                 \[
                     G = 
                     \begin{bmatrix}
@@ -1357,7 +1357,7 @@
             \begin{itemize}
                 \item {Utilizzando l'approccio classico dei codici a blocco: la sindrome $s_{(D)}$ mappa un polinomio di
                     grado $n-1$ su uno di grad $n-k-1$. Una volta calcolata la sindrome, si identifica un coset ed il pattern di errore 
-                    dal coset leader. É svantaggioso la complessità di associare tutti i vettori in $\mathcal{V}$ ad uno specifico
+                    dal coset leader. È svantaggioso la complessità di associare tutti i vettori in $\mathcal{V}$ ad uno specifico
                     coset
                 }
                 \item {Posso sfruttare le proprietà dei codici ciclici per derivare un metodo alternativo}
@@ -1806,7 +1806,7 @@
                         pari a $D$ e poi prendere decisioni di decodifica ad ogni nuovo istante di segnalazione   
                     }
                     \item {La parte comune dei sopravvissuti (quella su cui sono già state prese le decisioni)
-                        non ha bisogno di essere memorizzata. É sufficiente memorizzare i sopravvissuti nell'ultimo tratto da 
+                        non ha bisogno di essere memorizzata. È sufficiente memorizzare i sopravvissuti nell'ultimo tratto da 
                         $\ell -D$ a $\ell$, questo riduce enormemente l'esigenza di memoria dell'algoritmo
                     }
                 \end{enumerate}

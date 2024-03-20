@@ -216,7 +216,7 @@
         }
     \end{itemize}
     \subsection{Phase Amplitude Modulation - PAM}
-        É una tipologia di sistema di comunicazione in {\color{blue}Banda Base}, il cui segnale trasmesso $s_{T(t)}$ ha densità spettrale
+        È una tipologia di sistema di comunicazione in {\color{blue}Banda Base}, il cui segnale trasmesso $s_{T(t)}$ ha densità spettrale
         di potenza centrata in $0$. Il sistema PAM riceve in ingresso simboli di modulazione $\{a_i\}$ provenienti dal mappaggio dei bit $\{d_n\}$ 
         \subsubsection{Mappatore}
             Il mappatore ha come cardinalità una potenza del $2$, abbiamo PAM con mappatura: binaria, quaternaria o ottale
@@ -503,7 +503,7 @@
                 s_{T(t)}  = \sum_{i}a_i g_{T(t-iT)} \overset{TCF\ref{TCF di segnali periodici}}{\rightleftharpoons} \sum_{i}a_i G_{T(f)} e^{-j2\pi fiT}  \nonumber
             \end{gather}
             ma non posso analizzare con la $TCF$ le variabili aleatorie $a_i$. Posso allora calcolare la Densità spettrale di potenza (\ref{Densita di potenza spettrale}).
-            Ammettiamo che la sequenza di simboli di modulazione $\{a_i\}$ sia SSL \ref{Sitemi Stazionari in Senso Lato (SSL)}. La sua media é
+            Ammettiamo che la sequenza di simboli di modulazione $\{a_i\}$ sia SSL \ref{Sitemi Stazionari in Senso Lato (SSL)}. La sua media è
             \[
                 \mu_a = \eta_a = \mathbb{E}[a_i]
             \]  
@@ -1267,8 +1267,8 @@
         \[
             G_{RCR} = 
             \begin{cases}
-                \alpha = 0 &\text{É una rect } B_{\alpha=0}=\frac{1}{2T} \nonumber\\
-                \alpha=1 &\text{É un triangolo } B_{\alpha=1}=\frac{1}{T}\nonumber\\
+                \alpha = 0 &\text{È una rect } B_{\alpha=0}=\frac{1}{2T} \nonumber\\
+                \alpha=1 &\text{È un triangolo } B_{\alpha=1}=\frac{1}{T}\nonumber\\
                 \alpha\neq \{0,1\} & Altro\nonumber
             \end{cases}
         \]
@@ -1398,7 +1398,7 @@
             \[
                 g_{(t)} = g_{TC(t))} \otimes g_{R(t)} =  g_{T(t))} \otimes g_{R(t)}
             \]
-            abbiamo 2 variabili, $g_{T(t)}$ e $g_{R(t)}$, e dobbiamo rispettare 2 condizioni (é un problema di ricerca dell'ottimo):
+            abbiamo 2 variabili, $g_{T(t)}$ e $g_{R(t)}$, e dobbiamo rispettare 2 condizioni (è un problema di ricerca dell'ottimo):
             \begin{enumerate}
                 \item {
                     Annullamento dell'ISI: Dobbiamo fare in modo che $g_{(t)}$ sia un impulso che soddisfi le condizioni di Nyquist,
@@ -1956,7 +1956,7 @@
             \[
                 A^2 = \frac{3E_{simboli}}{M^2-1} 
             \]  
-            la SER espressa tramite l'energia del simbolo ricevuto é
+            la SER espressa tramite l'energia del simbolo ricevuto è
             \[
                 SER = \frac{2(M-1)}{M} Q_{\displaystyle\left(\sqrt{\frac{6E_{simboli}}{(M^2-1)N_0}}\right)} 
             \]
@@ -2039,7 +2039,7 @@
                 BER = P_r[\hat{d}_n \neq d_n]    
             \] 
             in generale il calcolo della BER in un sistema PAM è un valore difficilmente calcolabile poiché oltre a dipendere
-            dal rapporto $\frac{E_s}{N_0}$ e da $M$, dipende anche dalla legge di mappatura. É però possibile 
+            dal rapporto $\frac{E_s}{N_0}$ e da $M$, dipende anche dalla legge di mappatura. È però possibile 
             individuare facilmente un intervallo di valori entro quale siamo sicuri che si trovi la BER.
             Per individuare tale intervallo, supponiamo di utilizzare una trasmissione PAM usando un alfabeto
             M-ario e siano
@@ -2079,7 +2079,7 @@
                 BER \simeq \frac{2(M-1)}{Mlog_2(M)}Q_{\displaystyle \left(\sqrt{\frac{6log_2(M)}{M^2-1}}\frac{E_d}{N_0}\right)}    
             \] 
     \subsection{QAM}
-        É un sistema di comunicazione in {\color{red}banda passante} in cui il segnale trasmesso $s_{T(t)}$ ha densità 
+        È un sistema di comunicazione in {\color{red}banda passante} in cui il segnale trasmesso $s_{T(t)}$ ha densità 
         spettrale di potenza di tipo passa-banda, centrate su una frequenza $f_0$ detta frequenza portante.
         \subsubsection{Inviluppo complesso}
             l'inviluppo complesso del segnale trasmesso è 
@@ -2338,7 +2338,7 @@
             x_{s[k]} = b_k cos(\phi) + a_k sin(\phi) + n_{s[k]}\nonumber
         \end{gather}
 	    come si vede sul campione $x_{c[k]}$ è presente l'interferenza dovuta al simbolo $b_k$, mentre su $x_{x[k]}$ 
-        è presente l'interferenza dovuta al simbolo $a_k$. É quindi necessario effettuare una buona sincronizzazione,  
+        è presente l'interferenza dovuta al simbolo $a_k$. È quindi necessario effettuare una buona sincronizzazione,  
         perché altrimenti sui campioni $x_{c[k]}$ e $x_{s[k]}$ avremo interferenza nonostante sia rispettata la condizione 
         di Nyquist per l'annullamento dell'ISI. L'errore di fase $\phi$ ha l'effetto di ruotare il campione ricevuto 
         $\tilde{x}_{[k]}$, con il rischio di portare $\tilde{x}_{[k]}$ fuori dalla zona di decisione relativa al simbolo 

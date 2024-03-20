@@ -227,7 +227,7 @@
                         0\leq P[A] \leq 1,\ \forall \text{ evento A}
                     \]
                 }
-                \item \label{Ass. Prob. 2}{Additività: se $A$ e $B$ sono due eventi disgiunti, allora la probabilità dell'unione é: 
+                \item \label{Ass. Prob. 2}{Additività: se $A$ e $B$ sono due eventi disgiunti, allora la probabilità dell'unione è: 
                     \[
                         P[A\cup B] = P[A] + P[B] 
                     \]
@@ -701,7 +701,7 @@
             probabilità diventa $f_{X (x)}f_{Y (y)}$, se così fosse le due variabili si dicono \emph{statisticamente indipendenti}\index{Statisticamente Indipendenti}.
         \subsubsection{Somma di Variabili Aleatorie Indipendenti}
             Consideriamo due variabili aleatorie $X$ e $Y$ statisticamente indipendenti e continue con funzioni di densità di probabilità $f_{X (x)}$ e $f_{Y (y)}$ si 
-            definisce $Z = X+Y$ la cui $pdf$ $f_{Z (z)}$ é:
+            definisce $Z = X+Y$ la cui $pdf$ $f_{Z (z)}$ è:
             \[
                 f_{Z (z)} = \int_{-\infty}^{\infty}f_{X (x)}f_{Y (z-x)} dx =  f_{X (x)} \otimes f_{Y (y)}
             \]
@@ -885,7 +885,7 @@
                 cov[XY] = \mathbb{E}[(X-\mathbb{E}[X])(Y-\mathbb{E}[Y])]\nonumber\\
                 = \mathbb{E}[XY]-\mu_X\mu_Y\nonumber
             \end{gather}
-            Il \emph{coefficiente di correlazione}\index{Coefficiente di Correlazione} di $X$ e $Y$ é:
+            Il \emph{coefficiente di correlazione}\index{Coefficiente di Correlazione} di $X$ e $Y$ è:
             \[
                 \rho_{(X,Y)} = \frac{cov[XY]}{\sigma_X\sigma_Y}
             \]
@@ -1184,7 +1184,7 @@
                     \begin{align}
                         Q_{(x)} &= \int_{x}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}}dt\nonumber \\
                                 &= \int_{\lambda+\sqrt{p}}^{\infty}f_{N(n)}dn\text{ senza sapere se è gaussiana o meno}\nonumber \\
-                                &\overset{\text{é Gaussiana}}{=} \int_{\lambda+\sqrt{p}}^{\infty}\frac{1}{\sqrt{2\pi}\sigma_n}e^{-\frac{n^2}{2\sigma_n^2}}dn \overunderset{t = \frac{n}{\sigma_n}}{dt = \frac{dn}{\sigma_n}}{=} \int_{\frac{\lambda+\sqrt{p}}{\sigma_n}}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt\nonumber \\
+                                &\overset{\text{è Gaussiana}}{=} \int_{\lambda+\sqrt{p}}^{\infty}\frac{1}{\sqrt{2\pi}\sigma_n}e^{-\frac{n^2}{2\sigma_n^2}}dn \overunderset{t = \frac{n}{\sigma_n}}{dt = \frac{dn}{\sigma_n}}{=} \int_{\frac{\lambda+\sqrt{p}}{\sigma_n}}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt\nonumber \\
                                 &= Q_{\left(\frac{\lambda +\sqrt{p}}{\sigma_n}\right)} = P_r[n>\lambda + \sqrt{p}]\nonumber 
                     \end{align}
                     generalizzando la potenza del segnale ottengo l'errore\index{Errore Gaussiano}:
@@ -1231,7 +1231,7 @@
                     \end{figure}               
                 }
             \end{itemize}
-            La probabilità totale di errore del sistema é:
+            La probabilità totale di errore del sistema è:
             \begin{align}
                 P_e &= Q_{\displaystyle\left(\frac{\lambda +\sqrt{p}}{\sigma_n}\right)} P[S=-1]+\left(1- Q_{\displaystyle\left(\frac{\lambda -\sqrt{p}}{\sigma_n}\right)}\right)P[S=1]\nonumber \\
                     &= Q_{\displaystyle\left(\frac{\lambda +\sqrt{p}}{\sigma_n}\right)} (1-q)+\left(1- Q_{\displaystyle\left(\frac{\lambda -\sqrt{p}}{\sigma_n}\right)}\right)q = g_{(\lambda)}\nonumber \\
