@@ -17,9 +17,9 @@
     \label{Def sistema monodimensionale}
     \end{figure}
     Il sistema applica la trasformazione $T[\ ]: y_{(t)} = T[x_{(t)}]$ in generale \\ $y_{(t)} = T[x_{(\alpha)},t]$. 
-    \subsection{Propietá dei Sistemi Lineari Tempo Invarianti (LTI)}
+    \subsection{Proprietà dei Sistemi Lineari Tempo Invarianti (LTI)}
         \begin{itemize}
-            \item {Linearitá:
+            \item {Linearità:
                 \[
                     x_{(t)} = ax_{1(t)}+bx_{2(t)} \overset{T[\ ]}{\Rightarrow} y_{(t)} = aT[x_{1(t)}]+b T[x_{2(t)}]
                 \]
@@ -27,31 +27,31 @@
                 \[
                     x_{(t)} = ax_{1(t)}+bx_{2(t)} \overset{T[\ ]}{\Rightarrow} y_{(t)} = aT[x_{1(\alpha)},t]+b T[x_{2(\alpha)},t]
                 \]
-                É il principio di linearitá o sovrapposizione degli effetti visto a elettrotecnica.
+                É il principio di linearità o sovrapposizione degli effetti visto a elettrotecnica.
             }\label{SM Linearita}
-            \item {Stazionarietá:
+            \item {Stazionarietà:
                 \[
                     y_{(t)} = T[x_{(t)}] \rightarrow y_{(t-t_0)} = T[x_{(t-t_0)}]  
                 \]
             }\label{SM Stazionarieta}
-            \item {Causalitá:
+            \item {Causalità:
                 \[
                     y_{(t)} = T[x_{(\alpha)},\alpha\leq t]
                 \]
-                L'uscita all'istante $t$ dipende dall'ingresso ad instanti precedenti o al piú uguali a $t$, si basa su valori precendenti a 
-                $t$ non puó prevedere il futuro. Ne derivano 2 distinzioni di trasformazioni:
+                L'uscita all'istante $t$ dipende dall'ingresso ad instanti precedenti o al più uguali a $t$, si basa su valori precedenti a 
+                $t$ non può prevedere il futuro. Ne derivano 2 distinzioni di trasformazioni:
                 \begin{itemize}
                     \item Real Time: necessariamente causale (é nel presente)
                     \item Virtual time: Causale o Non Causale (es. ho tutto un file al quale posso prevedere i bit o frame successivi per applicarne un post-processing)
                 \end{itemize}
             }\label{SM Causalita}
-            \item {Stabilitá BIBO:
+            \item {Stabilità BIBO:
                 Se il segnale $x_{(t)}$ ha ampiezza limitata $\rightarrow$ l'uscita ha ampiezza limitata:
                     \[
                         |x_{(t)}|\leq M \rightarrow |y_{(t)}|\leq K 
                     \]
             }\label{SM Stabilita BIBO}
-            \item {Invertibilitá:
+            \item {Invertibilità:
                 \[
                     y_{(t)} = T[x_{(\alpha)},t] \overset{\text{Se} \exists}{\Rightarrow} x_{(t)} = T^{-1}[y_{(\alpha)},t]
                 \]
@@ -61,13 +61,13 @@
                 \begin{itemize}
                     \item {Senza memoria: se $y_{(t)} = T[x_{(\alpha)},\alpha=t]$}
                     \item {Con Memoria: $y_{(t)} =\int_{-\infty}^{t}x_{(\alpha)} d\alpha$ l'uscita all'istante $t$ dipende anche da valori dell'ingresso 
-                          ad istanti diversi da $t$. Nota bene é l'integrale di convoluzione di $x_{(t)} \otimes u_{(t)}$ 
+                          ad istanti diversi da $t$. Nota bene è l'integrale di convoluzione di $x_{(t)} \otimes u_{(t)}$ 
                     }
                 \end{itemize}
             }\label{SM Memoria}
         \end{itemize}
-    \subsection{Propietá dei Sistemi Lineari Stazionari (SLS)}
-        Sono sistemi LTI che godono delle propietá di Linearitá \ref{SM Linearita} e di Stazionarietá \ref*{SM Stazionarieta}:
+    \subsection{Proprietà dei Sistemi Lineari Stazionari (SLS)}
+        Sono sistemi LTI che godono delle proprietà di Linearità \ref{SM Linearita} e di Stazionarietà \ref*{SM Stazionarieta}:
         \begin{figure}[H]
             \centering 
             \begin{tikzpicture}[
@@ -107,20 +107,20 @@
         \label{Def impulso}
         \end{figure}
         Sollecitando il sistema con una Delta di Dirac ho la sua risposta impulsiva\index{Risposta Impulsiva}. Nel caso dei sistemi $SLS$ l'impulso
-        in uscita caratterizza completamente il sistema. Nel nostro caso $T[\delta_{(t-\alpha)}]$ non é altro che una traslazione della $T[\delta_{(t)}]$ per la 
-        Stazionarietá \ref*{SM Stazionarieta}: 
+        in uscita caratterizza completamente il sistema. Nel nostro caso $T[\delta_{(t-\alpha)}]$ non è altro che una traslazione della $T[\delta_{(t)}]$ per la 
+        Stazionarietà \ref*{SM Stazionarieta}: 
         \[
             y_{(t)} =\int_{-\infty}^{\infty}x_{(\alpha)}h_{(t-\alpha)}d\alpha = x_{(t)}\otimes h_{(t)} 
         \]
-        La trasformata del sistema dipende solo dalla $h_{(t)}$ (risposta impulsiva del sistema)\index{Risposta Impulsiva}. Passando al dominio della frequenza per la propietá della convoluzione \ref{Convoluzione}:
+        La trasformata del sistema dipende solo dalla $h_{(t)}$ (risposta impulsiva del sistema)\index{Risposta Impulsiva}. Passando al dominio della frequenza per la proprietà della convoluzione \ref{Convoluzione}:
         \[
             Y_{(f)} =X_{(f)}\otimes H_{(f)} 
         \]
-        Dove $H_{(f)} = TCF[h_{(t)}] = \int_{-\infty}^{\infty} h_{(t)}e^{-j2\pi ft}$ é la risposta in frequenza del sistema $SLS$. Esistono vari modi
+        Dove $H_{(f)} = TCF[h_{(t)}] = \int_{-\infty}^{\infty} h_{(t)}e^{-j2\pi ft}$ è la risposta in frequenza del sistema $SLS$. Esistono vari modi
         per calcolare $h_{(t)}$:
         \begin{itemize}
             \item {
-                Utilizzando un impulso di Dirac e le sue propietá, ma l'impulso di dirac é difficile da realizzare. 
+                Utilizzando un impulso di Dirac e le sue proprietà, ma l'impulso di Dirac è difficile da realizzare. 
             }
             \item {
                 Calcolo $H_{(f)}$ mandando in ingresso un segnale del quale sia nota la sua risposta e calcolo il rapporto uscita/ingresso 
@@ -302,8 +302,8 @@
             y_{(t)} &= x_{(t)} \otimes h_{(t)} = \int_{-\infty}^{\infty}x_{(\alpha)}h_{(t-\alpha)} d\alpha = \int_{-\infty}^{\infty}x_{(\alpha)}h_{(t-\alpha)}u_{(t-\alpha)} d\alpha \nonumber \\
                     &= \int_{-\infty}^{t}x_{(\alpha)}h_{(t-\alpha)} d\alpha 
         \end{align}
-        giungiamo all'integrale che definisce la Causalitá \ref{SM Causalita}: un sistema é causale se la sua risposta impulsiva 
-        é solo definita per $t>0$.
+        giungiamo all'integrale che definisce la Causalità \ref{SM Causalita}: un sistema è causale se la sua risposta impulsiva 
+        è solo definita per $t>0$.
         \begin{figure}[H]
             \centering
             \begin{tikzpicture}
@@ -321,21 +321,21 @@
                 \addplot[const plot,blue,thick] coordinates{(5,0)(3,0)(3,0.4)};
                 \end{axis}
             \end{tikzpicture}
-            \caption{Uscita di un sisetma causale}
+            \caption{Uscita di un sistema causale}
             \label{fig:Risposta impulsiva di un sistema causale}
         \end{figure}
         Dal valore $3$ in poi la risposta impulsiva rende il sistema causale.
     
-        \subsubsection{Stabilitá BIBO su $h_{(t)}$}
+        \subsubsection{Stabilità BIBO su $h_{(t)}$}
             \begin{align}
                 |y_{(t)}| &= \left|\int_{-\infty}^{\infty}x_{(\alpha)}h_{(t-\alpha)} d\alpha \right|\leq \int_{-\infty}^{\infty}|x_{(\alpha)}||h_{(t-\alpha)}| d\alpha \nonumber \\
                           &\leq M\left|\int_{-\infty}^{\infty}h_{(t-\alpha)} d\alpha \right| <K\nonumber
             \end{align}
-            Se l'ingresso $y<M$ allora lo é anche l'uscita. Ne deriva la C.S(Condizione Sufficiente): Assoluta integrabilitá della $h_{(t)}$ \index{Assoluta integrabilitá $h_{(t)}$},
-            se il sistema é bounded anche l'integrale deve esserlo.(To DO: cercare la condizione necessara sul libro)
+            Se l'ingresso $y<M$ allora lo è anche l'uscita. Ne deriva la C.S(Condizione Sufficiente): Assoluta integrabilità della $h_{(t)}$ \index{Assoluta integrabilità $h_{(t)}$},
+            se il sistema è bounded anche l'integrale deve esserlo.(To DO: cercare la condizione necessaria sul libro)
     \subsection{Filtri Ideali}
         \paragraph{Banda di un segnale} É la porzione di spettro calcolata sul semiasse positivo delle
-        frequenze dove lo spettro é diverso da zero.
+        frequenze dove lo spettro è diverso da zero.
         \[
             B = {f\dotproduct H_{(f)} \neq 0, f >0}  
         \]
@@ -382,7 +382,7 @@
             \[
                 h_{LP(t)}\triangleq 2Bsinc(2Bt)  
             \]
-            La risposta impulsiva non é causale, ma posso troncarla e spostarna nel semiasse positivo per renderlo tale, ma non é piú ideale:
+            La risposta impulsiva non è causale, ma posso troncarla e spostarla nel semiasse positivo per renderlo tale, ma non è più ideale:
             \begin{figure}[H]
                 \centering
 
@@ -411,7 +411,7 @@
                 \label{fig:filtro passa basso ideale causale}
             \end{figure} 
 
-            \paragraph{Cricuito Filtro Passa Basso:}
+            \paragraph{Circuito Filtro Passa Basso:}
             
             \begin{figure}[H]
                 \centering
@@ -471,14 +471,14 @@
             $Osservazione$: 
             \begin{itemize}
                 \item{
-                    Al tendere di $B$ a $0$ il valore che il filtro fa passare é il valor medio del segnale, tanto da tendere
-                    a un filtro $LP$ con spettro $\delta_{(t)}$, ma é difficilmente realizzabile.
+                    Al tendere di $B$ a $0$ il valore che il filtro fa passare è il valor medio del segnale, tanto da tendere
+                    a un filtro $LP$ con spettro $\delta_{(t)}$, ma è difficilmente realizzabile.
                 }
                 \item{
-                    La banda di un filtro é quanto si estende da $0 \rightarrow f^+$ fino a arrivare a $B$,$[0,B]$
+                    La banda di un filtro è quanto si estende da $0 \rightarrow f^+$ fino a arrivare a $B$,$[0,B]$
                 }
                 \item{
-                    Se il filtro é un filtro $BP$ la banda é l'ampiezza della banda che lascia passare $[f_0-B,f_0+B] = B$
+                    Se il filtro è un filtro $BP$ la banda è l'ampiezza della banda che lascia passare $[f_0-B,f_0+B] = B$
                 }
             \end{itemize}
         \subsubsection{Filtro Passa Alto di banda B - High Pass Filter (HP)}\label{Filtro Passa Alto di banda B - High Pass Filter (HP)}
@@ -524,7 +524,7 @@
                 h_{HP(t)}\triangleq \delta_{(t)} - 2Bsinc(2Bt)  
             \]
 
-        \paragraph{Cricuito Filtro Passa Alto:}
+        \paragraph{Circuito Filtro Passa Alto:}
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=4cm]{media/CR_high_pass_filter.png}
@@ -651,7 +651,7 @@
                 \label{fig:filtro passa banda ideale causale}
             \end{figure} 
 
-            \paragraph{Cricuito Filtro Passa Banda:}
+            \paragraph{Circuito Filtro Passa Banda:}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=4cm]{media/Band-Pass-Filter.png}
@@ -678,7 +678,7 @@
                 \caption{Filtro passa banda ideale in scala logaritmica}
                 \label{fig:BP filter logartithm}
             \end{figure}
-            Non riesco a fare un grafico con pendenza maggiore ma é per capire che le frequenze sotto il valore di $-3db$
+            Non riesco a fare un grafico con pendenza maggiore ma è per capire che le frequenze sotto il valore di $-3db$
             vengono ridotte drasticamente.
             \begin{figure}[H]
                 \centering
@@ -749,7 +749,7 @@
                 h_{BS(t)}\triangleq \delta_{(t)} - h_{BP(t)} = \delta_{(t)} - 2Bsinc(2Bt) \cos(2\pi f_0t)
             \]
 
-            \paragraph{Cricuito Filtro Elimina Banda:}
+            \paragraph{Circuito Filtro Elimina Banda:}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=4cm]{media/Band-Reject_Filter.png}
@@ -805,7 +805,7 @@
             I filtri sono riconducibili a funzioni di trasferimento come quelle viste per il tracciamento di Bode nel corso
             di fondamenti di automatica.
         \subsubsection{Filtri non distorcenti}
-            Definiamo prima cos'é  un sengale non distorto:
+            Definiamo prima cos'é  un segnale non distorto:
             \begin{figure}[H]
                 \centering
                 \begin{tikzpicture}[
@@ -822,7 +822,7 @@
                 \end{tikzpicture}
                 \label{fig:Sistema non distorcente}
             \end{figure}
-            {\color{blue}$y_{(t)}$} é un segnale non distorto di $x$ se: $y_{(t)}\triangleq kx_{(t-t_0)}$ $k\in\mathbb{R}^+$, cioé finché esso rimane una versione
+            {\color{blue}$y_{(t)}$} è un segnale non distorto di $x$ se: $y_{(t)}\triangleq kx_{(t-t_0)}$ $k\in\mathbb{R}^+$, cioè finché esso rimane una versione
             ritardata e/o amplificata del segnale $x_{(t)}$, in frequenza:
             \[
                 Y_{(f)} = kX_{(f)}e^{-j2\pi ft_0}   
@@ -917,7 +917,7 @@
                 }
                 \caption{Spettro filtro non distorcente}
             \end{figure}
-            Avere un tale filtro per tutti i segnali é molto restringente, ci basta che il nostro filtro sia non distorcente nella banda che ci interessa.
+            Avere un tale filtro per tutti i segnali è molto restringente, ci basta che il nostro filtro sia non distorcente nella banda che ci interessa.
             
             \begin{figure}[H]
                 \centering
@@ -987,7 +987,7 @@
         \[
               E_{x} = \int_{-\infty}^{\infty}|x_{(t)}|^2 dt = \int_{-\infty}^{\infty}|X_{(f)}|^2 df =\int_{-\infty}^{\infty} S_{x(f)} df
         \]
-        $S_{x(f)} = |X_{(f)}|^2$ é la densitá spettrale di energia del segnale, ci mostra come l'energia é distribuita nello spettro.
+        $S_{x(f)} = |X_{(f)}|^2$ è la densità spettrale di energia del segnale, ci mostra come l'energia è distribuita nello spettro.
         
         Dimostrazione:
         \begin{align}
@@ -1031,7 +1031,7 @@
             \end{tikzpicture}
             \caption{Spettro $S_{x(f)}$}
         \end{figure}            
-        \noindent La parte {\color{green}verde} é l'energia del segnale che perdiamo troncandolo con banda $B$
+        \noindent La parte {\color{green}verde} è l'energia del segnale che perdiamo troncandolo con banda $B$
     \subsection{Funzione di Correlazione - Segnali Aperiodici}\label{Funzione di Correlazione - Segnali Aperiodici}
         \[
             C_{xy} = R_{xy(\tau)}=\int_{-\infty}^{\infty}x_{(t)}y_{(t-\tau)}^\star dt 
@@ -1041,7 +1041,7 @@
             C_x = R_{x(\tau)}=\int_{-\infty}^{\infty}x_{(t)}x_{(t-\tau)}^\star dt 
         \]
         \noindent Misura la correlazione del segnale con se stesso.
-        \subsubsection{Propietá Autocorrelazione}
+        \subsubsection{Proprietà Autocorrelazione}
             \begin{itemize}
                 \item {$R_{x(0)} = E_x$
                     \[
@@ -1057,6 +1057,6 @@
                     \[ 
                         R_{x(\tau)} \overunderset{TCF}{ATCF}{\rightleftharpoons} S_{x(f)}
                     \]
-                    Posso calcolare la densitá spettrale di energia dall'autocorrelazione.
+                    Posso calcolare la densità spettrale di energia dall'autocorrelazione.
                 }
             \end{itemize}

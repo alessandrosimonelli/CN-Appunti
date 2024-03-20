@@ -8,7 +8,7 @@
             T_0=Periodo\ \ \ f_0\triangleq \frac{1}{T_0} =Frequenza
         \]
     \subsection{Trasformata Serie Di Fourier}
-        Ogni segnale periodico di periodo $T_0$ che soddifa le condizioni di Dirichlet e la sua $E_x < \infty (C.S.)$ puó essere scritto come la somma di 
+        Ogni segnale periodico di periodo $T_0$ che soddisfa le condizioni di Dirichlet e la sua $E_x < \infty (C.S.)$ può essere scritto come la somma di 
         infinite sinusoidi di frequenze multiple di $f_0 = \frac{1}{T_0}$
         \begin{itemize}
             \item{Equazione di Sintesi - Antitrasformata(ATSF)\label{ATSF}
@@ -27,13 +27,13 @@
                 \]
             } 
         \end{itemize}
-        La TSF gode della biunivocitá: $\forall x_{(t)} \exists! X_k$:
+        La TSF gode della biunivocità: $\forall x_{(t)} \exists! X_k$:
         \begin{align}
             x_{(t)} & \overunderset{TSF}{ATSF}{\rightleftharpoons} X_k  \nonumber\\
             Segnale\ Analogico\ Periodico &\overunderset{TSF}{ATSF}{\rightleftharpoons} Sequenza\ Complessa \nonumber
         \end{align}
         \subsubsection{Rappresentazione di $X_k$}
-            Essendo $X_k$ un numero complesso puó essere rappresentato in forma polare: 
+            Essendo $X_k$ un numero complesso può essere rappresentato in forma polare: 
             \[
                 X_k = |X_k|e^{\angle X_k}  
             \]
@@ -87,9 +87,9 @@
                 }
                 \caption{Spettro di un treno di rect}
             \end{figure}
-            lo spettro di Ampiezza gode della \textbf{simmetria pari} rispetto alle ascisse quindi é \textbf{sempre positivo}, mentre lo spettro di fase della \textbf{simmetria dispari}.
-        \subsection{Propietá della TSF}
-            \subsection{Linearitá}
+            lo spettro di Ampiezza gode della \textbf{simmetria pari} rispetto alle ascisse quindi è \textbf{sempre positivo}, mentre lo spettro di fase della \textbf{simmetria dispari}.
+        \subsection{Proprietà della TSF}
+            \subsection{Linearità}
             \subsection{Simmetria Hermitiana}
         
         \subsection{Calcolo dei coefficienti $X_k$ per segnali noti}
@@ -367,10 +367,10 @@
                     \caption{Spettro treno di $A\hspace{0.1cm}rect\left(\frac{t}{T}\right)$}
                     \label{fig:Spettro treno di rect}
                 \end{figure}  
-            Ora appizza matlab e fa esempi di un segnale e uno di ricostruzione dello stesso(script di matlab presenti nel teams):
+            Ora appizza MATLAB e fa esempi di un segnale e uno di ricostruzione dello stesso (script di MATLAB presenti su Teams):
             \begin{itemize}
-                \item Se un segnale varia molto rapidamente nel tempo ha componenti frequenziali piú alte $\rightarrow$ copre piú spettro(espansione spettrale) $T_0 \Downarrow$
-                \item Se un segnale varia molto lentamente copre le basse fraquenze $ T_0 \Uparrow$
+                \item Se un segnale varia molto rapidamente nel tempo ha componenti frequenziali più alte $\rightarrow$ copre più spettro(espansione spettrale) $T_0 \Downarrow$
+                \item Se un segnale varia molto lentamente copre le basse frequenze $ T_0 \Uparrow$
             \end{itemize}
             Se non ho abbastanza passi K non posso campionare le alte frequenze e quindi non faccio ne un analisi completa del segnale né riesco a ricostruire perfettamente il segnale  
             Inoltre in $0$ dello spettro ho il Valor medio \ref{Valore medio} del segnale.

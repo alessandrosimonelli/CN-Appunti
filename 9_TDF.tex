@@ -29,8 +29,8 @@
         \begin{align}
             \overline{X}_{(f)} &= \sum_{n=-\infty}^{\infty} x_{[nT]}e^{-j2\pi fnT} = \sum_{n=-\infty}^{\infty} \underset{(\nu)}{\int_{-\infty}^{\infty}} X_{(\nu)} e^{-j2\pi \nu nT} d\nu e^{-j2\pi fnT} \nonumber \\
                                &= \underset{(\nu)}{\int_{-\infty}^{\infty}} X_{(\nu)} \sum_{n=-\infty}^{\infty} e^{-j2\pi \nu nT} e^{-j2\pi fnT} d\nu \overset{\ref{tdf sequenza di delta}}{=} \underset{(\nu)}{\int_{-\infty}^{\infty}} X_{(\nu)} \sum_{n=-\infty}^{\infty} \frac{1}{T} \delta_{((f-\nu)-\frac{k}{T})} d\nu  \nonumber \\
-                               &\overset{\ref{Propietá del Delta di Dirac}:\text{paritá}}{=} \underset{(\nu)}{\int_{-\infty}^{\infty}} X_{(\nu)} \frac{1}{T} \sum_{n=-\infty}^{\infty}  \delta_{(\nu-(f-\frac{k}{T}))} d\nu = \frac{1}{T} \sum_{n=-\infty}^{\infty} \underset{(\nu)}{\int_{-\infty}^{\infty}} X_{(\nu)} \delta_{(\nu-(f-\frac{k}{T}))} d\nu  \nonumber \\
-                               &\overset{\ref{Propietá del Delta di Dirac}:\text{campionatrice}}{=}  \frac{1}{T} \sum_{n=-\infty}^{\infty} X_{(f-\frac{k}{T})} \nonumber
+                               &\overset{\ref{Proprietà del Delta di Dirac}:\text{parità}}{=} \underset{(\nu)}{\int_{-\infty}^{\infty}} X_{(\nu)} \frac{1}{T} \sum_{n=-\infty}^{\infty}  \delta_{(\nu-(f-\frac{k}{T}))} d\nu = \frac{1}{T} \sum_{n=-\infty}^{\infty} \underset{(\nu)}{\int_{-\infty}^{\infty}} X_{(\nu)} \delta_{(\nu-(f-\frac{k}{T}))} d\nu  \nonumber \\
+                               &\overset{\ref{Proprietà del Delta di Dirac}:\text{campionatrice}}{=}  \frac{1}{T} \sum_{n=-\infty}^{\infty} X_{(f-\frac{k}{T})} \nonumber
         \end{align}
         quindi la $TDF$ si ottiene periodicizzando la $TCF$ con periodo $\frac{1}{T}$:
         \[
@@ -101,7 +101,7 @@
                 A/D: interpolatore o filtro $p$, converte da discreto a analogico.
             }
         \end{itemize}
-        Il nostro obbiettivo é dimensionare T e l'interpolatore in modo tale da poter ricostruire il segnale $\hat{x}:\ \hat{x} =x$.
+        Il nostro obbiettivo è dimensionare T e l'interpolatore in modo tale da poter ricostruire il segnale $\hat{x}:\ \hat{x} =x$.
         \paragraph{Dimensioniamo l'$A/D$:} Riprendiamo la relazione tra $TDF$ e $TCF$:
         \begin{figure}[H]
             \centering
@@ -140,7 +140,7 @@
             \label{fig:relazione tdf tcf campionamento f 2B}
         \end{figure}
 
-        abbiamo trovato che la $TDF$  non é altro che la periodicizzazione della $TCF$ con periodo $\frac{1}{T}$: se $\frac{1}{T}\geq 2B$
+        abbiamo trovato che la $TDF$  non è altro che la periodicizzazione della $TCF$ con periodo $\frac{1}{T}$: se $\frac{1}{T}\geq 2B$
         il grafico ${\color{blue} X_{(f-\frac{k}{T})}}$ sono copie distinte non distorte e periodicizzate di $X_{(f)}$ da cui con un Filtro Passa-Basso \ref{Filtro Passa Basso di banda B - Low Pass Filter (LP)} 
         possiamo ricostruire il segnale. Se scegliessi $\frac{1}{T}<2B$:
         \begin{figure}[H]
@@ -180,7 +180,7 @@
             \caption{${\color{black} X_{(f)}}$,${\color{blue} X_{(f-\frac{k}{T})}}$,${\color{green} \overline{X}_{(f)} = \frac{1}{T}\sum_{k=-\infty}^{\infty}X_{(f-\frac{k}{T})}}$}
             \label{fig:relazione tdf tcf campionamento f sbagliata}
         \end{figure}
-        ho sovrapposizione delle copie di $X_{(f)}$ é il fenomeno di Aliasing: ho sovrapposizione di segnali che alterano il segnale originale. 
+        ho sovrapposizione delle copie di $X_{(f)}$ è il fenomeno di Aliasing: ho sovrapposizione di segnali che alterano il segnale originale. 
         In entrambi i casi ci troviamo in condizione di un segnale a banda limitata, nel tempo rappresenta un segnale illimitato.
         \paragraph{Dimensioniamo il $D/A$:}
         Partiamo dalla relazione di $\hat{x}$:
@@ -415,7 +415,7 @@
                 \caption{$x_{(t)}$,{\color{orange}$\hat{x} = \sum_{n=-\infty}^{\infty}x_{[nT]}p_{(t-nT)}$}}
                 \label{fig:x con interpolatore a seno cardinale}
             \end{figure}
-            l'interpolatore a seno cardinale non é causale: essendo delle $sinc$ a ogni campionamento, non posso conoscere il peso delle $sinc$ 
+            l'interpolatore a seno cardinale non è causale: essendo delle $sinc$ a ogni campionamento, non posso conoscere il peso delle $sinc$ 
             dei valori della sequenza successivi. Se opero non Real Time (Virtuale), invece ho infiniti campioni a cui posso attingere: Risolvo entrambi i 
             problemi troncando la $sinc$ e spostandola a dx, ma per troncarla sto moltiplicando una $sinc$ per una $rect$ nel tempo, passando alla frequenza 
             la funzione limitata nel tempo diventa illimitata in frequenza andando a influenzare anche le repliche successive.
@@ -423,18 +423,18 @@
 
         
         \paragraph{Teorema del Campionamento:} Dato un segnale analogico $x_{(t)}$ la cui banda di frequenze sia limitata e dato $c\in \mathbb{Z}$,
-        il segnale $x_{(t)}$ puó essere univocamente ricostruito a partire dai suoi campioni $x_{[nT]}$ presi a frequenza (o periodo) $f_s = \frac{1}{T}$ se 
+        il segnale $x_{(t)}$ può essere univocamente ricostruito a partire dai suoi campioni $x_{[nT]}$ presi a frequenza (o periodo) $f_s = \frac{1}{T}$ se 
         $f_s = \frac{1}{T} \geq 2B$ mediante:
         \[
             x_{(t)} = \sum_{n=-\infty}^{\infty} x_{[nT]}sinc\left(\frac{t}{T}-n\right) 
         \]
-        Criticitá
+        Criticità
         \begin{itemize}
             \item {Segnale a banda limitata}
             \item {Interpolatore dimensionato}
         \end{itemize}
         Osservazioni: Se utilizzassi un filtro con durata $\frac{1}{T}>>2B$ prenderei tantissimi campioni che
-        non servono per ricostruire meglio il segnale: dagli esempi di matlab possiamo vedere che ci basta anche solo un periodo uguale a $2B$.\\
+        non servono per ricostruire meglio il segnale: dagli esempi di MATLAB possiamo vedere che ci basta anche solo un periodo uguale a $2B$.\\
         Esempio:
         \[
             B = 10KHz,\ 2B = 20KHz,\ \text{Durata filtro} = 25KHz\ ho\ 5KHz\text{ di margine}

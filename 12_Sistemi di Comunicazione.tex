@@ -1,5 +1,5 @@
 \section{Sistemi di Comunicazione}
-    Un sistema di comunicazione numerico puó essere approssimato a
+    Un sistema di comunicazione numerico può essere approssimato a
     \begin{figure}[H]
         \centering 
         \begin{tikzpicture}[
@@ -47,7 +47,7 @@
     \end{figure}
     \begin{itemize}
         \item {CdC: Codifica di Canale, si occupa di aggiungere ridondanza ai bit in ingresso per proteggerli da eventuali errori del canale di trasmissione ho di
-            conseguenza che $k<n$, puó essere preceduto da un eventuale codifica di sorgente. 
+            conseguenza che $k<n$, può essere preceduto da un eventuale codifica di sorgente. 
             \begin{figure}[H]
                 \centering 
                 \begin{tikzpicture}[
@@ -63,15 +63,15 @@
                     \draw[->] (block) --node[above]{$\{d_n$\}} node[midway]{\tiny$/$} node[below]{\scriptsize$n,R_d$} (output);
                 \end{tikzpicture}    
             \end{figure}
-            $R_b = \frac{1}{T_b}$ é il Bit Rate a cui i bit sono generati in ingresso mentre, $R_d = \frac{1}{T_d}$ é il Bit Rate di uscita. Volendo trovare la relazione tra ingresso e uscita:
+            $R_b = \frac{1}{T_b}$ è il Bit Rate a cui i bit sono generati in ingresso mentre, $R_d = \frac{1}{T_d}$ è il Bit Rate di uscita. Volendo trovare la relazione tra ingresso e uscita:
             \[
                 kT_b = nT_d \Rightarrow \frac{R_b}{R_d} = \frac{k}{n}     
             \] 
-            il quale é compreso tra $0<\frac{R_b}{R_d}\leq 1$ se cosí non fosse non introdurrei ridondanza, il rate in ingresso deve essere inferiore a quello di uscita o non 
+            il quale è compreso tra $0<\frac{R_b}{R_d}\leq 1$ se così non fosse non introdurrei ridondanza, il rate in ingresso deve essere inferiore a quello di uscita o non 
             potrei introdurre bit aggiuntivi.
         }
         \item {Map: Mappatore ($M$), trasforma una \emph{sequenza} di bit di codice $\{d_n\}$ in una sequenza di simboli $\{a_i\}$ appartenenti ad un alfabeto $A$ costituito
-            da $M$ diversi simboli, dove $M$ é tipicamente una potenza del $2$. Ponendo $M=2^q$ il mappatore associa un simbolo di modulazione a ciascun blocco di $Q$ bit di canale. 
+            da $M$ diversi simboli, dove $M$ è tipicamente una potenza del $2$. Ponendo $M=2^q$ il mappatore associa un simbolo di modulazione a ciascun blocco di $Q$ bit di canale. 
             \begin{figure}[H]
                 \centering 
                 \begin{tikzpicture}[
@@ -155,15 +155,15 @@
             \[
                 T = qT_d =T_d log_{2}(M)  
             \]
-            la velocitá di trasmissione dei simboli $f_s = \frac{1}{T}$ é legata al rate $R_d$ da:
+            la velocità di trasmissione dei simboli $f_s = \frac{1}{T}$ è legata al rate $R_d$ da:
             \[
                 f_s = \frac{R_d}{Q} = \frac{R_d}{log_{2}(M)} 
             \] 
             devo caricare velocemente i simboli in ingresso al mappatore per poter completare la sequenza da mappare. Si nota anche come
-            all'aumentare della cardinalitá $M$ la velocitá diminuisca, la sua misura é fatta in $BAUD = \frac{simboli}{sec}$
+            all'aumentare della cardinalità $M$ la velocità diminuisca, la sua misura è fatta in $BAUD = \frac{simboli}{sec}$
         }
         \item {Mod: Modulatore converte la sequenza dei simboli $\{a_i\}$ in un segnale analogico $s_{T(t)}$ in modo tale da poter essere trasmesso  
-            sul canale di comunicazione. Puó essere una modulazione {\color{blue}BB} o {\color{red}BP}, in ogni caso la banda impiegata sará:
+            sul canale di comunicazione. Può essere una modulazione {\color{blue}BB} o {\color{red}BP}, in ogni caso la banda impiegata sarà:
             \[
                 B_T \simeq \frac{1}{T}  
             \]
@@ -171,7 +171,7 @@
             \[
                 B_T = \frac{1}{T} \overset{T = qT_d}{=} \frac{1}{qT_d} = \frac{1}{T_d log_2(M)} = \frac{nR_b}{klog_2(M)}     
             \]
-            osserviamo come aumentando la cardinalitá $M$ della mappa riduco la banda, ció é molto utile per poter occupare uno spettro limitato ma ridurla troppo
+            osserviamo come aumentando la cardinalità $M$ della mappa riduco la banda, ciò è molto utile per poter occupare uno spettro limitato ma ridurla troppo
             comporta un aumento dell'errore. Invece un rate del codice $\frac{n}{k}$ influenza sia la banda occupata che l'errore dei simboli, si tendono 
             a usare codici che abbiano un rate vicino all'$1$. 
         }
@@ -200,7 +200,7 @@
     \end{figure}
     Il segnale ricevuto $r_{(t)}$ viene demodulato dal demodulatore numerico, il quale ha il compito di fornire una stima dei simboli $\{\hat{a}_i\}$ trasmessi.
     In seguito vengono demappati in modo da ottenere una stima di $\{\hat{d}_n\}$ dei bit di codice. Infine passano nel decodificatore di canale la quale uscita 
-    fornisce ua stima dei $\{\hat{b}_n\}$ bit di informazione.
+    fornisce una stima dei $\{\hat{b}_n\}$ bit di informazione.
 
     I vantaggi di un sistema di comunicazione numerico rispetto ad uno analogico sono:
     \begin{itemize}
@@ -208,18 +208,18 @@
             Una maggiore resistenza al rumore, dovuta all'alfabeto dei simboli limitato, che consente di prendere decisioni affidabili.
         }
         \item {
-            La possibilitá di utilizzare ripetizioni rigenerative anziché ripetizioni che amplificano semplicemente il segnale ricevuto, amplificando quindi sia il segnale
+            La possibilità di utilizzare ripetizioni rigenerative anziché ripetizioni che amplificano semplicemente il segnale ricevuto, amplificando quindi sia il segnale
             utile che il rumore. 
         }
         \item {
-            La possibilitá di utilizzare codici a correzione d'errore inserendo ridondanza nella sequenza di bit informativi.
+            La possibilità di utilizzare codici a correzione d'errore inserendo ridondanza nella sequenza di bit informativi.
         }
     \end{itemize}
     \subsection{Phase Amplitude Modulation - PAM}
-        É una tipologia di sistema di comunicazione in {\color{blue}Banda Base}, il cui segnale trasmesso $s_{T(t)}$ ha densitá spettrale
+        É una tipologia di sistema di comunicazione in {\color{blue}Banda Base}, il cui segnale trasmesso $s_{T(t)}$ ha densità spettrale
         di potenza centrata in $0$. Il sistema PAM riceve in ingresso simboli di modulazione $\{a_i\}$ provenienti dal mappaggio dei bit $\{d_n\}$ 
         \subsubsection{Mappatore}
-            Il mappatore ha come cardinalitá una potenza del $2$, abbiamo PAM con mappatura: binaria, quaternaria o ottale
+            Il mappatore ha come cardinalità una potenza del $2$, abbiamo PAM con mappatura: binaria, quaternaria o ottale
             \begin{table}[H]
                 \centering
                 \subfloat[Mappa Binaria]{
@@ -274,7 +274,7 @@
                 \caption{Sistema PAM}
             \end{figure}
         \subsubsection{Modulatore}
-            Il segnale PAM é una serie di impulsi che si susseguono in successione con un intervallo $T = \frac{1}{f_s}$ e modulatori in ampiezza dei simboli 
+            Il segnale PAM è una serie di impulsi che si susseguono in successione con un intervallo $T = \frac{1}{f_s}$ e modulatori in ampiezza dei simboli 
             $\{a_i\}$. Possiamo usare un qualsiasi impulso, che chiamiamo $g_{T(t)}$, basta che sia di durata finita:
             \begin{figure}[H]
                 \centering
@@ -495,14 +495,14 @@
                     \end{tikzpicture}
                 }
             \end{figure}
-            dovendo analizzare il dominio frequnziale di $s_{T(t)}$ sarebbero tutte delle $sinc$ in {\color{blue}BB}  
-        \subsubsection{Densitá spettrale di potenza}\label{Densita spettrale di potenza - PAM}
+            dovendo analizzare il dominio frequenziale di $s_{T(t)}$ sarebbero tutte delle $sinc$ in {\color{blue}BB}  
+        \subsubsection{Densità spettrale di potenza}\label{Densita spettrale di potenza - PAM}
             Volendo analizzare la banda del segnale in uscita al modulatore PAM potremmo pensare di utilizzare la $TCF$:
             \begin{gather}
                 s_{T(t)} \overset{TCF\ref{TCF di segnali periodici}}{\rightleftharpoons} S_{T(f)}\nonumber\\
                 s_{T(t)}  = \sum_{i}a_i g_{T(t-iT)} \overset{TCF\ref{TCF di segnali periodici}}{\rightleftharpoons} \sum_{i}a_i G_{T(f)} e^{-j2\pi fiT}  \nonumber
             \end{gather}
-            ma non posso analizzare con la $TCF$ le variabili aleatorie $a_i$. Posso allora calcolare la Densitá spettrale di potenza (\ref{Densita di potenza spettrale}).
+            ma non posso analizzare con la $TCF$ le variabili aleatorie $a_i$. Posso allora calcolare la Densità spettrale di potenza (\ref{Densita di potenza spettrale}).
             Ammettiamo che la sequenza di simboli di modulazione $\{a_i\}$ sia SSL \ref{Sitemi Stazionari in Senso Lato (SSL)}. La sua media é
             \[
                 \mu_a = \eta_a = \mathbb{E}[a_i]
@@ -511,7 +511,7 @@
             \[
                 R_{a(m)} = \mathbb{E}[a_ia_{i+m}]    
             \]
-            ho la densitá spettrale di potenza come 
+            ho la densità spettrale di potenza come 
             \begin{gather}
                 S_{s(f)} = \frac{1}{T} S_{a(f)}\left|G_{T(f)}\right|^2 \nonumber \\
                 S_{a(f)} = \sum_{m} R_{a(m)}e^{-j2\pi fmT} \nonumber
@@ -561,15 +561,15 @@
                     \end{axis}
                     \end{tikzpicture}
                 \end{figure}
-                dalla quale possiamo ricavare la densitá spettrale di potenza dei simboli
+                dalla quale possiamo ricavare la densità spettrale di potenza dei simboli
                 \[
                     S_{a(f)} = \sigma_a^2 + \eta_a^2\sum_{m}e^{-j2\pi fmT} \overset{\ref{Relazione tra $TCF$ e $TDF$}}{=} \sigma_a^2 + \frac{\eta_a^2 }{T}\sum_{k} \delta_{(f-\frac{k}{T})}
                 \]
-                mentre la densitá spettrale di potenza del segnale 
+                mentre la densità spettrale di potenza del segnale 
                 \begin{align}
                     S_{s(f)} &= \frac{1}{T} \left[\sigma_a^2 + \frac{\eta_a^2 }{T}\sum_{k} \delta_{(f-\frac{k}{T})}\right]\left|G_{T(f)}\right|^2 \nonumber \\
                             &= \frac{1}{T} \sigma_a^2\left|G_{T(f)}\right|^2 + \frac{\eta_a^2 }{T^2}\sum_{k} \delta_{(f-\frac{k}{T})}\left|G_{T(f)}\right|^2\nonumber \\
-                            &\overset{\ref{Propietá del Delta di Dirac}}{=} \frac{1}{T} \sigma_a^2\left|G_{T(f)}\right|^2 + \frac{\eta_a^2 }{T^2}\sum_{k} \left|G_{T(\frac{k}{T})}\right|^2\nonumber
+                            &\overset{\ref{Proprietà del Delta di Dirac}}{=} \frac{1}{T} \sigma_a^2\left|G_{T(f)}\right|^2 + \frac{\eta_a^2 }{T^2}\sum_{k} \left|G_{T(\frac{k}{T})}\right|^2\nonumber
                 \end{align}
                 la potenza si calcola quindi con 
                 \[
@@ -581,8 +581,8 @@
                 \]
                 Possiamo osservare come una parte della potenza dipenda da una parte continua, $\frac{\sigma_a^2}{T} E_{g_T}$, e una parte discreta
                 composta da un pettine di Delta di Dirac, $\frac{\eta_a^2 }{T^2}\sum_{k} \left|G_{T(\frac{k}{T})}\right|^2$. Nel caso di simboli incorrelati ($\eta_a = 0$)
-                e la parte continua dipende dal filtro con banda dimensionata rispetto a $\frac{1}{T}$, la banda del segnale trasmesso sará quindi $B_T \simeq \frac{1}{T}$. 
-                La densitá spettrale di potenza in caso $\eta_a = 0$ diventa
+                e la parte continua dipende dal filtro con banda dimensionata rispetto a $\frac{1}{T}$, la banda del segnale trasmesso sarà quindi $B_T \simeq \frac{1}{T}$. 
+                La densità spettrale di potenza in caso $\eta_a = 0$ diventa
                 \[
                     S_{s(f)} = \frac{\sigma_a^2}{T} \left|G_{T(f)}\right|^2 =  \frac{\mathbb{E}[a_i^2]}{T} \left|G_{T(f)}\right|^2 = \frac{R_{a(0)}}{T} \left|G_{T(f)}\right|^2
                 \] \label{Potenza - PAM}
@@ -595,9 +595,9 @@
             \[
                 \eta_a = 0 \hspace{1cm} \sigma_a^2 = \mathbb{E}[a_i^2] = \frac{M^2-1}{3}    
             \]
-            con $M$ la cardinalitá del mappatore, risultano 
+            con $M$ la cardinalità del mappatore, risultano 
             \begin{itemize}
-                \item {Densitá spettrale di potenza:
+                \item {Densità spettrale di potenza:
                     \[
                         S_{s(f)} = \frac{M^2-1}{3T}\left|G_{T(f)}\right|^2
                     \]
@@ -607,12 +607,12 @@
                         P_s = \frac{M^2-1}{3T}E_{g_T}
                     \]
                 }
-                \item {Energia media per simbolo: dato che l'energia é calcolata in un $\Delta t$ posso ricavare l'energia del simbolo moltiplicando la potenza per $T$
+                \item {Energia media per simbolo: dato che l'energia è calcolata in un $\Delta t$ posso ricavare l'energia del simbolo moltiplicando la potenza per $T$
                     \[
                         E_S = P_sT = \frac{M^2-1}{3}E_{g_T}
                     \]
                 }
-                \item {Energia media per bit: dato che l'energia é calcolata in un $\Delta t$ posso ricavare l'energia del bit da trasmettere
+                \item {Energia media per bit: dato che l'energia è calcolata in un $\Delta t$ posso ricavare l'energia del bit da trasmettere
                 moltiplicando la potenza per $T_d$
                     \[
                         E_d = P_sT_d = \frac{M^2-1}{3log_2(M)}E_{g_T}
@@ -708,7 +708,7 @@
                 \]}
                 \item {$g_{T(t)}$: impulso di trasmissione}
                 \item {$c_{(t)}$: risposta impulsiva del canale}
-                \item {$w_{(t)}$: rimore gaussiano bianco con densitá spettrale di potenza\[
+                \item {$w_{(t)}$: rumore gaussiano bianco con densità spettrale di potenza\[
                     S_{w(f)} = \frac{N_0}{2}  
                 \]}
                 \item {$g_{R(t)}$: filtro di ricezione}
@@ -739,7 +739,7 @@
                     \[
                         x_{(t)} = r_{(t)} \otimes g_{R(t)} = \sum_{i}a_ig_{(t-iT)}+n_{(t)}  
                     \]
-                    dove $g_{(t)}$ é la risposta impulsiva globale del sistema
+                    dove $g_{(t)}$ è la risposta impulsiva globale del sistema
                     \[
                         g_{(t)} = g_{TC(t)} \otimes g_{R(t)} = g_{T(t)} \otimes c_{(t)} \otimes g_{R(t)}
                     \]
@@ -747,7 +747,7 @@
                     \[
                         n_{(t)} = w_{(t)} \otimes g_{R(t)}    
                     \]
-                    esso é un processo Gaussiano a media nulla e densitá spettrale di potenza 
+                    esso è un processo Gaussiano a media nulla e densità spettrale di potenza 
                     \[
                         S_{n(f)} = \frac{N_0}{2} \left|G_{R(f)}\right|^2  
                     \]
@@ -756,7 +756,7 @@
                     \[
                         x_{[kT]} = \sum_{i}a_ig_{[(k-i)T]}+n_{[k]}  
                     \]
-                    dove $n_{[k]}$ é una variabile aleatoria Gaussiana a media nulla e varianza 
+                    dove $n_{[k]}$ è una variabile aleatoria Gaussiana a media nulla e varianza 
                     \[
                         \sigma_n^2 = \frac{N_0}{2} \int_{-\infty}^{\infty}\left|G_{R(f)}\right|^2 df =\frac{N_0}{2} E_{g_R} 
                     \]
@@ -770,11 +770,11 @@
                         x_{[kT]} = a_Kg_{(0)} + \sum_{m\neq 0}a_{k-m}g_{[mT]}+n_{[k]}      
                     \]
                     Il campione $x_{[kT]}$ viene utilizzato per prendere una decisione sul simbolo $a_k$ il termine utile nella espressione di $x_{[kT]}$
-                    é 
+                    è 
                     \[
                         a_Kg_{(0)}
                     \]\label{ISI}
-                    il secondo termine che appare é il contributo di tutti i simboli di modulazione diversi da $a_k$ e rappresenta un disturbo che si 
+                    il secondo termine che appare è il contributo di tutti i simboli di modulazione diversi da $a_k$ e rappresenta un disturbo che si 
                     sovrappone al termine utile. Il disturbo descritto prende il nome di \emph{Interferenza Intersimbolica} (ISI)
                     \[
                         ISI =  \sum_{m\neq 0}a_{k-m}g_{[mT]}
@@ -788,8 +788,8 @@
                             $g_R$ agisce sul rumore termico $S_{n(f)} = \frac{N_0}{2} \left|G_{R(f)}\right|^2$
                         }
                     \end{itemize}
-                    Infine $n_k$ é il contributo del rumore termico. Rispetto ai sistemi di comunicazione analogici nei sistemi di comunicazione numerici
-                    é presente un'altra forma di disturbo l'ISI, normalmente l'ISI ha ordini di grandezza molto superiori al rumore termico per cui bisogna 
+                    Infine $n_k$ è il contributo del rumore termico. Rispetto ai sistemi di comunicazione analogici nei sistemi di comunicazione numerici
+                    è presente un'altra forma di disturbo l'ISI, normalmente l'ISI ha ordini di grandezza molto superiori al rumore termico per cui bisogna 
                     eliminarlo.
                 }
             \end{itemize}
@@ -798,7 +798,7 @@
             \[
                 ISI =  \sum_{m\neq 0}a_{k-m}g_{[mT]}
             \]
-            si nota come il suo completo annullamento é possibile imponendo le condizioni di Nyquist \label{Condizioni di Nyquist} nel dominio del tempo
+            si nota come il suo completo annullamento è possibile imponendo le condizioni di Nyquist \label{Condizioni di Nyquist} nel dominio del tempo
             \[
                 g_{[mT]} = 
                 \begin{cases}
@@ -813,7 +813,7 @@
             \]
             costituita dal simbolo trasmesso $a_k$ e dal rumore $n_k$. Un impulso che soddisfa tali condizioni si dice \emph{Impulso di Nyquist}.
             Sono quindi condizioni sufficienti, per $g_(t)$, che sia nullo agli estremi dell'intervallo $[-kT,kT]$ e che sia non nulla in $t=0$
-            allora soddisfano le codizioni di Nyquist
+            allora soddisfano le condizioni di Nyquist
             \begin{figure}[H]
                 \centering
                     \begin{tikzpicture}
@@ -940,7 +940,7 @@
                 \end{cases}  \Rightarrow \overline{G_{(f)}} = g_{(0)} 
             \]
             ho solo il termine per $m=0$ e di conseguenza ho ISI nullo. Questo vuol dire che finché la somma delle ripetizioni
-            della $G_{(f)}$ a intervalli di $\frac{1}{T}$ é uguale a una costante su tutto l'asse delel frequenze l'ISI é nullo.
+            della $G_{(f)}$ a intervalli di $\frac{1}{T}$ è uguale a una costante su tutto l'asse delle frequenze l'ISI è nullo.
             Un esempio con $G_{(f)} = triangoli,\ g_{(t)} = sinc^2$ con turata $\frac{1}{2T}$
             \begin{figure}[H]
                 \centering
@@ -1009,9 +1009,9 @@
                 \sum_{k= -\infty}^{\infty} G_{(f-\frac{k}{T})} = T
             \]
             indicano che una condizione \emph{necessaria}, ma non sufficiente, affinché un impulso $g_{(t)}$ sia di Nyquist
-            é che la sua trasformata di Fourier $G_{(f)}$ abbia banda almeno pari a $\frac{1}{2T}$. Se cosí non fosse
+            è che la sua trasformata di Fourier $G_{(f)}$ abbia banda almeno pari a $\frac{1}{2T}$. Se così non fosse
             le ripetizioni della trasformata $G_{(f)}$ nel dominio della frequenza sarebbe nulla in $f=\frac{1}{2T}$ e non sarebbero
-            piú soddisfatte le condizioni di Nyquist nel dominio della frequenza come ad esempio
+            più soddisfatte le condizioni di Nyquist nel dominio della frequenza come ad esempio
             \begin{figure}[H]
                 \centering
                     \begin{tikzpicture}
@@ -1039,8 +1039,8 @@
                     \end{tikzpicture}      
                     \caption{$g_{(t)}$}          
             \end{figure}
-            la banda $B_N =\frac{1}{2T}$ é detta banda minima di Nyquist, é un condizione necessara ma non sufficiente, per l'eliminazione di ISI,
-            poiché se gli impulsi sono di banda maggiore a $B_N$ la somma delle ripetizioni di $G_{(f)}$ non é una costante
+            la banda $B_N =\frac{1}{2T}$ è detta banda minima di Nyquist, è un condizione necessaria ma non sufficiente, per l'eliminazione di ISI,
+            poiché se gli impulsi sono di banda maggiore a $B_N$ la somma delle ripetizioni di $G_{(f)}$ non è una costante
             \begin{figure}[H]
                 \centering
                 \subfloat[$g_{(t)}$]{
@@ -1158,7 +1158,7 @@
                 }
                 
             \end{figure}
-        \paragraph{Dimensionaento di $g_{(t)}$}
+        \paragraph{Dimensionamento di $g_{(t)}$}
             Riprendiamo il segnale in ricezione di un sistema PAM
             \[
                 x_{[k]} = \sum_{m} a_{k-m}g_{[mT]} + n_{[k]}   
@@ -1174,8 +1174,8 @@
             \]
             dove:
             \begin{itemize}
-                \item {$a_{k}g_{(0)}$ é la componente utile}
-                \item {$\sum_{m\neq 0} a_{k-m}g_{[mT]}$ é l'ISI, il quale si annulla per le condizioni di Nyquist:
+                \item {$a_{k}g_{(0)}$ è la componente utile}
+                \item {$\sum_{m\neq 0} a_{k-m}g_{[mT]}$ è l'ISI, il quale si annulla per le condizioni di Nyquist:
                         \begin{itemize}
                             \item {Nel tempo:
                                 \[
@@ -1190,22 +1190,22 @@
                                 \[
                                     \overline{G_{(f)}} = g_{(0)} = \sum_{k}\frac{1}{T}G_{(f-\frac{k}{T})}    
                                 \]
-                                la quale é vera se la banda minima, $B_{min}$, di $G_{(f)}$ é $\frac{1}{2T}$. La 
-                                funzione che soddisfa tali condizioni é una $rect$ che nel dominio del tempo é una $sinc$
+                                la quale è vera se la banda minima, $B_{min}$, di $G_{(f)}$ è $\frac{1}{2T}$. La 
+                                funzione che soddisfa tali condizioni è una $rect$ che nel dominio del tempo è una $sinc$
                             }
                         \end{itemize}
                 }
             \end{itemize}
-            in realtá non uso la $rect/sinc$ per realizzare il dimensionaemnto della $g_{(t)}$ 
+            in realtà non uso la $rect/sinc$ per realizzare il dimensionamento della $g_{(t)}$ 
             \begin{itemize}
-                \item {In frequenza la $rect$ é discontinua, é difficile realizzare le 2 spike a $\pm\frac{1}{2T}$}
-                \item {Nel dominio del tempo ho una $sinc$ che é infinita, ed un eventuale errore di sincronizzazione
+                \item {In frequenza la $rect$ è discontinua, è difficile realizzare le 2 spike a $\pm\frac{1}{2T}$}
+                \item {Nel dominio del tempo ho una $sinc$ che è infinita, ed un eventuale errore di sincronizzazione
                 (\ref{Errore Sincronizzazione}) introduce ISI}
             \end{itemize}
-            Le ipotesi che abbiamo fatto fino ad ora implicano che il riceviore riesca a campionare a istanti
-            di tempo $T$, ma $T$ é un parametro che sceglie il trasmettitore, di conseguenza\label{Errore Sincronizzazione}
+            Le ipotesi che abbiamo fatto fino ad ora implicano che il ricevitore riesca a campionare a istanti
+            di tempo $T$, ma $T$ è un parametro che sceglie il trasmettitore, di conseguenza\label{Errore Sincronizzazione}
             i due dispositivi si devono sincronizzare e decidere un $T$. Il ricevitore comunque non riesce a campionare
-            precisamente a $T$, per motivi di trasmissione o non si sincronizza perfettamente, avró un leggero delta di campionamento
+            precisamente a $T$, per motivi di trasmissione o non si sincronizza perfettamente, avrò un leggero delta di campionamento
             \[
                 T_c = T+ \tau  
             \]
@@ -1241,18 +1241,18 @@
                 \end{axis}
                 \end{tikzpicture}
             \end{figure}
-            se non campiono piú a $T$ ma a $T_c$ avró ISI. Per risolvere tali problemi si introduce l'impulso a coseno rialzato.
+            se non campiono più a $T$ ma a $T_c$ avrò ISI. Per risolvere tali problemi si introduce l'impulso a coseno rialzato.
             
     \subsection{Impulso a coseno rialzato}
         Abbiamo visto come l'impulso rettangolare sia perfetto per soddisfare le Condizioni di Nyquist (\ref*{Condizioni di Nyquist}),
         in generale non viene realizzato tale impulso:
         \begin{itemize}
-            \item {Non é facilmente implementabile vista la discontinuitá che $G_{(f)}$ presenta in $f=\pm \frac{1}{2T}$}
+            \item {Non è facilmente implementabile vista la discontinuità che $G_{(f)}$ presenta in $f=\pm \frac{1}{2T}$}
             \item {Ha lobi molto pronunciati nel dominio del tempo rendendo il sistema molto sensibile a errori di Sincronizzazione \ref{Errore Sincronizzazione}}
         \end{itemize}
         per rimediare a tali problemi si utilizzano gli impulsi a coseno rialzato o detti Raised Cosine Roll-off (RCR). Essi 
-        costituiscono una famiglia di impulsi caratterizzati da un paramentro $\alpha\in [0,1]$ detto \emph{fattore di Roll-off}.
-        La trasformata di Fourier si presenta cosí 
+        costituiscono una famiglia di impulsi caratterizzati da un paramento $\alpha\in [0,1]$ detto \emph{fattore di Roll-off}.
+        La trasformata di Fourier si presenta così 
         \[
             G_{RCR} = 
             \begin{cases}
@@ -1263,7 +1263,7 @@
         \]
         una parte piatta di valore $T$ che si estende fino alla frequenza $\pm \frac{1-alpha}{2T}$. Dopo la parte piatta
         segue una zona di Roll-off che si estende nell'intervallo $\frac{1-alpha}{2T}< f \leq \pm \frac{1+alpha}{2T}$ fino a scendere 
-        a $0$. A $f=\frac{1}{2T}$ il valore é sempre indipendente da $\alpha$: $G_{RCR(f)} = \frac{T}{2}$, mentre al variare di $\alpha$:
+        a $0$. A $f=\frac{1}{2T}$ il valore è sempre indipendente da $\alpha$: $G_{RCR(f)} = \frac{T}{2}$, mentre al variare di $\alpha$:
         \[
             G_{RCR} = 
             \begin{cases}
@@ -1288,19 +1288,19 @@
         \end{figure}
         ricordando una $sinc$ ma con lobi molto smorzati man mano che $\alpha$ tende a $1$. 
 
-        Si sceglie il fattore di Roll-off tenendo conto sia della efficenza spettrale che migliora al decrescere di $\alpha$,
-        dal dominio del tempo bisogna invece tener conto della sensibilitá all'ISI che diminuisce al crescere di $\alpha$.
-        Inoltre una propietá del coseno rialzato é \label{propieta coseno rialzato} 
+        Si sceglie il fattore di Roll-off tenendo conto sia della efficienza spettrale che migliora al decrescere di $\alpha$,
+        dal dominio del tempo bisogna invece tener conto della sensibilità all'ISI che diminuisce al crescere di $\alpha$.
+        Inoltre una proprietà del coseno rialzato è \label{proprietà coseno rialzato} 
         \[
             g_{RCR(0)} = \int_{-\infty}^{\infty}G_{RCR(f)}df = 1
         \]
     \subsection{Filtro adattato}
-        Ci poniamo adesso il problema del dimensionamento di $g_{(t)}$ in forma estesa, cioé
+        Ci poniamo adesso il problema del dimensionamento di $g_{(t)}$ in forma estesa, cioè
         dimensionando i filtri $g_{T(t)},g_{R(t)}$ nelle ipotesi che il canale sia $c_{(t)} = \delta_{(t)}$. 
-        Il nostro obbiettivo é ridurre al minimo, se non eliminare, sia l'ISI che il rumore, per ottenere ció si introduce
-        il fltro adattato (Matched Filter). Il filtro risolve il seguente problema: preso un impulso $p_{(t)}$ di forma nota,
-        immerso in rumore additivo bianco $w_{(t)}$ (anche non Gaussiano) con densitá spettrale di potenza $S_{w(f)} = \frac{N_0}{2}$. 
-        Il segnale é inviato in ingresso ad un sistema lineare e tempo invariante con risposta impulsiva $h_{(t)}$ e campionato ad un 
+        Il nostro obbiettivo è ridurre al minimo, se non eliminare, sia l'ISI che il rumore, per ottenere ciò si introduce
+        il filtro adattato (Matched Filter). Il filtro risolve il seguente problema: preso un impulso $p_{(t)}$ di forma nota,
+        immerso in rumore additivo bianco $w_{(t)}$ (anche non Gaussiano) con densità spettrale di potenza $S_{w(f)} = \frac{N_0}{2}$. 
+        Il segnale è inviato in ingresso ad un sistema lineare e tempo invariante con risposta impulsiva $h_{(t)}$ e campionato ad un 
         istante $t_{0}$, ottenendo il campione $x_{(t_0)}$ come nel sistema di ricezione
         \begin{figure}[H]
             \centering
@@ -1335,7 +1335,7 @@
             s_{(t_0)} = \int_{-\infty}^{\infty} h_{\tau} p_{(t_0-\tau)}d\tau \nonumber\\
             n_{(t_0)} = \int_{-\infty}^{\infty} h_{\tau} w_{(t_0-\tau)}d\tau \nonumber
         \end{gather}
-        ricordiamo che $n_0$ é una variabile aleatoria e calcolando l'SNR:
+        ricordiamo che $n_0$ è una variabile aleatoria e calcolando l'SNR:
         \[
             \frac{S_u}{N_u} = \frac{s^2_{t_0}}{\mathbb{E}[n^2_{(t_0)}]}  
         \]
@@ -1344,7 +1344,7 @@
             \mathbb{E}[n^2_{(t_0)}] &= R_{n(0)} \overset{TCF}{=} S_{n(f)} = S_{w(f)}\left|H_{(f)}\right|^2 = \frac{N_0}{2}\left|H_{(f)}\right|^2 \nonumber \\
                                     &\overset{ATCF}{=} \int_{-\infty}^{\infty} S_{n(f)} df = \int_{-\infty}^{\infty} \frac{N_0}{2}\left|H_{(f)}\right|^2 df \nonumber            
         \end{align}
-        essendo $H_{(f)}$ la trasformata di fourier di $h_{(t)}$ e tenendo conto del teorema di Parseval ho
+        essendo $H_{(f)}$ la trasformata di Fourier di $h_{(t)}$ e tenendo conto del teorema di Parseval ho
         \[
             \mathbb{E}[n^2_{(t_0)}] = \frac{N_0}{2}\int_{-\infty}^{\infty} h_{(t)}^2 dt
         \]
@@ -1354,11 +1354,11 @@
                 &\overset{Dsg. Swartz}{\leq} \frac{\int_{-\infty}^{\infty} h_{\tau}d\tau \int_{-\infty}^{\infty} p_{(t_0-\tau)}d\tau}{\frac{N_0}{2}\int_{-\infty}^{\infty} h_{(t)}^2 dt} = \frac{2}{N_0}E_p \nonumber
         \end{align}        
         l'uguaglianza si ha se $h_{(t)} = kp_{(t_0-t)}$ con $k$ numero reale non nullo, ecco perché si chiama filtro adattato, poiché si adatta all'impulso $p_{(t)}$ e 
-        massimizza il rapporto segnale rumore all'istante $t_0$ quando il rumore é bianco e la risposta impulsiva del filtro é 
+        massimizza il rapporto segnale rumore all'istante $t_0$ quando il rumore è bianco e la risposta impulsiva del filtro è 
         \[
             h_{(t)} = p_{(t_0-t)}  
         \]     
-        cioé una versione del segnale $p_{(t)}$ ribaltata e traslata di $t_{0}$ come ad esempio 
+        cioè una versione del segnale $p_{(t)}$ ribaltata e traslata di $t_{0}$ come ad esempio 
         \begin{figure}[H]
             \centering
             \subfloat[$p_{(t)}$]{
@@ -1369,7 +1369,7 @@
                 \includegraphics[width=5.5cm]{media/uwu.png}
             }
         \end{figure}
-        Si puó ricavare la componente utile del segnale in uscita dal sistema
+        Si può ricavare la componente utile del segnale in uscita dal sistema
         \[
             s_{(t_0)} = \int_{-\infty}^{\infty} p{(t_0-t)}dt = E_p  
         \]
@@ -1377,19 +1377,19 @@
         \[
             H_{(f)} = TCF[p_{(t_0-t)}] = P^*_{(f)}e^{-j2\pi ft_0}    
         \]
-        con $P_(f) = TCF[p_{(t)}]$. Il modulo del filtro é 
+        con $P_(f) = TCF[p_{(t)}]$. Il modulo del filtro è 
         \[
             \left|H_{(f)}\right| = \left|P_{(f)}\right|   
         \] 
-        si osserva come nel domino della frequenza il filtro adattato amplifichi le zone freqeunziali dove $ \left|P_{(f)}\right|$
-        é maggiore (zona rapporto segnale rumore elevato) e attenui le zone freqeunziali dove $ \left|P_{(f)}\right|$ é minore 
-        (zone a basso rapporto segnale romore), si adatta al segnale.
+        si osserva come nel domino della frequenza il filtro adattato amplifichi le zone frequenziali dove $ \left|P_{(f)}\right|$
+        è maggiore (zona rapporto segnale rumore elevato) e attenui le zone frequenziali dove $ \left|P_{(f)}\right|$ è minore 
+        (zone a basso rapporto segnale rumore), si adatta al segnale.
 
         \subsubsection{Progettazione dei filtri di ricezione e trasmissione}
-            Nella raltá il canale $c_{(t)}$ é un canale distorcente diverso quindi da $\delta_{(t)}$, il dimensionamento di $g_{T(t)}$
-            e $g_{R(t)}$. Tipicamente in pratica per il dimensionaemnto di $g_{T(t)}$ e $g_{R(t)}$ consiste nell'assumere il canale 
-            come $c_{(t)} = \delta_{(t)}$ in modo tale che quando il canale non é distorcente il segnale venga trasmesso correttamente
-            mentre se il canale diventa distorcente si prendereanno delle precauzioni al ricevitore per mitigare tali distorsioni.
+            Nella realtà il canale $c_{(t)}$ è un canale distorcente diverso quindi da $\delta_{(t)}$, il dimensionamento di $g_{T(t)}$
+            e $g_{R(t)}$. Tipicamente in pratica per il dimensionamento di $g_{T(t)}$ e $g_{R(t)}$ consiste nell'assumere il canale 
+            come $c_{(t)} = \delta_{(t)}$ in modo tale che quando il canale non è distorcente il segnale venga trasmesso correttamente
+            mentre se il canale diventa distorcente si prenderanno delle precauzioni al ricevitore per mitigare tali distorsioni.
             Supponiamo quindi che il canale sia $c_{(t)} = \delta_{(t)}$ gli impulsi in ingresso al filtro di ricezione saranno del tipo
             \[
                 g_{TC(t)} = g_{T(t))} \otimes c_{(t)} =  g_{T(t))} 
@@ -1423,14 +1423,14 @@
             \[
                 G_{RCR(f)} = G_{T(f)}G_{T(f)}^\ast = \left|G_{T(f)}\right|^2  
             \]
-            dato che la funzione coseno rialzato é reale e non negativa posso esprimere la $G_{T(f)}$ come
+            dato che la funzione coseno rialzato è reale e non negativa posso esprimere la $G_{T(f)}$ come
             \[
                 G_{T(f)} = \sqrt{G_{RCR(f)}} = G_{R(f)}    
             \] 
-            cioé le risposte in frequenza dei filtri in trasmissione e ricezione coincidono cone la radice
+            cioè le risposte in frequenza dei filtri in trasmissione e ricezione coincidono con la radice
             quadrata della funzione coseno rialzato. I corrispondenti impulsi nel dominio del tempo 
             $g_{T(t)}$ e $g_{R(t)}$ sono detti \emph{impulsi a radice di coseno rialzato} e con l'acronimo RRCR
-            (Root raised cosine Roll-off). Si puó notare come non siano impulsi di Nyquist ma la loro convoluzione 
+            (Root raised cosine Roll-off). Si può notare come non siano impulsi di Nyquist ma la loro convoluzione 
             invece si.
             \begin{figure}[H]
                 \centering
@@ -1460,26 +1460,26 @@
             \end{tikzpicture}
         \end{figure}        
         il decisore riceve al suo ingresso il campione $x_{[k]}$ e lo utilizza per prendere una decisione sul simbolo trasmesso
-        $a_k$ usando il criterio di ottimalitá.
+        $a_k$ usando il criterio di ottimalità.
         \paragraph{Criterio MAP}
-            Il criterio che minimizza la probabilitá di errore sul simbolo $a_k$ é detto criterio MAP (Maximum A-posterior Probability),
+            Il criterio che minimizza la probabilità di errore sul simbolo $a_k$ è detto criterio MAP (Maximum A-posterior Probability),
             secondo tale criterio il simbolo da scegliere all'interno dell'alfabeto $\mathcal{A} = \{a^{(1)},a^{(2)},\dots,a^{(M)}\}$
-            é quello che ha il massimo probabiltá a posteriori di essere stato trasmesso, cioé dopo aver osservato il campione $x_{[k]}$.
+            è quello che ha il massimo probabilità a posteriori di essere stato trasmesso, cioè dopo aver osservato il campione $x_{[k]}$.
             Il criterio MAP sancisce quindi 
             \[
                 P_r[a_k = a^{(i)}|x_{[k]}]    
             \]
-            la probabilitá di aver trasmesso $\hat{a}_{k}=a^{(i)}$ nell'ipotesi di aver ricevuto $x_{[k]}$, questa sará
+            la probabilità di aver trasmesso $\hat{a}_{k}=a^{(i)}$ nell'ipotesi di aver ricevuto $x_{[k]}$, questa sarà
             \[
                 P_r[a_k = a^{(i)}|x_{[k]}] \leq P_r[a_k = a^{(\ell)}|x_{[k]}]\ \forall i\neq \ell\in \{1,2,\dots,M\}    
             \]
-            é minore della probabilitá di scegliere un simbolo $a^{(\ell)}$ sbagliato. Voglio massimizzare la prbabilitá di 
+            è minore della probabilità di scegliere un simbolo $a^{(\ell)}$ sbagliato. Voglio massimizzare la probabilità di 
             corretta ricezione 
             \[
                 P_r[a_k = a^{(i)}|x_{[k]}] = \frac{f_x[x_{[k]}|a_k = a^{(i)}]P_r[a_k = a^{(i)}]}{f_x[x_{[k]}]}    
             \]
-            dove $f_x[x_{[k]}]$ é la funzione densitá di probabilitá del campione $x_{[k]}$,
-            é come la probabilitá di Bayes (\ref{Regola di Bayes}) ma con la densitá di probabilitá ($fdp$). Posso analizzare
+            dove $f_x[x_{[k]}]$ è la funzione densità di probabilità del campione $x_{[k]}$,
+            è come la probabilità di Bayes (\ref{Regola di Bayes}) ma con la densità di probabilità ($fdp$). Posso analizzare
             solo il numeratore poiché dipende dal simbolo trasmesso, definisco quindi 
             \[
                 \gamma_{(a^{(i)},x_{[k]})} = f_x[x_{[k]}|a_k = a^{(i)}]P_r[a_k = a^{(i)}]
@@ -1488,12 +1488,12 @@
             \[
                 \gamma_{(a^{(i)},x_{[k]})} > \gamma_{(a^{(\ell)},x_{[k]})}
             \]
-            se il numeratore della probabilitá di corretta ricezione é maggiore di quello di sbagliata ricezione, 
-            analizzo i due nuemratori nelle ipotesi di 
+            se il numeratore della probabilità di corretta ricezione è maggiore di quello di sbagliata ricezione, 
+            analizzo i due numeratori nelle ipotesi di 
             \begin{itemize}
                 \item {ISI$=0$}
                 \item {$c_{(t)} = \delta_{(t)}$ oppure $c_{(t)} = A\delta_{(t-\tau)}$, non cambia tra i due il secondo tipo di canale campiona a $kT+\tau$
-                    che é il segnale ritardato}
+                    che è il segnale ritardato}
                 \item {$g_{(t)} = g_{TxRCR(t)}\otimes g_{RxRCR(t)} + n_{[k]}$}
             \end{itemize}
             Ho quindi 
@@ -1502,9 +1502,9 @@
             \]
             dove 
             \[
-                \sigma_n^2 = \int_{-\infty}^{\infty}S_{n(f)}df = \frac{N_0}{2} \int_{-\infty}^{\infty}\underset{\ref{propieta coseno rialzato}}{\left| G_{R(f)} \right|} df = \frac{N_0}{2}  
+                \sigma_n^2 = \int_{-\infty}^{\infty}S_{n(f)}df = \frac{N_0}{2} \int_{-\infty}^{\infty}\underset{\ref{proprietà coseno rialzato}}{\left| G_{R(f)} \right|} df = \frac{N_0}{2}  
             \]
-            e la funzione densitá di probabilitá 
+            e la funzione densità di probabilità 
             \begin{gather}
                 f_x[x_{[k]}|a_k = a^{(i)}] = \frac{1}{\sqrt{2\pi}\sigma_n}e^{\left(\displaystyle -\frac{(x_{[k]}-a^{(i)})^2}{2\sigma_n^2}\right)} \nonumber \\
                 x_{[k]} | a_k = a^{(i)} \sim \mathcal{N}(a^{(i)},\sigma_n^2)\nonumber \\
@@ -1521,25 +1521,25 @@
                 \frac{-\left(x_{[k]}-a^{(i)}\right)^2}{2\sigma_n^2}-ln\left(\sqrt{2\pi}\sigma_n\right) >  \frac{-\left(x_{[k]}-a^{(\ell)}\right)^2}{2\sigma_n^2}-ln\left(\sqrt{2\pi}\sigma_n\right)\nonumber \\
                 \left(x_{[k]}-a^{(i)}\right)^2<\left(x_{[k]}-a^{(\ell)}\right)^2\nonumber    
             \end{gather}
-            il risultato trovato é la distanza euclidea del simbolo ricevuto minore della distanza euclidea da qualsiasi altro simbolo. Se
-            questa disuguaglianza é vera, é il criterio chiamato a distanza minima euclidea o a massima verosomiglianza, valido solo se i simboli
+            il risultato trovato è la distanza euclidea del simbolo ricevuto minore della distanza euclidea da qualsiasi altro simbolo. Se
+            questa disuguaglianza è vera, è il criterio chiamato a distanza minima euclidea o a massima verosimiglianza, valido solo se i simboli
             sono equiprobabili. Ho due criteri 
             \[
-                MAP \overset{\text{Se equiprobabili}}{\Rightarrow} \text{Massima verosomiglianza}  
+                MAP \overset{\text{Se equiprobabili}}{\Rightarrow} \text{Massima verosimiglianza}  
             \] 
-            nel caso MAP massimizzo la funzione $\gamma_{(a^{(i)},x_{[k]})}$, nel caso a massima verosomiglianza massimizzo la $\Gamma_{(a^{(i)},x_{[k]})}$ 
+            nel caso MAP massimizzo la funzione $\gamma_{(a^{(i)},x_{[k]})}$, nel caso a massima verosimiglianza massimizzo la $\Gamma_{(a^{(i)},x_{[k]})}$ 
             In caso di simboli non equiprobabili si arriva alla funzione 
             \[
                 \Gamma_{(a^{(i)},x_{[k]})} = \left[x_{[k]}-a^{(i)}\right]^2-2\sigma^2ln(P_i)
             \]
-            con $P_i$ probabilitá a priori del simbolo $a^{(i)}$
+            con $P_i$ probabilità a priori del simbolo $a^{(i)}$
         \subsubsection{Zone di decisione}
             Il criterio MAP suddivide l'asse reale in \emph{zone di decisione}, ciascuna associata a un determinato simbolo dell'alfabeto $\mathcal{A}$.
-            Indichiamo con $\mathcal{Z}^{(m)}$ la zona di decisione associata al simbolo $a^{(m)}\in\mathcal{A}$, essa é definita come
+            Indichiamo con $\mathcal{Z}^{(m)}$ la zona di decisione associata al simbolo $a^{(m)}\in\mathcal{A}$, essa è definita come
             \[
                 \mathcal{Z}^{(m)} = \left\{ x\in\mathbb{R}: \Gamma_{(a^{(m)},x_{[k]})}<\Gamma_{(a^{(\ell)},x_{[k]})}, a^{(\ell)}\in\mathcal{A} \vee a^{(\ell)}\neq a^{(m)} \right\}
             \]   
-            per cui la decisione $\hat{a}_{k}$ viene presa a favore del simbolo $a^{(i)}$ solo se $x_{[k]}\in \mathcal{Z}^{(i)}$. Il decisore altro non é 
+            per cui la decisione $\hat{a}_{k}$ viene presa a favore del simbolo $a^{(i)}$ solo se $x_{[k]}\in \mathcal{Z}^{(i)}$. Il decisore altro non è 
             che un comparatore di $x_{[k]}$ con delle soglie in modo da individuare la zona di decisione di $x_{[k]}$. 
             \paragraph{Esempio PAM $\mathcal{A} = \{-1,+1\}$}{
                 Prendiamo in esempio una PAM con alfabeto $\mathcal{A} = \{-1,+1\}$ e sia 
@@ -1585,7 +1585,7 @@
                     \end{tikzpicture}
                     \caption{Zone di decisione PAM $\mathcal{A} = \{-1,+1\}$}
                 \end{figure}
-                l'asse é stato suddiviso in due zone di decisione e la soglia $\lambda$ dipende da $\sigma^2$ e $p$.
+                l'asse è stato suddiviso in due zone di decisione e la soglia $\lambda$ dipende da $\sigma^2$ e $p$.
                 Possiamo anche analizzare l'andamento di $\lambda$ al variare di $p$ fissato un valore di $\sigma$
                 \begin{figure}[H]
                     \centering
@@ -1613,9 +1613,9 @@
                     \end{tikzpicture}
                 \end{figure}
                 come si vede nel caso di simboli equiprobabili $p=\frac{1}{2}$ la soglia vale $\lambda=0$, mentre
-                assume valori positivi se la probabilitá del simbolo $\hat{a}_k = -1$ é $p>\frac{1}{2}$ ha maggiore 
-                probabilitá a priori di essere trasmesso. Il decisore tende a privilegiare la decisione sul simbolo
-                che ha maggiore probabilitá a priori di essere trasmesso, allargandone opportunemante la relativa
+                assume valori positivi se la probabilità del simbolo $\hat{a}_k = -1$ è $p>\frac{1}{2}$ ha maggiore 
+                probabilità a priori di essere trasmesso. Il decisore tende a privilegiare la decisione sul simbolo
+                che ha maggiore probabilità a priori di essere trasmesso, allargandone opportunamente la relativa
                 zona di decisione.
             }
             
@@ -1625,7 +1625,7 @@
                 P_m=\frac{1}{M}\ m=1,\dots,M  
             \]
             in questo caso il termine $-2\sigma^2ln(P_m)$ non dipende da $a^{(m)}$ e diventa trascurabile per la decisione
-            di $a_k$, il criterio di decisione si riduce alle distanze euclidee e il criterio a \emph{massima verosomiglianza}, $\hat{a}_k=a^{(i)}$ se
+            di $a_k$, il criterio di decisione si riduce alle distanze euclidee e il criterio a \emph{massima verosimiglianza}, $\hat{a}_k=a^{(i)}$ se
             \[
                 \Gamma_{(a^{i},x_{[k]})} < \Gamma_{(a^{(\ell)},x_{[k]})}                    
             \]
@@ -1634,7 +1634,7 @@
                 \left(x_{[k]}-a^{(i)}\right)^2<\left(x_{[k]}-a^{(\ell)}\right)^2  
             \]
             in caso di simboli equiprobabili possiamo notare che le soglie di decisione siano posizionate esattamente a 
-            metá tra i due simboli adiacenti dell'alfabeto, ad esempio in un sistema PAM quaternario
+            metà tra i due simboli adiacenti dell'alfabeto, ad esempio in un sistema PAM quaternario
             \begin{figure}[H]
                 \centering
                 \begin{tikzpicture}
@@ -1667,9 +1667,9 @@
                 \end{tikzpicture}
                 \caption{Zone di decisione 4-PAM $\mathcal{A} = \{-3,-1,+1,+3\}$}
             \end{figure}
-            il simbolo deciso dall'alfabeto $\mathcal{A}$ sará pertanto quello che ha distanza euclidea minore rispetto al 
-            campione $x_{[k]}$ ricevuto. Il criterio a massima verosomiglianza quindi minimizza l'errore in caso 
-            di simboli equiprobabili e a discapito della conoscenza di $\sigma$ e la probabilitá dei simboli,
+            il simbolo deciso dall'alfabeto $\mathcal{A}$ sarà pertanto quello che ha distanza euclidea minore rispetto al 
+            campione $x_{[k]}$ ricevuto. Il criterio a massima verosimiglianza quindi minimizza l'errore in caso 
+            di simboli equiprobabili e a discapito della conoscenza di $\sigma$ e la probabilità dei simboli,
             possiamo anche utilizzarlo in caso di simboli non equiprobabili fornendoci una soluzione sub-ottima. 
         \subsubsection{Calcolo della SER per un sistema PAM M-ario}
             Consideriamo un sistema PAM con alfabeto M-ario
@@ -1677,8 +1677,8 @@
                 \mathcal{A} = \{\pm 1,\pm 3,\dots, \pm(M-1)\}  
             \]
             il sistema M-PAM ottiene $x_{[k]} = Aa_k + n_{[k]}$,
-            vogliamo calcolare la probabilitá media di errore sul simbolo deciso ammettendo che i simboli 
-            siano equiprbabili, in assenza di ISI all'ingresso del ricevitore cosí fatto
+            vogliamo calcolare la probabilità media di errore sul simbolo deciso ammettendo che i simboli 
+            siano equiprobabili, in assenza di ISI all'ingresso del ricevitore così fatto
             \begin{figure}[H]
                 \centering
                 \begin{tikzpicture}[
@@ -1700,7 +1700,7 @@
                 \end{tikzpicture}
             \end{figure}                    
             supponiamo che i filtri in trasmissione e ricezione siano entrambi a radice di coseno rialzato. Il problema di questa 
-            approssimazione del sistema é che si suppone un canale di trasmissioene $\delta_{(t)}$ quando in realtá si approssima
+            approssimazione del sistema è che si suppone un canale di trasmissione $\delta_{(t)}$ quando in realtà si approssima
             meglio con $A\delta_{(t-\tau)}$, dobbiamo quindi campionare a $kT+\tau$ e scalare per $A$, valori che saranno 
             opportunamente ricevuti al momento della sincronizzazione, il sistema diventa 
             \begin{figure}[H]
@@ -1727,14 +1727,14 @@
                     \draw [->] (RX) --node[above]{$\hat{a}_{k}$} (output);
                 \end{tikzpicture}
             \end{figure}                    
-            dove $z_{[k]} = \frac{x_{[k]}}{A} = a_k + \frac{n_{[k]}}{A}$ il rumore é quindi $\simeq\mathcal{N}(0,\frac{\sigma^2_n}{A^2})$, se calcoliamo
+            dove $z_{[k]} = \frac{x_{[k]}}{A} = a_k + \frac{n_{[k]}}{A}$ il rumore è quindi $\simeq\mathcal{N}(0,\frac{\sigma^2_n}{A^2})$, se calcoliamo
             la varianza nel caso della PAM con simboli indipendenti 
             \[
                 \sigma_n^2 = \frac{\sigma^2_n}{A^2} = \frac{N_0}{2}\frac{M^2-1}{3E_s}= \frac{M^2-1}{6(\frac{E_s}{N_0})}    
             \] 
-            Se non scalassi per il fattore $A$ le zone di decisione dovrebebro adattarsi al valore di $A$.
+            Se non scalassi per il fattore $A$ le zone di decisione dovrebbero adattarsi al valore di $A$.
             Il decisore suddivide l'asse $x$ in zone di decisione, come mostrato in figura 131, con le soglie poste esattamente
-            a metá tra due simboli adiacenti nel caso di simboli equiprobabili
+            a metà tra due simboli adiacenti nel caso di simboli equiprobabili
             \begin{figure}[H]
                 \centering
                 \begin{tikzpicture}
@@ -1771,7 +1771,7 @@
                 \end{tikzpicture}
                 \caption{Zone di decisione M-PAM $\mathcal{A} = \{\pm 1,\pm 3,\dots, \pm(M-1)\}$}
             \end{figure}
-            usando il teorema della probabilitá totale possiamo esprimere la SER (Symbol Error Rate)
+            usando il teorema della probabilità totale possiamo esprimere la SER (Symbol Error Rate)
             \[
                 SER = \sum_{i=1}^{M}P[e|a^{(m)}]P_r[a_k=a^{(i)}]    
             \]
@@ -1783,11 +1783,11 @@
             \[
                 SER = \frac{1}{M} \sum_{m=1}^{M}P[e|a^{(m)}]  
             \]
-            restano quindi da calcolare le $M$ probabilitá condizionate $P[r|a^{(m)}]$ per $m = 1,\dots,M$.
-            L'analisi dell'alfabeto $\mathcal{A}$ e le zone di decisione si puó eveincere come i simboli 
-            nelle zone di decisione esterne ($\pm(M-1)$) abbiano la stessa probabilitá, come anche i 
-            simboli interni $\{\pm 1,\dots,\pm (M-3)\}$ abbiano tra di loro la stessa probabilitá. Ne segue che 
-            possiamo calcolare solo due probabilitá, ad esempio
+            restano quindi da calcolare le $M$ probabilità condizionate $P[r|a^{(m)}]$ per $m = 1,\dots,M$.
+            L'analisi dell'alfabeto $\mathcal{A}$ e le zone di decisione si può evincere come i simboli 
+            nelle zone di decisione esterne ($\pm(M-1)$) abbiano la stessa probabilità, come anche i 
+            simboli interni $\{\pm 1,\dots,\pm (M-3)\}$ abbiano tra di loro la stessa probabilità. Ne segue che 
+            possiamo calcolare solo due probabilità, ad esempio
             \begin{gather}
                 P[e|a^{(m)}] = P[e|a_k = 1]\ se\ a^{(m)\in\{\pm 1,\dots,\pm (M-3)\}}\nonumber \\
                 P[e|a_k =-M+1] = P[e|a_k = M-1]\ se\ a^{(m)\in\{\pm (M-1)\}}\nonumber
@@ -1796,22 +1796,22 @@
             \[
                 SER =  \frac{M-2}{M}P[e|a_k = 1]+ \frac{2}{M}P[e|a_k = M-1]
             \]
-            dove i coefficienti moltiplicativi sono quanti simboli hanno la relativa probabilitá, ricordiamoci
-            che possiamo fare cosí solo perché la costellazione lo permette, magari in casi diversi potrei
-            avere piú termini. Il nostro simbolo trasmesso é quindi caratterizzato da
+            dove i coefficienti moltiplicativi sono quanti simboli hanno la relativa probabilità, ricordiamoci
+            che possiamo fare così solo perché la costellazione lo permette, magari in casi diversi potrei
+            avere più termini. Il nostro simbolo trasmesso è quindi caratterizzato da
             \[
                 z_{[k]} = a_{[k]} + \eta_{[k]}
             \]
             con $\eta_{[k]} = \frac{n_{[k]}}{A} \sim \mathcal{N}(0,\frac{\sigma_n^2}{A^2})\sim \mathcal{N}(0,\sigma_\eta^2)$,
-            per un generico simbolo la sua probabilitá di errore é espressa come 
+            per un generico simbolo la sua probabilità di errore è espressa come 
             \[
                 P_{err} = Q_{\displaystyle\left(\frac{\lambda - a^{(m)}}{\sigma}\right)}    
             \]
             dove $\lambda - a^{(m)}$ indica la distanza dalla soglia.
-            Calcoliamo le probabilitá di errore condizionale:
+            Calcoliamo le probabilità di errore condizionale:
             \begin{enumerate}
                 \item {Calcolo di $P[e|a_k = 1]$
-                    Supponiamo sia stato inviato il simbolo $a_k = 1$ il campione ricevuto é 
+                    Supponiamo sia stato inviato il simbolo $a_k = 1$ il campione ricevuto è 
                     \[
                         z_{[k]} = 1 + \eta_{[k]}  
                     \]
@@ -1853,20 +1853,20 @@
                         \end{axis}
                         \end{tikzpicture}
                     \end{figure}
-                    notiamo come l'errore é presente quando il simbolo non é compreso all'interno dell'intervallo
+                    notiamo come l'errore è presente quando il simbolo non è compreso all'interno dell'intervallo
                     \begin{align}
                         P[e|a_k =1] &= P_r[z_{[k]}< 0 \cup z_{[k]}> 2] = P_r[1+\eta_{[k]}< 0 \cup 1+\eta_{[k]}> 2] \nonumber \\
                                     &= P_r[\eta_{[k]}< -1 \cup \eta_{[k]}> 1]\nonumber 
                     \end{align}
-                    potremmo calcolare l'integrale della distribuzione di probabilitá ma utilizziamo la funzione $Q$,
-                    gli intervalli di errore esterni sono uguali quindi possiamo calacolare $Q$ solo nel punto destro
+                    potremmo calcolare l'integrale della distribuzione di probabilità ma utilizziamo la funzione $Q$,
+                    gli intervalli di errore esterni sono uguali quindi possiamo calcolare $Q$ solo nel punto destro
                     \[
                         P[e|a_k =1] = 2Q_{\displaystyle\left(\frac{1}{\sigma_\eta}\right)}  
                     \]
                     
                 }
                 \item {Calcolo di $P[e|a_k = M-1]$
-                    Supponiamo di aver trasmessio il simbolo $a_k = M-1$, il campione é caratterizzato da
+                    Supponiamo di aver trasmesso il simbolo $a_k = M-1$, il campione è caratterizzato da
                     \[
                         z_{[k]} = M-1+\eta_{[k]}    
                     \]
@@ -1911,14 +1911,14 @@
                         P[e|a_k=M-1] &= P_r[z_{[k]}<M-2] = P_r[M-1+\eta_{[k]}<M-2] = P_r[\eta_{[k]}<-1] \nonumber \\
                                      &= P_r[\eta_{[k]}>1]\nonumber
                     \end{align}
-                    dalla figura possiamo ricavare la probabilitá di errore 
+                    dalla figura possiamo ricavare la probabilità di errore 
                     \begin{align}
                         P[e|a_k=M-1] &= 1-Q_{\displaystyle \left(\frac{\lambda-a^{(m)}}{\sigma_\eta}\right)} = 1-Q_{\displaystyle\left(-\frac{1}{\sigma_\eta}\right)} \nonumber \\
                                      &= Q_{\displaystyle\left(\frac{1}{\sigma_\eta}\right)} \nonumber
                     \end{align}
                 }
             \end{enumerate}
-            Sostituiendo i risultati ottenuti nella formula della SER
+            Sostituendo i risultati ottenuti nella formula della SER
             \begin{align}
                 SER &= \frac{M-2}{M}2Q_{\displaystyle\left(\frac{1}{\sigma_\eta}\right)}+ \frac{2}{M}Q_{\displaystyle\left(\frac{1}{\sigma_\eta}\right)} \nonumber \\
                     &= \frac{2(M-1)}{M} Q_{\displaystyle\left(\frac{1}{\sigma_\eta}\right)} \nonumber
@@ -1932,12 +1932,12 @@
             \[
                 r_{(t)} = S_{R(t)} + w_{(t)} = \sum_{i}Aa_ig_{T(t-iT)}+w_{(t)}    
             \]
-            la cui densitá spettrale di potenza é espressa come
+            la cui densità spettrale di potenza è espressa come
             \[
                 S_{R(f)} = \frac{A}{T}S_{a(f)}\left|G_{T(f)}\right|^2
             \]
-            se i simboli sono independenti ed equiprobabili e sono nel caso di una PAM posso esprimere 
-            densitá spettrale di potenza dei simboli come
+            se i simboli sono indipendenti ed equiprobabili e sono nel caso di una PAM posso esprimere 
+            densità spettrale di potenza dei simboli come
             \begin{align}
                 S_{a(f)} &= \sum_{m}R_{a(m)}e^{-j2\pi fmT} = R_{a(0)}\nonumber \\
                          &= E[a_m^2] = \frac{M^2-1}{3}\nonumber
@@ -1947,12 +1947,12 @@
             \[
                 S_{R(f)} = \frac{A}{T}\frac{M^2-1}{3}\left|G_{T(f)}\right|^2
             \]
-            dalla quale possiamo calcolare l'energia dei simboli moltiplicando pet $T$ o dei bit 
+            dalla quale possiamo calcolare l'energia dei simboli moltiplicando per $T$ o dei bit 
             moltiplicando per $T_d$ 
             \[
-                E_{simboli} = \int_{-\infty}^{\infty}S_{R(f)} df \overset{\ref{propieta coseno rialzato}}{=} A^2\frac{M^2-1}{3}  
+                E_{simboli} = \int_{-\infty}^{\infty}S_{R(f)} df \overset{\ref{proprietà coseno rialzato}}{=} A^2\frac{M^2-1}{3}  
             \]
-            $A$ puó essere quindi espresso in funzione dell'energia dei simboli 
+            $A$ può essere quindi espresso in funzione dell'energia dei simboli 
             \[
                 A^2 = \frac{3E_{simboli}}{M^2-1} 
             \]  
@@ -1964,30 +1964,30 @@
             \[
                 SER \overset{M=2}{=} Q_{\displaystyle\left(\sqrt{\frac{2E_{simboli}}{N_0}}\right)} 
             \]
-        \subsubsection{Efficenza spettrale ed efficenza energetica}
+        \subsubsection{Efficienza spettrale ed efficienza energetica}
             Abbiamo visto come l'impulso di trasmissione $g_{T(t)}$ impiegato in un sistema PAM sia tipicamente 
-            un impulso a Radice di Coseno RIalzato (\ref{F. Coseno Rialzato}). Nel caso di simboli indipendenti
-            ed equiprobabili, la densitá spettrale di potenza del segnale trasmesso é 
+            un impulso a Radice di Coseno Rialzato (\ref{F. Coseno Rialzato}). Nel caso di simboli indipendenti
+            ed equiprobabili, la densità spettrale di potenza del segnale trasmesso è 
             \[
                 S_{s(f)} = \frac{M^2-1}{3T}\left|G_{T(f)}\right|^2 = \frac{M^2-1}{3T} G_{RCR(f)}
             \]
-            per cui la banda impiegata dal segnale PAM é 
+            per cui la banda impiegata dal segnale PAM è 
             \[
                 B_s = \frac{1+\alpha}{2T}
             \]
             e dipende sia dal fattore di Roll-off, $\alpha$, che dalla frequenza di segnalazione $f_s=\frac{1}{T}$
-            \paragraph{Efficenza Spettrale: }\index{Efficenza Spettrale}\label{Efficenza Spettrale} l'efficenza spettrale del sistema PAM é definita da 
+            \paragraph{Efficienza Spettrale: }\index{Efficenza Spettrale}\label{Efficenza Spettrale} l'efficienza spettrale del sistema PAM è definita da 
                 \[
                     \eta_{sp} = \frac{R_d}{B_T} [\frac{bit}{Hz}]    
                 \]
-                dove $R_d=\frac{log_2(M)}{T}$ é il bit-rate, ho quindi nel caso di impulsi $RCR$ 
+                dove $R_d=\frac{log_2(M)}{T}$ è il bit-rate, ho quindi nel caso di impulsi $RCR$ 
                 nella PAM
                 \[
                     \eta_{sp} = \frac{2log_2(M)}{1+\alpha} [\frac{bit}{Hz}]    
                 \]
-                questo indica come l'efficenza spettrale del sistema aumenta al crescere della cardinalitá $M$
+                questo indica come l'efficienza spettrale del sistema aumenta al crescere della cardinalità $M$
                 dell'alfabeto. 
-            \paragraph{Efficenza Energetica: }\index{Efficenza Energetica}\label{Efficenza Energetica}
+            \paragraph{Efficienza Energetica: }\index{Efficenza Energetica}\label{Efficenza Energetica}
                 Per valutare l'efficenza energetica del sistema occorre analizzare le curve della SER 
                 al variare del rapporto $\frac{E_{simboli}}{N_0}$.
                 \begin{figure}[H]
@@ -1995,12 +1995,12 @@
                     \includegraphics[width = 10cm]{media/scala_logaritmica_ser.png}
                     \caption{Scala logaritmica SER}
                 \end{figure}
-                La SER é espressa in scala logaritmica ed il rapporto $\frac{E_{simboli}}{N_0}$ é espresso in $db$.
-                Viene solitamente fissata una probabilitá di errore obbiettivo stabilita in base all'applicazione, il
+                La SER è espressa in scala logaritmica ed il rapporto $\frac{E_{simboli}}{N_0}$ è espresso in $db$.
+                Viene solitamente fissata una probabilità di errore obbiettivo stabilita in base all'applicazione, il
                 rapporto $\frac{E_{simboli}}{N_0}$ richiesto per raggiungere la SER obbiettivo cresce al crescere della 
-                cardinalitá $M$. Questo riduce come l'efficenza energetica del sistema diminuisca al crescere di $M$, entra piú rumore.
-                Concludiamo che la scelta dell'alfabeto $\mathcal{A}$ é vincolata da due esigenze contrastanti:
-                da un lato sarebbe bene scegliere una carinalitá $M$ elevata per aumentarne l'efficenza spettrale, dall'altro
+                cardinalità $M$. Questo riduce come l'efficienza energetica del sistema diminuisca al crescere di $M$, entra più rumore.
+                Concludiamo che la scelta dell'alfabeto $\mathcal{A}$ è vincolata da due esigenze contrastanti:
+                da un lato sarebbe bene scegliere una cardinalità $M$ elevata per aumentarne l'efficienza spettrale, dall'altro
                 lato la scelta di un valore $M$ elevato peggiora l'efficenza energetica del sistema.
             \paragraph{Perdita Energetica: } Si definisce perdita energetica di un sistema di comunicazione numerico $A$ rispetto
                 ad un sistema $B$ l'aumento (in $db$) del rapporto $\frac{E_{simboli}}{N_0}$ necessario al sistema $A$ per 
@@ -2016,30 +2016,30 @@
                 \[
                     \frac{3}{2}Q_{\displaystyle\left(\sqrt{\frac{4}{5}\left(\frac{E_s}{N_0}\right)_{M=4}}\right)} =Q_{\displaystyle\left(\sqrt{2\left(\frac{E_s}{N_0}\right)_{M=2}}\right)}      
                 \]
-                solitamente si tende a trascurare eventuali coefficienti moltiplicativi, potendo cosí confrontare direttamente
+                solitamente si tende a trascurare eventuali coefficienti moltiplicativi, potendo così confrontare direttamente
                 l'argomento della funzione $Q$
                 \[
                     \frac{4}{5}\left(\frac{E_s}{N_0}\right)_{M=4} =2\left(\frac{E_s}{N_0}\right)_{M=2}          
                 \]
-                la perdita del sistema 4-PAM rispetto al sistema 2-PAM é in $db$
+                la perdita del sistema 4-PAM rispetto al sistema 2-PAM è in $db$
                 \[
                     \eval*{L}_{db} = 10log_{10}\left(\frac{\left(\frac{E_s}{N_0}\right)_{M=4}}{\left(\frac{E_s}{N_0}\right)_{M=2}}\right) = 10log_{10}\left(\frac{5}{2}\right) \simeq 4db    
                 \]
-                cioé comporta che la curva di SER per la 4-PAM é praticamente la stessa del sistema 2-PAM, salvo una traslazione di
+                cioè comporta che la curva di SER per la 4-PAM è praticamente la stessa del sistema 2-PAM, salvo una traslazione di
                 circa $4db$ verso destra.
             \paragraph{Esempio sistema 4-PAM}{
 
             }
         \subsubsection{Codifica GRAY nel sistema PAM}
-            Abbiamo visto come la SER in un sistema PAM dipende dal rapporto $\frac{E_s}{N_0}$ e dalla cardinalitá 
+            Abbiamo visto come la SER in un sistema PAM dipende dal rapporto $\frac{E_s}{N_0}$ e dalla cardinalità 
             $M$ dell'alfabeto $\mathcal{A}$. Come sappiamo i simboli di modulazione $\{a_i\}$ in un sistema PAM sono
-            il risultato della mappatura dei bit di codice $\{d_n\}$. Per l'utente finale sarebbe quindi piú utile 
-            conoscere al posto della SER la probabilitá di errore sui bit $\{d_n\}$, chiamata Bit Error Rate (BER)
+            il risultato della mappatura dei bit di codice $\{d_n\}$. Per l'utente finale sarebbe quindi più utile 
+            conoscere al posto della SER la probabilità di errore sui bit $\{d_n\}$, chiamata Bit Error Rate (BER)
             \[
                 BER = P_r[\hat{d}_n \neq d_n]    
             \] 
-            in generale il calcolo della BER in un sistema PAM é un valore difficilmente calcolabile poiché oltre a dipendere
-            dal rapporto $\frac{E_s}{N_0}$ e da $M$, dipende anche dalla legge di mappatura. É peró possibile 
+            in generale il calcolo della BER in un sistema PAM è un valore difficilmente calcolabile poiché oltre a dipendere
+            dal rapporto $\frac{E_s}{N_0}$ e da $M$, dipende anche dalla legge di mappatura. É però possibile 
             individuare facilmente un intervallo di valori entro quale siamo sicuri che si trovi la BER.
             Per individuare tale intervallo, supponiamo di utilizzare una trasmissione PAM usando un alfabeto
             M-ario e siano
@@ -2049,7 +2049,7 @@
                 N_{se} = \text{Numero di simboli ricevuti errati}\nonumber \\
                 N_{de} = \text{Numero di bit ricevuti errati}\nonumber 
             \end{gather}
-            Si tenga presente che ogni simbolo PAM é ottenuto mappando un blocco di $log_2(M)$ bit, ho quindi
+            Si tenga presente che ogni simbolo PAM è ottenuto mappando un blocco di $log_2(M)$ bit, ho quindi
             \[
                 N_d = N_slog_2(M)    
             \]
@@ -2066,23 +2066,23 @@
             \[
                 \frac{SER}{log_2(M)} \leq BER \leq SER    
             \]
-            da cui si vede che la BER non puó mai superare la SER. A seconda della legge di mappatura impiegata,
-            la BER puó assumere valori piú vicini a $\frac{SER}{log_2(M)}$ o a SER. Vale la pena notare che la BER 
+            da cui si vede che la BER non può mai superare la SER. A seconda della legge di mappatura impiegata,
+            la BER può assumere valori più vicini a $\frac{SER}{log_2(M)}$ o a SER. Vale la pena notare che la BER 
             coinciderebbe con il valore $\frac{SER}{log_2(M)}$ solo se, ogni volta che un simbolo ricevuto contiene 
-            un errore, solo uno dei bit corrispondenti a quel simbolo é sbagliato. Questa osservazione é utile 
-            per individuare quale sia la mappa ottima. Infatti, tenendo conto che quando un simbolo é ricevuto con errore
-            molto probabilmente viene frainteso con un simbolo adiacente nell'alfabeto $\mathcal{A}$, la mappa ottima é 
+            un errore, solo uno dei bit corrispondenti a quel simbolo è sbagliato. Questa osservazione è utile 
+            per individuare quale sia la mappa ottima. Infatti, tenendo conto che quando un simbolo è ricevuto con errore
+            molto probabilmente viene frainteso con un simbolo adiacente nell'alfabeto $\mathcal{A}$, la mappa ottima è 
             quella che associa a simboli adiacenti di $\mathcal{A}$ blocchi di $log_2(M)$ bit che differiscono per un solo bit. 
-            Una tale mappa é nota come "Mappa GRAY", ed é quella che minimizza la BER per un prefissato valore della SER. 
-            Se in un sistema PAM viene utilizzata la mappadi GRAY, la BER é espressa da 
+            Una tale mappa è nota come "Mappa GRAY", ed è quella che minimizza la BER per un prefissato valore della SER. 
+            Se in un sistema PAM viene utilizzata la mappa di GRAY, la BER è espressa da 
             \[
                 BER \simeq \frac{2(M-1)}{Mlog_2(M)}Q_{\displaystyle \left(\sqrt{\frac{6log_2(M)}{M^2-1}}\frac{E_d}{N_0}\right)}    
             \] 
     \subsection{QAM}
-        É un sistema di comunicazione in {\color{red}banda passante} in cui il segnale trasmesso $s_{T(t)}$ ha densitá 
+        É un sistema di comunicazione in {\color{red}banda passante} in cui il segnale trasmesso $s_{T(t)}$ ha densità 
         spettrale di potenza di tipo passa-banda, centrate su una frequenza $f_0$ detta frequenza portante.
         \subsubsection{Inviluppo complesso}
-            l'inviluppo complesso del segnale trasmesso é 
+            l'inviluppo complesso del segnale trasmesso è 
             \[
                 \tilde{s}_{(t)} = I_{(t)} +j Q_{(t)}      
             \]
@@ -2091,7 +2091,7 @@
                   s_{T(t)} = \mathbb{R}e\{\tilde{s}_{(t)}e^{j\omega_0t}\}
             \]
             con $\omega_0 = 2\pi f_0$, $\tilde{s}_{(t)}\in \mathbb{C}$, $I_{(t)}\in \mathbb{R}$ detta parte in fase e 
-            $Q_{(t)}\in \mathbb{R}$ detta parte in quadratura del segnale $s_{T(t)}$ il quale puó quindi essere espresso 
+            $Q_{(t)}\in \mathbb{R}$ detta parte in quadratura del segnale $s_{T(t)}$ il quale può quindi essere espresso 
             come 
             \[
                 s_{T(t)} =I_{(t)}\cos(\omega_0t)+jQ_{(t)}\sin(\omega_0t)  
@@ -2101,26 +2101,26 @@
                 I_{(t)} = \sum_{i}a_ig_{T(t-iT)}\nonumber \\
                 Q_{(t)} = \sum_{i}b_ig_{T(t-iT)}\nonumber
             \end{gather}
-            in cui $g_{T(t)}$ é l'impulso di trasmissione, $T$ é l'intervallo di segnalazione,
+            in cui $g_{T(t)}$ è l'impulso di trasmissione, $T$ è l'intervallo di segnalazione,
             $\{a_i\}$ e $\{b_i\}$ sono i simboli di modulazione, ottenuti dal mappaggio di bit del codice $\{d_n\}$.
-            La mappa ha cardinalitá $M$ ed é di tipo bidimensionale, nel senso che ad ogni stringa di $log_2(M)$ bit di codice
-            fa corrispondere una coppia $(a_i,b_i)$ disponibili nell'alafabeto impiegato. $M$ é il numero possibile di coppie $(a_i,b_i)$ 
-            disponibili nell'alfabeto. Nel caso di mappe bidimensionali l'alfabeto é costituito da punti $(a_i,b_i)$ nel piano cartesiano,
-            ed é detto \emph{costellazione}. Un esempio di costellazione quaternaria é mostrata nella figura seguente
+            La mappa ha cardinalità $M$ ed è di tipo bidimensionale, nel senso che ad ogni stringa di $log_2(M)$ bit di codice
+            fa corrispondere una coppia $(a_i,b_i)$ disponibili nell'alafabeto impiegato. $M$ è il numero possibile di coppie $(a_i,b_i)$ 
+            disponibili nell'alfabeto. Nel caso di mappe bidimensionali l'alfabeto è costituito da punti $(a_i,b_i)$ nel piano cartesiano,
+            ed è detto \emph{costellazione}. Un esempio di costellazione quaternaria è mostrata nella figura seguente
             \begin{figure}[H]
                 \centering
                 \includegraphics[width = 6.5cm]{media/costellazione quaternaria.png}
                 \caption{Costellazione quaternaria}
             \end{figure}
         \subsubsection{Trasmettitore - QAM}
-            Il trasmettitore usa un modulatore $I/Q$ come illustrato di seguito, dove $g_{T(t)}$ é un impulso a radice di coseno rialzato 
+            Il trasmettitore usa un modulatore $I/Q$ come illustrato di seguito, dove $g_{T(t)}$ è un impulso a radice di coseno rialzato 
             come quello impiegato in un sistema PAM.
             \begin{figure}[H]
                 \centering
                 \includegraphics[width = 12cm]{media/trasmettitore qam.png}
                 \caption{Trasmettitore QAM}
             \end{figure}
-            L'inviluppo complesso del segnale trasmesso é espresso da
+            L'inviluppo complesso del segnale trasmesso è espresso da
             \[
                 \tilde{s}_{(t)} = I_{(t)} +jQ_{(t)} = \sum_{i}c_ig_{T(t-iT)}
             \]
@@ -2128,19 +2128,19 @@
             \[
                 c_i = a_i+jb_i    
             \]
-            e si vede che $\tilde{s}_{(t)}$ é in pratica un segnale PAM con simboli complessi. L'equivalente in banda base del trasmettitore é 
+            e si vede che $\tilde{s}_{(t)}$ è in pratica un segnale PAM con simboli complessi. L'equivalente in banda base del trasmettitore è 
             \begin{figure}[H]
                 \centering
                 \includegraphics[width = 12cm]{media/equivalente ricevitore in banda base.png}
                 \caption{Equivalente in Banda Base}
             \end{figure}
-        \subsubsection{Densitá spettrale di potenza - QAM}
-            Per il calcolo della densitá spettrale di potenza del segnale $s_{T(t)}$, si ricorda che essa é legata a quella dell'inviluppo
+        \subsubsection{Densità spettrale di potenza - QAM}
+            Per il calcolo della densità spettrale di potenza del segnale $s_{T(t)}$, si ricorda che essa è legata a quella dell'inviluppo
             complesso $\tilde{s}_{(t)}$ dalla relazione
             \[
                 S_{s(f)} = \frac{1}{4}\left[S_{\tilde{s}{(f-f_0)}}+ S_{\tilde{s}{(-f-f_0)}}\right]    
             \]
-            per cui é sufficiente calcolare la densitá spettrale di potenza $S_{\tilde{s}(f)}$. Ammettiamo che la sequenza dei 
+            per cui è sufficiente calcolare la densità spettrale di potenza $S_{\tilde{s}(f)}$. Ammettiamo che la sequenza dei 
             simboli $\{c_i\}$ sia stazionaria in senso lato con valore medio 
             \[
                 \eta_c=\mathbb{E}[c_i]    
@@ -2149,7 +2149,7 @@
             \[
                 R_{c(m)} = \mathbb{E}[c_{i+m}c^\ast_i]    
             \]
-            la densitá spettrale di potenza di $\tilde{s}_{T(t)}$ é la trasformata di Fourier di $R_{\tilde{s}{(f-f_0)}}$ ed é espressa da
+            la densità spettrale di potenza di $\tilde{s}_{T(t)}$ è la trasformata di Fourier di $R_{\tilde{s}{(f-f_0)}}$ ed è espressa da
             \[
                 S_{\tilde{s}{(f)}} = \frac{1}{T} f_{c(f)}\left|G_{T(f)}\right|^2    
             \]
@@ -2157,11 +2157,11 @@
             \[
                 f_{c(f)} = \sum_{m}R_{c(m)}e^{-j2\pi fmT}
             \]
-            é la densitá spettrale di potenza dei simboli complessi $\{c_i\}$. La potenza di $s_{T(t)}$ é quindi esprimibile come
+            è la densità spettrale di potenza dei simboli complessi $\{c_i\}$. La potenza di $s_{T(t)}$ è quindi esprimibile come
             \[
                 P_s=\frac{1}{2T} \int_{-\infty}^{\infty} f_{c(f)} \left|G_{T(f)}\right|^2 df
             \]
-            Poiché $g_{T(t)}$ é un impulso tipicamente a radice di coseno rialzato, la banda di $\tilde{s}_{T(t)}$ é 
+            Poiché $g_{T(t)}$ è un impulso tipicamente a radice di coseno rialzato, la banda di $\tilde{s}_{T(t)}$ è 
             \[
                 B_{\tilde{s}}=\frac{1+\alpha}{2T}    
             \]
@@ -2174,14 +2174,14 @@
                 \eta_{sp} = \frac{R_d}{B_T} = \frac{log_2(M)}{1+\alpha} 
             \]
             avendo tenuto conto che $R_d = \frac{log_2(M)}{T}$. Si osservi come l'efficenza spettrale del sistema aumenti all'aumentare 
-            della cardinalitá $M$ della costellazione.
+            della cardinalità $M$ della costellazione.
         \subsubsection{Ricevitore - QAM}
             Supponiamo che il canale sia non distorcente ed aggiunga solo rumore termico. In tale ipotesi, il segnale ricevuto 
-            é espresso da
+            è espresso da
             \[
                 r_{(t)} = s_{T(t)}+w_{(t)}    
             \]
-            con $w_{(t)}$ rumore Gaussiano bianco avente densitá spettrale di potenza $\frac{N_0}{2}$. Il ricevitore ha la
+            con $w_{(t)}$ rumore Gaussiano bianco avente densità spettrale di potenza $\frac{N_0}{2}$. Il ricevitore ha la
             struttura mostrata in figura seguente 
             \begin{figure}[H]
                 \centering
@@ -2190,30 +2190,30 @@
             \end{figure}            
             Il segnale ricevuto viene inviato a un filtro passa-banda(\ref{Filtro Passa Banda di banda B - Band Pass Filter (BP)})
             con frequenza centrale $f_0$ e tale da non distorcere il segnale utile. Esso serve a selezionare il segnale utile e ad 
-            eleminare il rumore fuori banda. Dopo la demodulazione $I/Q$, il segnale passa attraverso il filtro di ricezione $g_{R(t)}$,
+            eliminare il rumore fuori banda. Dopo la demodulazione $I/Q$, il segnale passa attraverso il filtro di ricezione $g_{R(t)}$,
             tipicamente a radice di coseno rialzato, che sostituisce il passa-basso presente nel demodulatore di $I/Q$. I segnali 
             $x_{c(t)}$ e $x_{s(t)}$ in uscita dal filtro di ricezione sono espressi da 
             \begin{gather}
                 x_{c(t)} = \sum_{i}a_ig_{(t-iT)}+n_{c(t)}\nonumber \\
                 x_{s(t)} = \sum_{i}b_ig_{(t-iT)}+n_{s(t)}\nonumber
             \end{gather}
-            dove $g_{(t)} = g_{(T(t))}\otimes g_{(R(t))}$ é un impulso a coseno rialzato, mentre $n_{c(t)}$ e $n_{s(t)}$ sono 
-            processi di rumore Gaussiano, a media nulla e a densitá spettrale di potenza
+            dove $g_{(t)} = g_{(T(t))}\otimes g_{(R(t))}$ è un impulso a coseno rialzato, mentre $n_{c(t)}$ e $n_{s(t)}$ sono 
+            processi di rumore Gaussiano, a media nulla e a densità spettrale di potenza
             \[
                 S_{n_c(f)} = S_{n_s(f)} = N_0\left|G_{R(f)}\right|^2   
             \]
             Qualora il filtro passa-banda sia simmetrico intorno a $f_0$ i processi $n_{c(t)}$ e $n_{s(t)}$ sono anche incorrelati, e quindi 
-            indipendenti essendo congiuntamente Gaussiani. Dopo il campionatore abbimo i campioni $x_{c[k]}$ e $x_{s[k]}$ espressi da 
+            indipendenti essendo congiuntamente Gaussiani. Dopo il campionatore abbiamo i campioni $x_{c[k]}$ e $x_{s[k]}$ espressi da 
             \begin{gather}
                 x_{c[k]} = a_{[k]}+n_{c[k]}\nonumber \\
                 x_{s[k]} = b_{[k]}+n_{s[k]}\nonumber
             \end{gather}
-            dove si é tenuto conto che $g_{(t)}$ sia un impulso di Nyquist. Le variabili aleatorie $n_{c[k]}$ e $n_{s[k]}$ sono 
+            dove si è tenuto conto che $g_{(t)}$ sia un impulso di Nyquist. Le variabili aleatorie $n_{c[k]}$ e $n_{s[k]}$ sono 
             Gaussiane, a media nulla con varianza 
             \[
                 \sigma^2 = N_0\int_{-\infty}^{\infty}\left|G_{R(f)}\right|^2df= N_0g_{RCR(0)} = N_0
             \]
-            l'equivalente in banda base del ricevitore é 
+            l'equivalente in banda base del ricevitore è 
             \begin{figure}[H]
                 \centering
                 \includegraphics[width = 12cm]{media/equivalente in banda base ricevitore qam.png}
@@ -2230,46 +2230,46 @@
         \[
             s_{T(t)} = I_{(t)}\cos(\omega_0 t)
         \]
-        dove $I_{(t)}$ é un segnale PAM
+        dove $I_{(t)}$ è un segnale PAM
         \[
             I_{(t)} = \sum_{i}a_ig_{T(t-iT)}    
         \]
         con simboli $\{a_i\}$ appartenenti all'alfabeto M-ario $\mathcal{A} = \{\pm 1, \pm 3,\dots,\pm (M-1)\}$. Pertanto 
-        il segnale ASK non é altro che un segnale PAM traslato in frequenza mediante modulazione classica. Lo schema trasmettitore 
-        é riportato in figura 
+        il segnale ASK non è altro che un segnale PAM traslato in frequenza mediante modulazione classica. Lo schema trasmettitore 
+        è riportato in figura 
         \begin{figure}[H]
             \centering
             \includegraphics[width = 12cm]{media/trasmettitore ask.png}
             \caption{Trasmettitore ASK}
         \end{figure}        
-        e si vede che é composto solo dal ramo relativo a $I_{(t)}$. Nel caso di simboli indipendenti ed equiprobabili, la densitá 
-        spettrale di potenza dell'impulso complesso é 
+        e si vede che è composto solo dal ramo relativo a $I_{(t)}$. Nel caso di simboli indipendenti ed equiprobabili, la densità 
+        spettrale di potenza dell'impulso complesso è 
         \[
             S_{\tilde{s}(f)} = \frac{M^2-1}{3T}\left|G_{T(f)}\right|^2
         \]
-        e l'energia media per simbolo trasmesso é 
+        e l'energia media per simbolo trasmesso è 
         \begin{align}
             E_s &= \frac{1}{2}T\int_{-\infty}^{\infty}S_{\tilde{s}(f)}df\nonumber \\
                 &= \frac{M^2-1}{6}E_{g_T}\nonumber
         \end{align}
         essendo $E_{g_T}$ l'energia di $g_{T(t)}$. Qualora $g_{T(t)}$ sia un impulso a radice di coseno rialzato, l'efficenza spettrale
-        del sistema ASK é 
+        del sistema ASK è 
         \[
             \eta_{sp} = \frac{log_2(M)}{1+\alpha}    
         \]
-        ed é la metá di quella del corrispondente segnale PAM trasmesso in banda base. Il ricevitore é costituito da un demodulatore seguito da 
+        ed è la metà di quella del corrispondente segnale PAM trasmesso in banda base. Il ricevitore è costituito da un demodulatore seguito da 
         un ricevitore per segnali PAM, secondo quanto riportato nella figura seguente
         \begin{figure}[H]
             \centering
             \includegraphics[width = 12cm]{media/ricevitore ask.png}
             \caption{Ricevitore ASK}
         \end{figure}
-        Ricordando che il guadagno di demodulazione é pari a $1$, é facile capire che le prestazioni in termini di SER e BER per un sistema ASK
-        M-ario coincidono con quelle di un sistema PAM. In particolare continua a valere che aumentando la cardinalitá $M$ dell'alfabeto 
-        si ha una diminuzione dell'efficenza energetica a favore di un aumento in quella spettrale, a paritá di $M$ l'efficenza 
-        spettrale del sistema ASK é la metá di quella del corrispondente sistema PAM. 
+        Ricordando che il guadagno di demodulazione è pari a $1$, è facile capire che le prestazioni in termini di SER e BER per un sistema ASK
+        M-ario coincidono con quelle di un sistema PAM. In particolare continua a valere che aumentando la cardinalità $M$ dell'alfabeto 
+        si ha una diminuzione dell'efficienza energetica a favore di un aumento in quella spettrale, a parità di $M$ l'efficienza 
+        spettrale del sistema ASK è la metà di quella del corrispondente sistema PAM. 
     \subsection{Modulazione Quadrature Amplitude Modulation - QAM}
-        In questo tipo di modulazione, la cardinalitá $M$ della costellazione é una potenza di $4$, e i simboli $\{a_i\}$ e $\{b_i\}$
+        In questo tipo di modulazione, la cardinalità $M$ della costellazione è una potenza di $4$, e i simboli $\{a_i\}$ e $\{b_i\}$
         vengono generati da due mappe PAM a $\sqrt{M}$ livelli che operano indipendentemente su bit diversi.
         \begin{figure}[H]
             \centering
@@ -2281,7 +2281,7 @@
             due sottoflussi distinti. Ciascun sottoflusso entra in un mappatore PAM a $\sqrt{M}$ livelli con alfabeto
             ${\mathcal{A} = \{\pm 1, \pm 3,\dots, \pm(\sqrt{M}-1)\}}$ da cui escono i simboli $\{a_i\}$ e $\{b_i\}$, che vengono poi usati per generare 
             i segnali PAM $I_{(t)}$ e $Q_{(t)}$. Il segnale QAM equivale a una coppia di segnali PAM con simboli indipendenti trasmessi 
-            contemporaneamente sul canale mediante due oscillazioni in quadratura. Nel caso di mappe PAM bianrie si ha un segnale 4-QAM aventi
+            contemporaneamente sul canale mediante due oscillazioni in quadratura. Nel caso di mappe PAM binarie si ha un segnale 4-QAM aventi
             seguente costellazione
         \end{sloppypar}
         \begin{figure}[H]
@@ -2289,14 +2289,14 @@
             \includegraphics[width = 6.5cm]{media/costellazione qam.png}
             \caption{Costellazione QAM}
         \end{figure}
-        in cui a ciascun simbolo $c_i = a_i +jb_i$ é associata una coppia di bit. Se le mappe PAM sono quaternarie si ha un sistema 
+        in cui a ciascun simbolo $c_i = a_i +jb_i$ è associata una coppia di bit. Se le mappe PAM sono quaternarie si ha un sistema 
         16-QAM in cui 4 bit vengono mappati su di un simbolo complesso $c_i$, in tal caso la costellazione diventa la seguente
         \begin{figure}[H]
             \centering
             \includegraphics[width = 6.5cm]{media/costellazione 16qam.png}
             \caption{Costellazione 16-QAM}
         \end{figure}
-        in caso di simboli indipendenti ed equiprobabili, la densitá spettrale di potenza dell'inviluppo complesso é 
+        in caso di simboli indipendenti ed equiprobabili, la densità spettrale di potenza dell'inviluppo complesso è 
         \[
             S_{\tilde{s}(f)} = \frac{C_2}{T}\left|G_{T(f)}\right|^2    
         \]
@@ -2304,7 +2304,7 @@
         \[
             C_2 = \mathbb{E}[\left|c_i\right|^2] = \frac{2}{3}(M-1)    
         \]
-        é la potenza media dei simboli trasmessi. Possiamo calcolare l'energia media per simbolo trasmesso
+        è la potenza media dei simboli trasmessi. Possiamo calcolare l'energia media per simbolo trasmesso
         \[
             E_s = \frac{1}{2}T\int_{-\infty}^{\infty}S_{\tilde{s}(f)} df = \frac{M-1}{3}E_{g_T}
         \]
@@ -2313,14 +2313,14 @@
         \[
             \eta_{sp} = \frac{log_2(M)}{1+\alpha}  
         \]
-        ed é uguale a quella di ciascuno dei segnali PAM presenti sul ramo $I_{(t)}$ e sul ramo $Q_{(t)}$ del trasmettitore.
-        Il ricevitore é costituito da un demodulatore $I/Q$ seguito da due ricevitori per segnali PAM
+        ed è uguale a quella di ciascuno dei segnali PAM presenti sul ramo $I_{(t)}$ e sul ramo $Q_{(t)}$ del trasmettitore.
+        Il ricevitore è costituito da un demodulatore $I/Q$ seguito da due ricevitori per segnali PAM
         \begin{figure}[H]
             \centering
             \includegraphics[width = 12cm]{media/ricevitore qam 2.png}
             \caption{Ricevitore QAM}
         \end{figure}
-        Come possiamo vedere la decisione non é presa sul simbolo complesso $c_k$, ma sui simboli $a_k$ e $b_k$ in modo 
+        Come possiamo vedere la decisione non è presa sul simbolo complesso $c_k$, ma sui simboli $a_k$ e $b_k$ in modo 
         indipendente mediante un decisore PAM a $\sqrt{M}$ livelli. Possiamo anche rappresentare il sistema nel suo
         equivalente in banda base nel caso sia presente un errore di fase $\phi$ durante la demodulazione $I/Q$
         \begin{figure}[H]
@@ -2328,7 +2328,7 @@
             \includegraphics[width = 12cm]{media/equivalente in banda base ricevitore qam.png}
             \caption{Equivalente in banda base ricevitore QAM}
         \end{figure}
-        In tal caso, assumendo l'assenza di ISI, il campione in uscita dal filtro di ricezione é 
+        In tal caso, assumendo l'assenza di ISI, il campione in uscita dal filtro di ricezione è 
         \[
             \tilde{x}_{[k]} = x_{c[k]}+ jx_{s[k]} = e^{j\phi}c_k+\tilde{n}_{[k]}  
         \]
@@ -2337,8 +2337,8 @@
             x_{c[k]} = a_k cos(\phi) - b_k sin(\phi) + n_{c[k]}\nonumber \\
             x_{s[k]} = b_k cos(\phi) + a_k sin(\phi) + n_{s[k]}\nonumber
         \end{gather}
-	    come si vede sul campione $x_{c[k]}$ é presente l'interferenza dovuta al simbolo $b_k$, mentre su $x_{x[k]}$ 
-        é presente l'interferenza dovuta al simbolo $a_k$. É quindi necessario effettuare una buona sincronizzazione,  
+	    come si vede sul campione $x_{c[k]}$ è presente l'interferenza dovuta al simbolo $b_k$, mentre su $x_{x[k]}$ 
+        è presente l'interferenza dovuta al simbolo $a_k$. É quindi necessario effettuare una buona sincronizzazione,  
         perché altrimenti sui campioni $x_{c[k]}$ e $x_{s[k]}$ avremo interferenza nonostante sia rispettata la condizione 
         di Nyquist per l'annullamento dell'ISI. L'errore di fase $\phi$ ha l'effetto di ruotare il campione ricevuto 
         $\tilde{x}_{[k]}$, con il rischio di portare $\tilde{x}_{[k]}$ fuori dalla zona di decisione relativa al simbolo 
@@ -2354,20 +2354,20 @@
             }
         \end{figure}
         per quanto riguarda la costellazione 4-QAM, le zone di decisione sono i 4 quadranti del piano complesso, mentre
-        la costellazione 16-QAM si ha una griglia di quadranti 4x4. La costellazione 16-QAM é piu sensibile all'errore 
+        la costellazione 16-QAM si ha una griglia di quadranti 4x4. La costellazione 16-QAM è più sensibile all'errore 
         di fase rispetto alla costellazione 4-QAM. Per portare un simbolo fuori dalla propria zona di decisione 
         (in assenza di rumore) occorre una rotazione di $45^\circ$ per un sistema 4-QAM, mentre basta una rotazione di 
         meno di $20^\circ$ per un sistema 16-QAM.
 
         Nell'ipotesi di assenza di ISI e di perfetto sincronismo, le prestazioni di un sistema QAM in termini di BER 
         sono perfettamente analoghe a quelli di un sistema PAM a $\sqrt{M}$ livelli che costituiscono il segnale QAM.
-        In presenza di codifica di GRAY, la BER é espressa approsimativamente da 
+        In presenza di codifica di GRAY, la BER è espressa approssimativamente da 
         \[
             BER \simeq \frac{4(\sqrt{M}-1)}{\sqrt{M}log_2(M)}Q_{\displaystyle \left(\sqrt{\frac{3log_2(M)}{M-1}\frac{E_d}{N_0}}\right)}  
         \]
-        Possiamo pertanto concludere che il sistema QAM ha stessa efficenza energetica e stessa efficenza spettrale di due segnali PAM
-        a $\sqrt{M}$ livelli che siano trasmessi sul ramo $I_{(t)}$ e $Q_{(t)}$. Rispetto al sistema ASK, ha la stessa efficenza energetica,
-        ma efficenza spettrale doppia in quanto il segnale QAM é costituito da due segnali ASK modulati con frequenze portanti in 
+        Possiamo pertanto concludere che il sistema QAM ha stessa efficienza energetica e stessa efficienza spettrale di due segnali PAM
+        a $\sqrt{M}$ livelli che siano trasmessi sul ramo $I_{(t)}$ e $Q_{(t)}$. Rispetto al sistema ASK, ha la stessa efficienza energetica,
+        ma efficienza spettrale doppia in quanto il segnale QAM è costituito da due segnali ASK modulati con frequenze portanti in 
         quadratura e trasmessi sulla stessa banda.
 
     \subsection{Modulazione Phase Shift Keyring - PSK}

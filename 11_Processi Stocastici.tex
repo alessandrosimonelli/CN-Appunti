@@ -1,6 +1,6 @@
 \section{Processi Stocastici}
-    I \emph{processi stocastici} sono segnali continui ma aleatori: é un set di variabili aleatorie indicizzate nel tempo.
-    \paragraph{Propietá:}
+    I \emph{processi stocastici} sono segnali continui ma aleatori: è un set di variabili aleatorie indicizzate nel tempo.
+    \paragraph{Proprietà:}
         \begin{itemize}
             \item {Sono funzione del tempo.}
             \item {Sono funzioni aleatorie, non possiamo predire, prima di condurre l'esperimento, l'andamento del segnale ma 
@@ -10,25 +10,25 @@
             \centering
             \includegraphics[width = 6cm]{media/processi stocastici.png}
         \end{figure}
-        al campionamento $t_k$ ho un set di variabili aleatorie. L'aletorietá puó essere derivante da uno o piú fattori,
+        al campionamento $t_k$ ho un set di variabili aleatorie. L'aleatorietà può essere derivante da uno o più fattori,
         ad esempio in una funzione cosinusoidale $Acos(2\pi f_ct+\Theta)$ possono essere aleatorie ampiezza, frequenza e fase.
 
     \subsection{Valore medio}
-        Consideriamo un processo stocastico reale $X_{(t)}$, il valore medio é l'expectation della variabile aleatoria ottenuta campionando
+        Consideriamo un processo stocastico reale $X_{(t)}$, il valore medio è l'expectation della variabile aleatoria ottenuta campionando
         il processo al tempo $t$:
             \[
                 \mu_{X(t)} = \mathbb{E}[X_{(t)}] = \int_{-\infty}^{\infty}xf_{X_{(t)}(t)}dt
             \]
-        ad ogni istante di tempo $t$ ho una nuova variabile aleatoria per questo é funzione del tempo.
+        ad ogni istante di tempo $t$ ho una nuova variabile aleatoria per questo è funzione del tempo.
     \subsection{Autocorrelazione}
         Consideriamo un processo stocastico reale $X_{(t)}$ e due variabili aleatorie associate $X_{(t_1)}$ e $X_{(t_2)}$. 
-        L'autocorrelazione é l'expectation del prodotto delle due variabili aleatorie:
+        L'autocorrelazione è l'expectation del prodotto delle due variabili aleatorie:
         \[
             R_{XX(t_1,t_2)} = \mathbb{E}[X_{t_1}X_{t_2}] = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} x_1x_2f_{X_{(t_1)},X_{(t_2)}(x_1,x_2)}dx_1dx_2
         \]
-        \subsubsection{Propietá della autocorrelazione $R_x$}
+        \subsubsection{Proprietà della autocorrelazione $R_x$}
             \begin{itemize}
-                \item {Paritá: $R_{X(\tau)} = R_{X(-\tau)}$}
+                \item {Parità: $R_{X(\tau)} = R_{X(-\tau)}$}
                 \item {$R_{X(0)}\geq \underset{Val.\ Massimo}{\underbrace{\left|R_{X(\tau)}\right|}}$: Cosa rappresenta?
                     \begin{align}
                         R_{X(\tau)} &= \mathbb{E}[X_{(t_1)}X_{(t_2)}]=\eval*{\mathbb{E}[X_{(t)}X_{(t-\tau)}] }_{\tau = 0} \nonumber \\
@@ -37,33 +37,33 @@
                     coincide con la potenza del processo SSL.
                 }
             \end{itemize}
-        \subsubsection{Sigificato fisico dell'autocorrelazione}
-            La funzione di autocorrelazione ci fornisce la possibilitá di descrivere l'indipendenza di due variabili aleatorie ottenute dal campionamento
-            del processo stocastico $X_{(t)}$ a tempi divesti. Piú il processo stocastico $X_{(t)}$ cambia nel tempo, piú rapidamente la funzione di autocorrelazione 
-            scenderá dal suo massimo $R_{XX(0)}$
+        \subsubsection{Significato fisico dell'autocorrelazione}
+            La funzione di autocorrelazione ci fornisce la possibilità di descrivere l'indipendenza di due variabili aleatorie ottenute dal campionamento
+            del processo stocastico $X_{(t)}$ a tempi diversi. Più il processo stocastico $X_{(t)}$ cambia nel tempo, più rapidamente la funzione di autocorrelazione 
+            scenderà dal suo massimo $R_{XX(0)}$
             \begin{figure}[H]
                 \centering
                 \includegraphics[width = 8cm]{media/autocorrelazione stocastica.png}
             \end{figure}
-    \subsection{Sitemi Stazionari in Senso Lato (SSL)}\label{Sitemi Stazionari in Senso Lato (SSL)}
+    \subsection{Sistemi Stazionari in Senso Lato (SSL)}\label{Sitemi Stazionari in Senso Lato (SSL)}
         Un processo stocastico $X_{(t)}$ si dice Stazionario in Senso Lato (SSL) se:
         \begin{itemize}
-            \item {Il valore medio del processo $X_{(t)}$ é costante $\forall t$:
+            \item {Il valore medio del processo $X_{(t)}$ è costante $\forall t$:
                 \[
                     \mu_{X(t)} = \mathbb{E}[X_{(t)}] \overset{SSL}{\Rightarrow} \mu_{X}    
                 \]
             }
             \item {La funzione di autocorrelazione del processo $X_{(t)}$ dipende solamente dalla differenza tra la differenza 
-                tra due tempi qualsiasi al quale il processo é campionato:
+                tra due tempi qualsiasi al quale il processo è campionato:
                 \[
                     R_{XX(t_1,t_2)} = \mathbb{E}[X_{(t_1)}X_{(t_2)}] \overset{SSL}{\Rightarrow} R_{X(t_1-t_2)} = R_{X(\tau)}      
                 \]
-                Se il processo dipende solo da $\tau$ posso farne la $TCF$ e analizzarne la densitá spettrale. 
+                Se il processo dipende solo da $\tau$ posso farne la $TCF$ e analizzarne la densità spettrale. 
                 }
         \end{itemize} 
         \subsubsection{Trasmissione di un SSL in un sistema LTI-Filter}
             Supponiamo di avere un processo stocastico $X_{(t)}$ in ingresso ad un sistema LTI-Filter di risposta $h_{(t)}$,
-            producendo un nuvo processo stocastico $Y_{(t)}$
+            producendo un nuovo processo stocastico $Y_{(t)}$
             \begin{figure}[H]
                 \centering
                 \begin{tikzpicture}[
@@ -103,14 +103,14 @@
                     \end{align}
                 }
             \end{itemize}
-            Supponiamo adesso che il processo $X_{(t)}$ sia SSL, verifchiamo se anche $Y_{(t)}$ é SSL:
+            Supponiamo adesso che il processo $X_{(t)}$ sia SSL, verifichiamo se anche $Y_{(t)}$ è SSL:
             \paragraph{Valore Medio:}
                 \begin{align}
                     \mu_Y &= \mathbb{E}[Y_{(t)}] = \int_{-\infty}^{\infty} \mathbb{E}[X_{(\alpha)}] h_{(t-\alpha)} d\alpha = \int_{-\infty}^{\infty} \mu_{X_{(\alpha)}} h_{(t-\alpha)} d\alpha \nonumber \\
                             &= \mu_{X_{(\alpha)}} \int_{-\infty}^{\infty} h_{(t-\alpha)} d\alpha \overunderset{\beta = t-\alpha}{d\beta = -d\alpha}{=} \mu_{X_{(\alpha)}} \int_{-\infty}^{\infty} h_{(\beta)} d\beta\nonumber \\
                             &= \mu_X H_{(0)}\nonumber
                 \end{align}
-                si $H_{(0)}$ é proprio il grande ritorno di una $TCF$, viene fuori perché se calcoliamo la $TCF$ in $0$
+                si $H_{(0)}$ è proprio il grande ritorno di una $TCF$, viene fuori perché se calcoliamo la $TCF$ in $0$
                 \[
                     \eval*{\int_{-\infty}^{\infty} h_{(\beta)} e^{-j2\pi f\beta} d\beta}_{f = 0} = \int_{-\infty}^{\infty} h_{(\beta)} d\beta = H_{(0)}
                 \]
@@ -120,12 +120,12 @@
                     R_{Y(t_1,t_2)} &= R_{X(\tau)}\otimes h_{(\tau)} \otimes h_{(-\tau)} \nonumber \\
                                     &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} h_{(\tau_1)}h_{(\tau_2)} R_{XX(\tau+\tau_1-\tau_2)} d\tau_1d\tau_2\nonumber
                 \end{align}    
-        \subsubsection{Densitá di potenza spettrale}\label{Densita di potenza spettrale}
+        \subsubsection{Densità di potenza spettrale}\label{Densita di potenza spettrale}
             Supponiamo di voler caratterizzare l'output di $Y_{(t)}$ usando il dominio della frequenza:
             \[
                 \mathbb{E}[Y_{(t)}^2] = \int_{-\infty}^{\infty} \left|H_{(f)}\right|^2 S_{XX(f)} df  
             \]
-            dove $S_{XX(f)}$ é la Densitá di potenza spettrale:
+            dove $S_{XX(f)}$ è la Densità di potenza spettrale:
             \[
                 S_{XX(f)} = \int_{-\infty}^{\infty} R_{XX(\tau)} e^{-j2\pi f\tau}d\tau
             \]
@@ -155,20 +155,20 @@
                 S_{Y(f)} &= TCF[R_X] =TCF[ R_{X(\tau)}\otimes h_{(\tau)} \otimes h_{(-\tau)}] \overset{\ref{Conv. Distributiva}}{=}  S_{X(f)}H_{(f)} H_{(-f)}    \nonumber \\
                          &\overset{\ref{Simmetria Hermitiana}}{=} S_{X(f)}H_{(f)} H^\ast_{(f)} =  S_{X(f)}|H_{(f)}|^2\nonumber
             \end{align}
-            trovo che la densitá spettrale di potenza di $Y_{(t)}$ é la densitá spettrale di potenza di $X_{(t)}$ per il modulo quadro della
-            risposta del filtro e la sua misura é in watt per hertz ($W/Hz$).
+            trovo che la densità spettrale di potenza di $Y_{(t)}$ è la densità spettrale di potenza di $X_{(t)}$ per il modulo quadro della
+            risposta del filtro e la sua misura è in watt per hertz ($W/Hz$).
     \subsection{Processo Gaussiano}
-        Un processo $Y_{(t)}$ é detto processo Gaussiano se la variabile aleatoria $Y$ é una variabile aleatoria a distribuzione Gaussiana:
+        Un processo $Y_{(t)}$ è detto processo Gaussiano se la variabile aleatoria $Y$ è una variabile aleatoria a distribuzione Gaussiana:
         \[
             f_{Y(y)} = \frac{1}{\sqrt{2\pi}\sigma}e^{\left(\displaystyle-\frac{(y-\mu)^2}{2\sigma^2}\right)}    
         \] 
-        \paragraph{Propietá:}
+        \paragraph{Proprietà:}
         \begin{itemize}
             \item {
-                Il processo stocastico creato da un fenomeno fisico solitamente é possibile ricondurlo a un modella Gaussiano.
+                Il processo stocastico creato da un fenomeno fisico solitamente è possibile ricondurlo a un modella Gaussiano.
             }
             \item {
-                L'uso di un modello Gaussiano per un fenomeno fisico é spesso confermato dagli esperimenti.
+                L'uso di un modello Gaussiano per un fenomeno fisico è spesso confermato dagli esperimenti.
             }
             \item {
                 Il teorema del limite centrale (\ref{Teorema del Limite Centrale - Central Limit Theorem}) fornisce una giustificazione matematica per la 
@@ -176,11 +176,11 @@
             }
         \end{itemize}
         \subsubsection{Rumore Bianco}
-            É una sorgente di rumore idealizzata in modo tale da rendere lo spettro di densitá di potenza costante ($\frac{N_0}{2}$), cioé indipendente
-            dalla frequenza a cui operiamo. L'aggettivo "Bianco" deriva dall'ottica: un segnale di luce bianca contine in ugual maniera tutte le frequenze
+            É una sorgente di rumore idealizzata in modo tale da rendere lo spettro di densità di potenza costante ($\frac{N_0}{2}$), cioè indipendente
+            dalla frequenza a cui operiamo. L'aggettivo "Bianco" deriva dall'ottica: un segnale di luce bianca contiene in ugual maniera tutte le frequenze
              all'interno dello spettro visivo. Ne possiamo dare una definizione approssimativa:
              \begin{center}
-                Il rumore bianco, identificato da $W_{(t)}$ é un processo stazionario con densitá di potenza spettrale $S_{W(f)}$ con valore
+                Il rumore bianco, identificato da $W_{(t)}$ è un processo stazionario con densità di potenza spettrale $S_{W(f)}$ con valore
                 costante in tutto l'intervallo delle frequenze:
                 \[
                     S_{WW(f)} = \frac{N_0}{2}\ \forall f  
@@ -188,7 +188,7 @@
              \end{center}
              \begin{figure}[H]
                 \centering
-                \subfloat[Densitá di potenza spettrale]{
+                \subfloat[Densità di potenza spettrale]{
                     \begin{tikzpicture}
                         \begin{axis}[
                             xlabel=$f$,
@@ -238,15 +238,15 @@
                     \end{tikzpicture}
                 }
             \end{figure}
-            \paragraph{Propietá:}
+            \paragraph{Proprietà:}
             \begin{itemize}
                 \item {Dato che $R_{W(\tau)}=0\ \forall \tau\neq 0$ ne segue che due differenti campionamenti del rumore bianco sono completamente
                 incorrelati tra loro}
                 \item {
-                    Se il rumore bianco é Gaussiano allore due campioni sono statisticamente indipendenti.
+                    Se il rumore bianco è Gaussiano allora due campioni sono statisticamente indipendenti.
                 }
                 \item {
-                    Finché la banda di un processo del rumore in ingresso al sistema é ampiamente maggiore della banda del sistema stesso, allora possiamo modellare
+                    Finché la banda di un processo del rumore in ingresso al sistema è ampiamente maggiore della banda del sistema stesso, allora possiamo modellare
                     il rumore come un processo a rumore bianco.
                 }
             \end{itemize}
@@ -376,7 +376,7 @@
                 \end{tikzpicture}
                 \caption{${\color{blue}s_{(t)}},{\color{purple}n_{(t)}},{\color{orange}LP-filter}$}
             \end{figure}
-            in uscita dal filtro ho $x_{(t)} = s_{(t)} + n_{(t)} \otimes h_{(t)}$ con la densitá spettrale del rumore:
+            in uscita dal filtro ho $x_{(t)} = s_{(t)} + n_{(t)} \otimes h_{(t)}$ con la densità spettrale del rumore:
             \[
                 S_{W(f)} = S_{n(f)} |H_{(f)}|^2 = S_{n(f)} 
             \]
@@ -385,9 +385,9 @@
                 x_{[k]} = x_{(t=kT)} = s_{[k]}+w_{[k]}    
             \]
             Cosa succede al rumore?
-            Nel dominio della frequenza lo spettro di rumore filtrato,$w_{[k]}$, é  una somma di delta di dirac ho quindi $S_{w(f)} = rect\left(\frac{f}{2B}\right)$
-            trasformadola nel dominio del tempo, cioé calcolando la sua autocorrelazione per $ATCF[S_{w(f)}] = R_{w(\tau)}$ ottengo $R_{w(\tau)} = 2B\tau sinc(2B\tau)$,
-            campionandola rispetto alla banda del filtro $B$ in $\frac{k}{2B}$ la $sinc$ é sempre $0$ rendendo le variabili del rumore Gaussiano statisticamente 
+            Nel dominio della frequenza lo spettro di rumore filtrato,$w_{[k]}$, è  una somma di delta di Dirac ho quindi $S_{w(f)} = rect\left(\frac{f}{2B}\right)$
+            trasformandola nel dominio del tempo, cioè calcolando la sua autocorrelazione per $ATCF[S_{w(f)}] = R_{w(\tau)}$ ottengo $R_{w(\tau)} = 2B\tau sinc(2B\tau)$,
+            campionandola rispetto alla banda del filtro $B$ in $\frac{k}{2B}$ la $sinc$ è sempre $0$ rendendo le variabili del rumore Gaussiano statisticamente 
             indipendenti a valore medio nullo e varianza $N_0B$. 
             \[
                 \eval*{R_{w(\tau)}}_{\tau=kT} =\eval*{\mathbb{E}[w_{(t)}w_{(t-\tau)}]}_{\tau=kT} \overset{T=\frac{1}{2B}}{=} 0  
@@ -418,12 +418,12 @@
                 \end{axis}
                 \end{tikzpicture}
             \end{figure}
-            per questo il modello $Y = S + n \sim \mathcal{N} (0,\sigma^2)$ é giusto per approssimare il rumore. Calcoliamone il valor medio e varianza:
+            per questo il modello $Y = S + n \sim \mathcal{N} (0,\sigma^2)$ è giusto per approssimare il rumore. Calcoliamone il valor medio e varianza:
             \begin{gather}
                 w_{(t)} \sim \mathcal{N}(0,\sigma^2_w)  \nonumber \\
                 \sigma^2_w = \mathbb{E}[X^2]-\mu_w = \mathbb{E}[X^2] = R_{w(0)} = N_0B\nonumber
             \end{gather}
-            Ne segue che piú la banda é elevata piú rumore entra nel sistema.            
+            Ne segue che più la banda è elevata più rumore entra nel sistema.            
 
 
 

@@ -1,6 +1,6 @@
 \section{Trasformata Continua Di Fourier}
     \subsection{Segnali Aperiodici}
-        Nel caso di segnali come $x_{(t)}=rect\left(\frac{t}{T}\right)$ non posso usare la $TSF$ posso peró scrivere:
+        Nel caso di segnali come $x_{(t)}=rect\left(\frac{t}{T}\right)$ non posso usare la $TSF$ posso però scrivere:
         \[
             x_{(t)} = \lim_{T_0\rightarrow\infty} x_p(t) ,\ x_p(t) = \sum_{n = -\infty}^{\infty} x_{(t-nT_0)} 
         \]
@@ -58,7 +58,7 @@
         \begin{figure}[H]
             \centering
             \includegraphics[width=12cm]{media/insiemi_tcf.png}
-            \caption{Insiemi dei segnali per tcf}
+            \caption{Insiemi dei segnali per TCF}
             \label{fig:segnali aperiodici tcf}
         \end{figure}
         {\subsubsection{Equazione di Analisi}
@@ -67,11 +67,11 @@
         \subsubsection{Equazione di Sintesi}
             \[x_{(t)} = \int_{-\infty}^{\infty} X_{(f)} e^{j2\pi ft} df\hspace{0.3cm} Equazione\ di\ sintesi \]
         }
-        La $TCF$ gode della biunivocitá
+        La $TCF$ gode della biunivocità
         \begin{align}
             x_{(t)} \overunderset{TCF}{ATCF}{\leftrightharpoons}  X_{(f)}\nonumber \hspace{0.3cm} X_{(f)} \in \mathbb{C}
         \end{align}
-        Essendo $X_{(f)}$ un numero complesso puó essere rappresentato in forma polare: 
+        Essendo $X_{(f)}$ un numero complesso può essere rappresentato in forma polare: 
         \[
             X_{(f)} = |X_{(f)}|e^{\angle X_{(f)}}  
         \]
@@ -125,8 +125,8 @@
             }
             \caption{Spettro del segnale TCF}
         \end{figure}
-        lo spettro di Ampiezza gode della \textbf{simmetria pari} rispetto alle ascisse quindi é \textbf{sempre positivo e continuo}, mentre lo spettro di fase della \textbf{simmetria dispari}, 
-        questa propietá é chiamata \textbf{Simmetria Hermitiana}
+        lo spettro di Ampiezza gode della \textbf{simmetria pari} rispetto alle ascisse quindi è \textbf{sempre positivo e continuo}, mentre lo spettro di fase della \textbf{simmetria dispari}, 
+        questa proprietà è chiamata \textbf{Simmetria Hermitiana}
 
         \subsubsection{TCF di una $Arect\left(\frac{t}{T}\right)$}
             $x_{(t)} = A\hspace{0.1cm}rect\left(\frac{t}{T}\right)$
@@ -222,22 +222,22 @@
             }
             \end{figure}
 
-    \subsection{Propietá}
+    \subsection{Proprietà}
         Come per la TSF vale che al variare del periodo della funzione $T$:
             \begin{itemize}
                 \item Se $T\uparrow$ aumenta $ \rightarrow f\downarrow$ diminuisce e si stringe lo spettro  
                 \item Se $T\downarrow$ diminuisce $ \rightarrow f\uparrow$ aumenta e si allarga lo spettro  
             \end{itemize}
-        Inoltre come si puó evincere dal successivo Teorema della Dualitá \ref{Dualita}:
+        Inoltre come si può evincere dal successivo Teorema della Dualità \ref{Dualita}:
             \begin{itemize}
                 \item Una funzione limitata (finita) nel tempo ha uno spettro nella frequenza illimitato $\rightarrow$ sono i segnali fisici   
                 \item Una funzione illimitata nel tempo ha uno spettro nella frequenza limitato (finito)
             \end{itemize}
-        Da come vedremo piú avanti quindi effettuare troncamenti in frequenza comporta, per alcuni segnali, perdere componenti ad alte
-        frequenze, la scelta dell'intervallo di troncamento é cruciale per la ricostruzione del segnale: se tronchiamo un segnale perdendo
+        Da come vedremo più avanti quindi effettuare troncamenti in frequenza comporta, per alcuni segnali, perdere componenti ad alte
+        frequenze, la scelta dell'intervallo di troncamento è cruciale per la ricostruzione del segnale: se tronchiamo un segnale perdendo
         le frequenze alte perdiamo le sue variazioni rapide, ad esempio se tronchiamo una $sinc(f)$ male potremmo non ottenere una buona $rect(t)$
         nel tempo.
-        \subsubsection{Simmetria hermitiana}\label{Simmetria Hermitiana}
+        \subsubsection{Simmetria Hermitiana}\label{Simmetria Hermitiana}
             \begin{align}
                 Ip&: x_{(t)}\ reale \nonumber \\
                 Th&: X_{(f)}\ hermitiana \nonumber \\ 
@@ -248,20 +248,20 @@
                     \end{cases} \nonumber
             \end{align}
 
-        \subsubsection{Paritá}\label{Parita}
+        \subsubsection{Parità}\label{Parita}
             \begin{align}
                 Ip&: x_{(t)}\ reale\ e\ pari  \nonumber \\
                 Th&: X_{(f)}\ reale\ e\ pari \nonumber  
             \end{align}
 
-        \subsubsection{Disparitá}\label{Disparita}
+        \subsubsection{Disparità}\label{Disparita}
             \begin{align}
                 Ip&: x_{(t)}\ reale\ e\ dispari  \nonumber \\
                 Th&: X_{(f)}\ immaginaria\ e\ dispari \nonumber 
             \end{align}
 
     \subsection{Teoremi relativi alla TCF}
-        \subsubsection{Linearitá}\label{Linearita}
+        \subsubsection{Linearità}\label{Linearita}
             $Ip: x_{(t)} = \alpha x_{1(t)} + \beta x_{2(t)}$\\        
             $Th: X_{(f)} = \alpha X_{1(f)} + \beta X_{2(f)}$\\ 
             Dimostrazione:
@@ -326,7 +326,7 @@
                 }
                 
 
-        \subsubsection{Dualitá}\label{Dualita}
+        \subsubsection{Dualità}\label{Dualita}
             $Ip: x_{(t)} \overunderset{TCF}{ATCF}{\leftrightharpoons} X_{(f)}$\\        
             $Th: X_{(t)} \overunderset{TCF}{ATCF}{\leftrightharpoons} x_{(-f)}$ \\
             Dimostrazione:
@@ -341,7 +341,7 @@
             Esempio:\\
                 {
                     $x_{(t)}=Asinc(Bt) \Rightarrow X_{(f)} = \int_{-\infty}^{\infty}A sinc(Bt)e^{-j2\pi ft}dt$ \\
-                    Applico la dualitá:
+                    Applico la dualità:
                     \begin{gather}
                         A rect\left(\frac{t}{T}\right) \rightleftarrows ATsinc(Tf) \nonumber \\
                         ATsinc(Tt) \rightleftarrows A rect\left(\frac{-f}{T}\right) \nonumber
@@ -369,7 +369,7 @@
             \end{align}
             {\em Osservazione:}
                 \begin{itemize}
-                    \item Un ritardo nel tempo introduce una componente solo di fase che cresce lienarmente con la frequenza
+                    \item Un ritardo nel tempo introduce una componente solo di fase che cresce linearmente con la frequenza
                     \item Un esponenziale nel tempo introduce un ritardo nel dominio della frequenza $x_{(t)}e^{-j2\pi f_0t} \rightarrowtail X_{(f-f_0)}$, vedi \ref{Modulazione con Esponenziale Complesso}
                 \end{itemize}
             Esempio:\\
@@ -465,7 +465,7 @@
                         }
                         \caption{Spettro della $rect$ con ritardo}
                     \end{figure}
-                    Il \LaTeX{} sbaglia e aggiunge le spike nelle $f$ positive, il grafico é dispari con andamento come per le $f$ negative.
+                    Il \LaTeX{} sbaglia e aggiunge le spike nelle $f$ positive, il grafico è dispari con andamento come per le $f$ negative.
                 }
 
         \subsubsection{Derivazione}\label{Derivazione}
@@ -479,7 +479,7 @@
                 y_{(t)} &= \derivative{}{t} x_{(t)} = \derivative{}{t} ACTF[x_{(t)}] =\derivative{}{t} \int_{-\infty}^{\infty} X_{(f)}e^{j2\pi ft} df = \nonumber\\
                         &= \int_{-\infty}^{\infty} X_{(f)}\derivative{}{t}e^{j2\pi ft} df = \int_{-\infty}^{\infty} X_{(f)}j2\pi fe^{j2\pi ft} df \nonumber
             \end{align}
-            Posso Scrivere $y_{(t)}$ come $ACTF[y_{(t)}] = \int_{-\infty}^{\infty} Y_{(f)}e^{j2\pi ft} df $, se quindi $Y_{(f)} = j2\pi f X_{(f)}$ l'ugaglianza é valida:
+            Posso Scrivere $y_{(t)}$ come $ACTF[y_{(t)}] = \int_{-\infty}^{\infty} Y_{(f)}e^{j2\pi ft} df $, se quindi $Y_{(f)} = j2\pi f X_{(f)}$ l'uguaglianza è valida:
             \[
                 y_{(t)} =\int_{-\infty}^{\infty} Y_{(f)}e^{j2\pi ft} df
             \]
@@ -502,7 +502,7 @@
                          Y_{(f)} =\frac{X_{(f)}}{j2\pi f}\nonumber
             \end{gather}
 
-            L'ipotesi 3 é conseguenza della divisione per $f$ e che devo mantenere l'uguaglianza $X_{(f)} = j2\pi f Y_{(f)}$, si nota come nella dimostrazione usando il Th della Derivazione (\ref{Derivazione})
+            L'ipotesi 3 è conseguenza della divisione per $f$ e che devo mantenere l'uguaglianza $X_{(f)} = j2\pi f Y_{(f)}$, si nota come nella dimostrazione usando il Th della Derivazione (\ref{Derivazione})
             quando $f=0$ la funzione nella frequenza deve essere $0,\ X_{(f)} = j2\pi f Y_{(f)} = 0$ 
         
         Esempio: $TCF$ di una piramide\\
@@ -539,7 +539,7 @@
 
                     \end{axis}
                 \end{tikzpicture}
-                \caption{Funzione priamide}
+                \caption{Funzione piramide}
                 \label{fig:funzione piramide}
             \end{figure}
             $TCF[x_{(t)}]:$
@@ -590,7 +590,7 @@
         
                             \end{axis}
                         \end{tikzpicture}
-                        \caption{Funzione priamide}
+                        \caption{Funzione piramide}
                         \label{fig:derivata piramide}
                     \end{figure}
                     \begin{align}
@@ -611,14 +611,14 @@
                         per\ la\ dualita \ref{Dualita}: \nonumber \\
                         ABsinc^2(Bt) \rightleftharpoons A\left(1-\left(\frac{|f|}{B}\right)\right)rect \left(\frac{f}{2B}\right) \nonumber
                     \end{gather} 
-                    I segni negativi spariscono per il valore assoluto e per la paritá della $rect$. Per verificare che i calcoli siano
-                    corretti posso colacolare la $X_{(f)}$ in $0$ e vedo quanto é l'area del segnale: 
+                    I segni negativi spariscono per il valore assoluto e per la parità della $rect$. Per verificare che i calcoli siano
+                    corretti posso calcolare la $X_{(f)}$ in $0$ e vedo quanto è l'area del segnale: 
                     \[
                         \eval{T^2sinc(Tf)}_{0} = T^2 \hspace{.2cm} \int_{-\infty}^{\infty} Trect(\frac{t}{T}) = T  
                     \]
                     {\em Osservazione}: la funzione piramidale varia meno rapidamente nel {\em tempo} rispetto alla funzione rettangolare
-                    quindi lo spetto non occupa le alte frequenze, l'andamento é di $\frac{sinc^2}{x^2}$, é molto piú contenuto. La rect avendo un gradino
-                    varia molto rapidamente nel {\em tempo} e di conseguenza il suo spettro si estende a frequenze piú alte del segnale priamidale.
+                    quindi lo spetto non occupa le alte frequenze, l'andamento è di $\frac{sinc^2}{x^2}$, è molto più contenuto. La rect avendo un gradino
+                    varia molto rapidamente nel {\em tempo} e di conseguenza il suo spettro si estende a frequenze più alte del segnale piramidale.
                     \begin{figure}[H]
                         \centering
                         \begin{tikzpicture}
@@ -680,7 +680,7 @@
                             &= \int_{-\infty_{t}}^{\infty}x_{(\tau)}\int_{-\infty_{\tau}}^{\infty} y_{(t-\tau)}e^{-j2\pi ft}  dt\ d\tau \overset{Th. \ref{Ritardo}}{\Rightarrow} \int_{-\infty}^{\infty}Y_{(f)}x_{(\tau)}e^{-j2\pi f\tau} d\tau  \nonumber \\
                             &= X_{(f)}Y_{(f)} \nonumber
                 \end{align}
-            Propietá della convoluzione:
+            Proprietà della convoluzione:
             \begin{itemize}
                 \item {
                         Commutativa:
@@ -711,7 +711,7 @@
                         \end{align}
                     }\label{Conv. Associativa}
             \end{itemize}
-            Tutte le propietá sono valutate nel dominio del $tempo$ ma valgono anche per il dominio della $frequenza$.
+            Tutte le proprietà sono valutate nel dominio del $tempo$ ma valgono anche per il dominio della $frequenza$.
         \subsubsection{Prodotto}\label{Prodotto}
             $Ip:\begin{cases}
                 x_{(t)}\overunderset{TCF}{ATCF}{\leftrightharpoons} X_{(f)} \\
@@ -817,10 +817,10 @@
                 $t=0$: si ha il valore massimo del prodotto tra le due funzioni (in questo caso $A=1$), l'integrale vale T.
             }
             \item {
-                $t=\frac{T}{2}$: le due $rect$ sono disgiunte, nel raggiungere questa posizione il valore dell'integrale é diminuito fino a $0$.
+                $t=\frac{T}{2}$: le due $rect$ sono disgiunte, nel raggiungere questa posizione il valore dell'integrale è diminuito fino a $0$.
             }
         \end{itemize}
-        Traccamo l'andamento dell'integrale:
+        Tracciamo l'andamento dell'integrale:
         \begin{figure}[H]
             \centering
             \begin{tikzpicture}
@@ -858,7 +858,7 @@
         {\em Osservazioni}:
         \begin{itemize}
             \item {Il prodotto di convoluzione ha come durata la somma delle durate dei segnali $[-\frac{T}{2},\frac{T}{2}]\rightarrow[-T,T]$}
-            \item {In $t=0$ é l'area il prodotto dei segnali}
+            \item {In $t=0$ è l'area il prodotto dei segnali}
         \end{itemize}
         Esempio con $rect$ di durata $T$ e $2T$: 
         \begin{figure}[H]
@@ -929,7 +929,7 @@
             }
             \caption{Integrale di convoluzione di $rect$ di durata diversa}
         \end{figure}
-        Esemptio $TCF$ di un triangolo:
+        Esempio $TCF$ di un triangolo:
         \begin{figure}[H]
             \centering
             \begin{tikzpicture}
@@ -963,7 +963,7 @@
             \label{fig:PC TCF triangolo}
             \caption{Integrale di convoluzione}
         \end{figure}
-        Dal Th. di Convoluzione \ref{Convoluzione} sappiamo che é il prodotto di convoluzione di 2 rect di durata uguale a $T$:
+        Dal Th. di Convoluzione \ref{Convoluzione} sappiamo che è il prodotto di convoluzione di 2 rect di durata uguale a $T$:
         \begin{gather}
             z_{(t)} = x_{(t)}\otimes y_{(t)} = rect\left(\frac{t}{T}\right) \otimes rect\left(\frac{t}{T}\right) \overset{Th. \ref{Convoluzione}}{\Rightarrow} Tsinc(fT)\dotproduct Tsinc(fT) \nonumber \\
             T^2sinc^2(fT) \nonumber 
@@ -1086,7 +1086,7 @@
             \caption{Segnale nel dominio della frequenza modulato e non}
         \end{figure}
         Serve per spostare la frequenza (es. di trasmissione) del segnale in modo tale, ad esempio, da non sovrapporre due segnali che sono sulla stessa frequenza.
-        Se il segnale non fosse modulato si dice in {\color{blue} \textbf{banda base} (BB)} se il segnale é modulato si dice in {\color{red}\textbf{banda passante}(BP)}.
+        Se il segnale non fosse modulato si dice in {\color{blue} \textbf{banda base} (BB)} se il segnale è modulato si dice in {\color{red}\textbf{banda passante}(BP)}.
         \begin{figure}[H]
             \centering
             \begin{tikzpicture}
@@ -1306,8 +1306,8 @@
                 TCF[y_{(t)}] &\overset{Th. \ref{Modulazione con coseno}}{\Rightarrow}  \frac{2G_{(f)}}{2} + \frac{2G_{(f-2f_0)}}{2}+ \frac{2G_{(f+2f_0)}}{2} \nonumber \\
                         &= G_{(f)}+G_{(f-2f_0)}+G_{(f+2f_0)}
             \end{align}
-            Dall'ultima uguagliaza posso quindi usare un filtro in ({\color{blue}BB}) per rimuovere i segnali alle frequenze $\pm 2f_0$ e ricavare il mio segnale $G_{(f)}$.\\
-            Riporto un po di esempi di demodulazione di una o piú $rect$:
+            Dall'ultima uguaglianza posso quindi usare un filtro in ({\color{blue}BB}) per rimuovere i segnali alle frequenze $\pm 2f_0$ e ricavare il mio segnale $G_{(f)}$.\\
+            Riporto un po di esempi di demodulazione di una o più $rect$:
             Esempio di Demodulazione
             \begin{figure}[H]
                 \centering
@@ -1366,8 +1366,8 @@
                 }
                 \caption{Demodulazione di una $sinc$}
             \end{figure}
-            Nel caso di piú segnali durante la demodulazione il segnale che voglio recuperare viene spostato in {\color{blue}BB}
-            mentre gli altri segnali presenti sullo spettro vengono a loro volta modulati peró con un $f_0$ diverso rispetto al loro $f_0^\prime$:
+            Nel caso di più segnali durante la demodulazione il segnale che voglio recuperare viene spostato in {\color{blue}BB}
+            mentre gli altri segnali presenti sullo spettro vengono a loro volta modulati però con un $f_0$ diverso rispetto al loro $f_0^\prime$:
             \begin{figure}[H]
                 \centering
                 \subfloat[Due $sinc$ modulate]{
@@ -1425,7 +1425,7 @@
                 }
                 \caption{Demodulazione di due $sinc$}
             \end{figure}
-            Potrei peró trovarmi in situazioni delle quali non posso recuperare il segnale
+            Potrei però trovarmi in situazioni delle quali non posso recuperare il segnale
             \begin{figure}[H]
                 \centering
                 \subfloat[Due $sinc$ modulate]{
@@ -1483,9 +1483,9 @@
                 }
                 \caption{Demodulazione di due $sinc$ non recuperabili}
             \end{figure}
-            Come possiamo vedere nella regione della {\color{blue}BB}, il segnale é molto sporco, magari puó essere confuso con un 
-            $\cos$ e non una sinc. inoltre ora qui ho usato numeri interi per fare il $plot$ quindi non si accavallano cosí male 
-            ma si accavallano solo in $\frac{1}{T}$ se usassi altri valori sarebbe ancora piú sporco il segnale.\\
+            Come possiamo vedere nella regione della {\color{blue}BB}, il segnale è molto sporco, magari può essere confuso con un 
+            $\cos$ e non una sinc. inoltre ora qui ho usato numeri interi per fare il $plot$ quindi non si accavallano così male 
+            ma si accavallano solo in $\frac{1}{T}$ se usassi altri valori sarebbe ancora più sporco il segnale.\\
             
             Adesso proviamo a calcolare quanti segnali possiamo trasmettere in una banda:\\
             
@@ -1526,8 +1526,8 @@
                     \label{fig:esempio radar}
                 \end{figure}    
                 La sorgente emette un'{\color{red}onda} continua e passivamente capta per le {\color{green}onde} riflesse dagli oggetti.
-                Il calcolo della distanza si basa sulla capacitá dei materiali di riflettere le onde, piú la frequenza dell'onda é alta 
-                piú i materiali riescono a riflettere. L'emettitore, in presenza di ostacolo, riceve il segnale riflesso ({\em eco})
+                Il calcolo della distanza si basa sulla capacità dei materiali di riflettere le onde, più la frequenza dell'onda è alta 
+                più i materiali riescono a riflettere. L'emettitore, in presenza di ostacolo, riceve il segnale riflesso ({\em eco})
                 e misura il ritardo dell'{\em eco} rispetto al segnale originale per poi calcolarne la distanza. Prendiamo un emettitore di onde 
                 rettangolari.
                 \begin{figure}[H]
@@ -1559,17 +1559,17 @@
                     \caption{Spettro per la trasmissione}
                     \label{fig:radar rettangolare}
                 \end{figure}    
-                Indichiamo con $\tau$ il ritardo di ricezione dell'{\em eco} e la distanza che sempara il radar dall'oggetto $d$:
+                Indichiamo con $\tau$ il ritardo di ricezione dell'{\em eco} e la distanza che separa il radar dall'oggetto $d$:
                 \[
                     d=\frac{c\tau}{2}
                 \]
                 Compare un fattore $\frac{1}{2}$ dovuto al segnale che percorre due volte la distanza tra l'emettitore e l'oggetto.
-                Possiamo notare che l'{\em eco} ha ampiezza minore poiché dell'energia é stata assorbita dal materiale o una porzione del segnale
+                Possiamo notare che l'{\em eco} ha ampiezza minore poiché dell'energia è stata assorbita dal materiale o una porzione del segnale
                 originale ha oltrepassato il materiale stesso.
                 
                 Analizziamo in frequenza cosa succede. 
                 
-                Volgiamo realizzare un radar a onda rettagolare che rileva a un massimo di $15$ metri di distanza e a un minimo di $1,5$ metri.
+                Volgiamo realizzare un radar a onda rettangolare che rileva a un massimo di $15$ metri di distanza e a un minimo di $1,5$ metri.
                 Possiamo calcolare i valori di ritardo massimo e minimo:
                 \begin{gather}
                     \tau_{min} =\frac{2\dotproduct 15}{3\dotproduct 10^8} =10^{-7} = 0.1\mu s  \nonumber\\
@@ -1608,8 +1608,8 @@
                 
                 Nel nostro caso potremmo scegliere un $T\backsimeq 1ns \backsimeq 10^{-9}$ per rispettare i limiti imposti dall'esercizio.
                 Ma analizzando l'intervallo frequenziale della $TCF$ della funzione rettangolo, una $sinc(x)$, il nostro segnale ha componenti
-                frequenziali significative nell'ordine dei GHz, $\frac{1}{T}= \frac{1}{10^{-9}} = 1GHz$. I segnali nell'ordine dei GHz oltrepassano con facilitá
-                gli ostacoli, basti vedere le bande di funzionamento dei cellulari e il Wi-Fi. Si utilizzano segnali con l'ordine di cetinaia se non migliaia di Hz, 
+                frequenziali significative nell'ordine dei GHz, $\frac{1}{T}= \frac{1}{10^{-9}} = 1GHz$. I segnali nell'ordine dei GHz oltrepassano con facilità
+                gli ostacoli, basti vedere le bande di funzionamento dei cellulari e il Wi-Fi. Si utilizzano segnali con l'ordine di centinaia se non migliaia di Hz, 
                 possiamo vedere come la lunghezza d'onda del segnale giochi un ruolo fondamentale:
                 
                 \begin{gather}
@@ -1625,7 +1625,7 @@
             % come funzionano il lidarr e il sonarr? come hanno fatto a rilevare i movimenti con il wifi?
     \subsection{Delta di Dirac}\label{Delta di Dirac}
         Si definisce Delta di Dirac $\delta_{(t)} = \derivative{}{t}U_{(t)}$ con $U_{(t)}$ funzione gradino.
-        Piú correttamente si definisce Delta di Dirac la funzione che se integrata restituisce il gradino unitario:
+        Più correttamente si definisce Delta di Dirac la funzione che se integrata restituisce il gradino unitario:
         \[
             u_{(t)} = \int_{-\infty}^{\infty} \delta_{(t)} dt \rightarrow U_{(t)}
         \]
@@ -1654,17 +1654,17 @@
             \caption{Delta di Dirac}
             \label{fig:Grafico Delta Di DIrac}
         \end{figure}    
-        L'ampiezza della funzione é dovuta alla costante moltiplicativa, ma alla fin fine rimane sempre una funzione impulso.\\
+        L'ampiezza della funzione è dovuta alla costante moltiplicativa, ma alla fin fine rimane sempre una funzione impulso.\\
 
         % \textbf{boh amplia magari}
         
-        \subsubsection{Propietá del Delta di Dirac}\label{Propietá del Delta di Dirac}
+        \subsubsection{Proprietà del Delta di Dirac}\label{Proprietà del Delta di Dirac}
                 \begin{itemize}
                     \item {
                         $\int_{-\infty}^{\infty} \delta_{(t)} dt = 1$
                     }\label{PD1}
                     \item {
-                        Propietá Campionatrice:\label{PDD Campionatrice}\index{Propietá Campionatrice del Delta di Dirac}\\
+                        Proprietà Campionatrice:\label{PDD Campionatrice}\index{Proprietà Campionatrice del Delta di Dirac}\\
                         $Ip:\ x_{(t)}\ continua\ in\ t_0$
                         \[
                             \int_{-\infty}^{\infty}x_{(t)}\delta_{(t-t_0)} dt = x_{(t_0)}  
@@ -1691,12 +1691,12 @@
                                 \addplot [blue,thick,samples = 300] {cos(deg(x))+3};
                                 \end{axis}
                             \end{tikzpicture}
-                            \caption{Propietá Campionatrice}
+                            \caption{Proprietà Campionatrice}
                             \label{fig:Grafico P. Campionatrice}
                         \end{figure} 
                     }\label{PD2}
                     \item {
-                        Paritá: $\delta_{(t)} = \delta_{(-t)}$
+                        Parità: $\delta_{(t)} = \delta_{(-t)}$
                     }\label{PD3}
                     \item {
                         $x_{(t)}\delta_{(t-t_0)} dt = x_{(t_0)}\delta_{(t-t_0)}  $
@@ -1729,7 +1729,7 @@
                     Ae^{-j2\pi f_0t} &\overunderset{TCF}{ATCF}{\leftrightharpoons} A\delta_{(-f-f_0)} =  A\delta_(f+f_0) \nonumber 
                 \end{align}
         \subsubsection{$TCF$ di segnali periodici}\label{TCF di segnali periodici}\index{TCF di segnali periodici}
-                Nel caso di segnali periodci, come $x_{(t)} = \cos(2\pi f_0t)$, abbiamo definito la $TSF$, proviamo a calcolarne la $TCF$:
+                Nel caso di segnali periodici, come $x_{(t)} = \cos(2\pi f_0t)$, abbiamo definito la $TSF$, proviamo a calcolarne la $TCF$:
                 \[
                     x_{(t)} = \cos(2\pi f_0t) \overunderset{TCF}{ATCF}{\rightleftharpoons} ?
                 \] 
@@ -1831,7 +1831,7 @@
                             TCF[y_{(t)}] = \overunderset{+\infty}{n = -\infty}{\sum} X_n \delta_{(f-\frac{k}{T_0})} \nonumber 
                         \end{cases}
                     \]
-                    La TCF diventa un campionamento con la Delta di Dirac \ref{Propietá del Delta di Dirac}
+                    La TCF diventa un campionamento con la Delta di Dirac \ref{Proprietà del Delta di Dirac}
 
                     \begin{figure}[H]
                         \centering
@@ -2154,14 +2154,14 @@
                         \caption{$|\cos(2\pi f_0t)|$}
                         \label{fig:cos 2pif_0t}
                     \end{figure}
-                    ${\color{red}y_{(t)}} = |\cos(2\pi f_0t)|$ non é altro che il segnale aperiodico ${\color{blue}x_{(t)}} = \cos(2\pi f_0t) \dotproduct rect\left(\frac{t}{\frac{T_0}{2}}\right)$ con periodo $\frac{T_0}{2}$:
+                    ${\color{red}y_{(t)}} = |\cos(2\pi f_0t)|$ non è altro che il segnale aperiodico ${\color{blue}x_{(t)}} = \cos(2\pi f_0t) \dotproduct rect\left(\frac{t}{\frac{T_0}{2}}\right)$ con periodo $\frac{T_0}{2}$:
                     \[
                         \begin{cases}
                             Y_k = \frac{2}{T_0} X_{(kf_0)} = \frac{2}{T_0} X_{(k\frac{2}{T_0})}   \nonumber \\
                             X_{(f)} = \frac{T_0}{2}sinc(f\frac{T_0}{2}) \otimes \left(\frac{\delta_{(f-f_0)}}{2} + \frac{\delta_{(f-f_0)}}{2}\right)\nonumber
                         \end{cases}
                     \]
-                    Per il calcolo di $X_{(f)}$ si applica il Th della Modulazione con $cos$ \ref{Modulazione con coseno} e la propietá campionatrice della Delta di Dirac rispetto alla convoluzione \ref{PD3}.
+                    Per il calcolo di $X_{(f)}$ si applica il Th della Modulazione con $cos$ \ref{Modulazione con coseno} e la proprietà campionatrice della Delta di Dirac rispetto alla convoluzione \ref{PD3}.
                     \[
                         X_{(f)} = \frac{T_0}{4}sinc\left((f-f_0)\frac{T_0}{2}\right) + \frac{T_0}{4}sinc\left((f+f_0)\frac{T_0}{2}\right)
                     \]
@@ -2175,7 +2175,7 @@
                     \end{cases}$\\
                     $Th: Y_{(f)} =\frac{X_{(0)}}{2}\delta_{(f)} +\frac{X_{(f)}}{j2\pi f}$ \\
                     
-                    Prende la nominazione di completo perché risolve il problema di mantenere l'uguaglianza $j2\pi fY_{(f)} = X_{(f)}$
+                    Prende la denominazione di completo perché risolve il problema di mantenere l'uguaglianza $j2\pi fY_{(f)} = X_{(f)}$
                     
                     Per la dimostrazione ci serve definire prima:
                     \begin{itemize}
@@ -2183,7 +2183,7 @@
                             $TCF$ di $\frac{1}{t}$ 
                                 \begin{align}
                                     \frac{1}{t} &\overunderset{TSF}{ATSF}{\rightleftharpoons}  sgn(f) \nonumber \\
-                                    \text{Per la }&\text{Dualitá \ref{Dualita}}\nonumber \\
+                                    \text{Per la }&\text{Dualità \ref{Dualita}}\nonumber \\
                                     sgn(t) &\overunderset{TSF}{ATSF}{\rightleftharpoons} \frac{1}{j\pi f} \nonumber
                                 \end{align}
                         }
@@ -2198,7 +2198,7 @@
                                 \int_{-\infty}^{\infty} u_{(t)} dt  = 1\nonumber \\   
                                 X_{(f)} = 1 \nonumber    
                             \end{cases}$
-                            la terza ipotesi non é mai verificata. Scriviamo la funzione gradino in modo diverso:
+                            la terza ipotesi non è mai verificata. Scriviamo la funzione gradino in modo diverso:
                             \[
                                 u_{(t)} = \frac{1}{2}+\frac{1}{2}sgn(t)
                             \] 
