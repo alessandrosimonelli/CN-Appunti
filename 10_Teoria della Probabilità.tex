@@ -1,6 +1,6 @@
-\section{Teoria della Probabilitá}
+\section{Teoria della Probabilità}
     \subsection{Introduzione}
-        Perché abbiamo bisogno della teoria della probabilitá? Prendiamo un sistema di comunicazione:
+        Perché abbiamo bisogno della teoria della probabilità? Prendiamo un sistema di comunicazione:
         \begin{figure}[H]
             \centering
                 \begin{tikzpicture}[
@@ -54,9 +54,9 @@
         \begin{itemize}
             \item {Convertitore Analogico/Digitale ($A/D$): Campiona con frequenza $f_s$ e crea la sequenza $x_{[nT]}$.}
             \item {Quantizzatore ($Q$): Converte i valori della sequenza $x_{[nT]}$ in informazioni, bit. Ho sempre perdita di informazione a 
-                questo livello, per quanti livelli di quantizzazione io metta il quantizzatore introdurrá sempre un'approssimazione. 
+                questo livello, per quanti livelli di quantizzazione io metta il quantizzatore introdurrà sempre un'approssimazione. 
             }
-            \item{Nei blocchi sotto elencati é dove entra in gioco la Teoria dei Codici, ci permettono di comprimere i dati e proteggerli dagli errori del canale:
+            \item{Nei blocchi sotto elencati è dove entra in gioco la Teoria dei Codici, ci permettono di comprimere i dati e proteggerli dagli errori del canale:
                 \begin{itemize}
                     \item {Codici di Sorgente ($CdS$): Comprimono i bit in ingresso dal quantizzatore eliminando la ridondanza.}
                     \item {Codifica di Canale ($CdC$): Aggiunge ridondanza ai dati da trasmettere per proteggere i dati dagli errori del canale.}
@@ -90,7 +90,7 @@
             \caption{Esempio sistema di ricevitore}
         \end{figure}
         \begin{itemize}
-            \item {RIcevitore ($RX$): Si occupa della ricezione del segnale trasmesso $r_{(t)}$.}
+            \item {Ricevitore ($RX$): Si occupa della ricezione del segnale trasmesso $r_{(t)}$.}
             \item{La Teoria dei Codici si applica anche in ricezione per la decodifica:
                 \begin{itemize}
                     \item {Decodifica Canale ($DC$): .}
@@ -121,7 +121,7 @@
             \label{fig:Sistema di comunicazione canale con errore}
             \caption{Esempio sistema di canale con errore}
         \end{figure}
-        Durante la trasmissione di $s_{(t)}$ viene introdotto dell'errore $n_{(t)}$. $n_{(t)}$ é un segnale completamente aleatorio di varia 
+        Durante la trasmissione di $s_{(t)}$ viene introdotto dell'errore $n_{(t)}$. $n_{(t)}$ è un segnale completamente aleatorio di varia 
         natura:
         \begin{itemize}
             \item {Termico}
@@ -131,22 +131,22 @@
         \end{itemize}
         \noindent di conseguenza $r_{(t)} = s_{(t)}+e_{(t)}$ diventa un segnale aleatorio.
 
-        I segnali che analizzo sono tutte quantitá aleatorie: ho bisogno della probabilitá per analizzare la tipologia di segnali, anche per la sorgente
+        I segnali che analizzo sono tutte quantità aleatorie: ho bisogno della probabilità per analizzare la tipologia di segnali, anche per la sorgente
         potrei averne bisogno se non sono nel caso di segnali deterministici.
 
         \subsubsection{Tipi di modelli matematici}
             Esistono vari tipi di modelli matematici:
             \begin{itemize}
                 \item {Deterministico: se esiste certezza e ne possiamo calcolare il valore a ogni istante del tempo (Es. sistemi lineari tempo invarianti)}
-                \item {Probabilistico (Aleatorio): se non conosciamo la certezza con cui l'evento puó verificarsi ma ne possiamo dare una valutazione probabilistica.}
+                \item {Probabilistico (Aleatorio): se non conosciamo la certezza con cui l'evento può verificarsi ma ne possiamo dare una valutazione probabilistica.}
             \end{itemize}
             Introduciamo quindi
     \subsection{Algebra dei Set (insiemi)}
-        Un set é una collezione di elementi che condividono un criterio oggettivo per decidere se appartengono al set o no. Prendiamo come set $A$ e come 
+        Un set è una collezione di elementi che condividono un criterio oggettivo per decidere se appartengono al set o no. Prendiamo come set $A$ e come 
         elemento del set $A$ $x$:
         \begin{itemize}
             \item {Se l'elemento appartiene al set: $x\in A$, viceversa se non appartiene:$x\notin A$}
-            \item {Se un set é vuoto: $A=\{\emptyset\}=\emptyset$}
+            \item {Se un set è vuoto: $A=\{\emptyset\}=\emptyset$}
             \item {Se $x_1, \dots, x_n$ sono elementi di $A$ allora:
                 \[
                     A=\{x_1, \dots, x_n \}
@@ -155,23 +155,23 @@
         \end{itemize}
         \subsubsection{Operazioni booleane su set}
             \begin{itemize}
-                \item {Unione ($A\cup B$): l'unione di due set $A$ e $B$ é a sua volta un set composto dagli elementi che appartegono a $A$ o $B$, o entrambi.}
-                \item {Intersezione ($A\cap B$): l'intersezione di due set $A$ e $B$ é a sua volta un set composto dagli elementi che appartegono a $A$ e $B$.
+                \item {Unione ($A\cup B$): l'unione di due set $A$ e $B$ è a sua volta un set composto dagli elementi che appartengono a $A$ o $B$, o entrambi.}
+                \item {Intersezione ($A\cap B$): l'intersezione di due set $A$ e $B$ è a sua volta un set composto dagli elementi che appartengono a $A$ e $B$.
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width = 5cm]{media/Unione_Intersezione.png}
                     \caption{Unione e Intersezione} 
                 \end{figure}
                 }
-                \item {Disgiunzione: é una relazione tra due set $A$ e $B$, essi sono disgiunti se tra loro non hanno elementi comuni ($A\cap B = \emptyset $).}
-                \item {Partizione ($A = A_1\cup A_2\cup A_3$): la partizione di un insieme $A$ é una divisione dell'insieme stesso in subset disgiunti.
+                \item {Disgiunzione: è una relazione tra due set $A$ e $B$, essi sono disgiunti se tra loro non hanno elementi comuni ($A\cap B = \emptyset $).}
+                \item {Partizione ($A = A_1\cup A_2\cup A_3$): la partizione di un insieme $A$ è una divisione dell'insieme stesso in subset disgiunti.
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width = 5cm]{media/Insiemi_distinti.png}
                     \caption{Disgiunzione e Partizione} 
                 \end{figure}
                 }
-                \item {Complemento ($A^c$): dati due set $A$ e $B:A\subset B$ il complemento del set $A$ é il set contenente gli elementi di $B$ non appartenenti ad $A$.
+                \item {Complemento ($A^c$): dati due set $A$ e $B:A\subset B$ il complemento del set $A$ è il set contenente gli elementi di $B$ non appartenenti ad $A$.
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width = 5cm]{media/Insieme_Complementare.png}
@@ -186,19 +186,19 @@
                         \left(A^c\right)^c = A
                     \]
                 }
-                \item {Propietá commutativa
+                \item {Proprietà commutativa
                     \begin{gather}
                         A\cup B = B\cup A \nonumber \\
                         A\cap B = B\cap A \nonumber
                     \end{gather}
                 }
-                \item {Propietá associativa
+                \item {Proprietà associativa
                     \begin{gather}
                         (A\cup B) \cup C= (A\cup C)\cup B \nonumber \\
                         (A\cap B) \cap C= (A\cap C)\cap B \nonumber                        
                     \end{gather}
                 }
-                \item {Propietá distributiva
+                \item {Proprietà distributiva
                     \begin{gather}
                         (A\cup B) \cap C= (A\cap C)\cup (B \cap C) \nonumber \\
                         (A\cap B) \cup C= (A\cup C)\cap (B \cup C) \nonumber                        
@@ -207,37 +207,37 @@
             \end{itemize}
 
     \subsection{Modelli probabilistici}
-        La descrizione di un esperimento con risultati incerti é chiamato \emph{modello probabilistico}, la costruzione del modello richiede:
+        La descrizione di un esperimento con risultati incerti è chiamato \emph{modello probabilistico}, la costruzione del modello richiede:
         \begin{itemize}
             \item {Spazio dei campioni o set universale $S$: nel quale sono presenti tutti i possibili risultati dell'esperimento.}
             \item {Una classe di eventi $A$ che sia un subset di $S$.}
-            \item {Legge della Probabilitá: alla quale una quantitá non negativa $P[A]$ viene assegnata ad $A$. $P[A]$ viene detta probabilitá dell'evento $A$: rappresenta
-                con quale occorrenza potrebbe verificarsi il risultato delĺ'esperimento $A$.}
+            \item {Legge della Probabilità: alla quale una quantità non negativa $P[A]$ viene assegnata ad $A$. $P[A]$ viene detta probabilità dell'evento $A$: rappresenta
+                con quale occorrenza potrebbe verificarsi il risultato dell'esperimento $A$.}
         \end{itemize}
         \begin{figure}[H]
             \centering
             \includegraphics[width = 5cm]{media/Insieme_probabilita.png}
             \caption{Modello Probabilistico} 
         \end{figure}
-        Un evento puó avere come risultato un singolo risultato o un subset di risultati di $S$.
-        \subsubsection{Assiomi della probabilitá}
+        Un evento può avere come risultato un singolo risultato o un subset di risultati di $S$.
+        \subsubsection{Assiomi della probabilità}
             \begin{enumerate}
-                \item \label{Ass. Prob. 1}{Non Negativitá: la probabilitá di $A$ é un numero non negativo:
+                \item \label{Ass. Prob. 1}{Non Negatività: la probabilità di $A$ è un numero non negativo:
                     \[
                         0\leq P[A] \leq 1,\ \forall \text{ evento A}
                     \]
                 }
-                \item \label{Ass. Prob. 2}{Additivitá: se $A$ e $B$ sono due eventi disgiunti, allora la probablitá dell'unione é: 
+                \item \label{Ass. Prob. 2}{Additività: se $A$ e $B$ sono due eventi disgiunti, allora la probabilità dell'unione é: 
                     \[
                         P[A\cup B] = P[A] + P[B] 
                     \]
                 }
-                \item \label{Ass. Prob. 3}{Normalizzazione: la probabilitá del set universale $S$ é $P[S] = 1$}
+                \item \label{Ass. Prob. 3}{Normalizzazione: la probabilità del set universale $S$ è $P[S] = 1$}
             \end{enumerate}
-            Si sviluppano alcune propietá della probabilitá:
+            Si sviluppano alcune proprietà della probabilità:
             \begin{itemize}
                 \item {
-                    La probabilitá di un evento impossibile é zero.
+                    La probabilità di un evento impossibile è zero.
                     Dimostrazione:
                 }
                 \item {
@@ -245,7 +245,7 @@
                     Dimostrazione:
                 }
                 \item {
-                    Se un evento $A$ é un subset di un evento $B$ allora: $P[A]\leq P[B]$. 
+                    Se un evento $A$ è un subset di un evento $B$ allora: $P[A]\leq P[B]$. 
                     Dimostrazione: 
                 }
                 \item {
@@ -255,15 +255,15 @@
                     \end{sloppypar}
                 }
             \end{itemize}
-        \subsubsection{Probabilitá condizionata}\label{Probabilitá condizionata}
-            Prendiamo in esempio un esperimento che implica due eventi $A$ e $B$: $P[A|B]$ sia la probabilitá che un evento $A$ si verifichi
-            dato il verificarsi dell'evento $B$, $P[A|B]$ é detta probabilitá condizionata di $A$ dato $B$, assumendo $P[B]\neq 0$:
+        \subsubsection{Probabilità condizionata}\label{Probabilità condizionata}
+            Prendiamo in esempio un esperimento che implica due eventi $A$ e $B$: $P[A|B]$ sia la probabilità che un evento $A$ si verifichi
+            dato il verificarsi dell'evento $B$, $P[A|B]$ è detta probabilità condizionata di $A$ dato $B$, assumendo $P[B]\neq 0$:
             \[
                 P[A|B] = \frac{P[A\cap B]}{P[B]}
             \]
 
         \subsubsection{Regola di Bayes}\label{Regola di Bayes}
-            Supponiamo che si possano ricavare facilmente le probabilitá $P[A|B]$, $P[A]$ e $P[B]$ e vogliamo trovare la probabilitá condizionata $P[B|A]$:
+            Supponiamo che si possano ricavare facilmente le probabilità $P[A|B]$, $P[A]$ e $P[B]$ e vogliamo trovare la probabilità condizionata $P[B|A]$:
             \[
                 P[B|A] = \frac{P[A|B]P[B]}{P[A]}   
             \]
@@ -273,8 +273,8 @@
             \[
                 P[A\cap B] = P[A]P[B]    
             \]
-        \subsubsection{Legge della probabilitá totale}\label{Legge della probabilitá totale}
-            Supponiamo $\{ A_n = 1,\dots N\}$ é un insieme di eventi disgiunti:
+        \subsubsection{Legge della probabilità totale}\label{Legge della probabilità totale}
+            Supponiamo $\{ A_n = 1,\dots N\}$ è un insieme di eventi disgiunti:
 
             \begin{figure}[H]
                 \centering
@@ -284,77 +284,77 @@
                 P[B] = \sum_{n=1}^{N}P[B\cap A_n]    
             \]
         \subsubsection{Problemi esempio:}
-            \paragraph{Radar Detection Problem:} Nel problema del rilevamento vogliamo analizzare in particolere tre tipi di probabilitá:
+            \paragraph{Radar Detection Problem:} Nel problema del rilevamento vogliamo analizzare in particolare tre tipi di probabilità:
                 \begin{itemize}
                     \item {
-                        \emph{Probabilitá a priori} $P[A]$: probabilitá che il bersaglio sia nell'area.
+                        \emph{Probabilità a priori} $P[A]$: probabilità che il bersaglio sia nell'area.
                     }
                     \item {
-                        \emph{Probabilitá di rivelazione} $P[B|A]$: probabilitá che il radar riveli il bersaglio, quando effettivamente il bersaglio
-                         é presente nell'area.
+                        \emph{Probabilità di rivelazione} $P[B|A]$: probabilità che il radar riveli il bersaglio, quando effettivamente il bersaglio
+                         è presente nell'area.
                     }
                     \item {
-                        \emph{Probabilitá di falso allarme} $P[B|A^c]$: probabilitá che il radar riveli il bersaglio, ma il bersaglio non
-                         é effettivamente presente nell'area. 
+                        \emph{Probabilità di falso allarme} $P[B|A^c]$: probabilità che il radar riveli il bersaglio, ma il bersaglio non
+                         è effettivamente presente nell'area. 
                     }
                 \end{itemize}
-                Dati i dati delle relative probabilitá:
+                Dati i dati delle relative probabilità:
                 \begin{gather}
                     P[A] = 0.02 \nonumber \\
                     P[B|A] = 0.99 \nonumber \\
                     P[B|A^c] = 0.01 \nonumber 
                 \end{gather}
-                $A^c$ indica che il bersagli non é presente. Il problema richiede di calcolare la probabilitá condizionata
-                $P[A|B]$, la quale definisce la probabilitá che il bersaglio sia presente nell'area e il radar l'abbia rivelata.
+                $A^c$ indica che il bersagli non è presente. Il problema richiede di calcolare la probabilità condizionata
+                $P[A|B]$, la quale definisce la probabilità che il bersaglio sia presente nell'area e il radar l'abbia rivelata.
                 Soluzione:
                 \[
                     \overset{\ref{Regola di Bayes}}{\Rightarrow} P[A|B] = \frac{P[A]P[B|A]}{P[B]}    
                 \]                    
                 Devo solo calcolare $P[B]$:
                 \begin{align}
-                        \overset{\ref{Legge della probabilitá totale}}{\Rightarrow} P[B] &= \sum_{n=1}^{2} P[B\cap A_n] = \sum_{n=1}^{2} P[B|A_n] P[A_n] \nonumber \\
+                        \overset{\ref{Legge della probabilità totale}}{\Rightarrow} P[B] &= \sum_{n=1}^{2} P[B\cap A_n] = \sum_{n=1}^{2} P[B|A_n] P[A_n] \nonumber \\
                         P[B] &= P[B|A]P[A] + P[B|A^c]P[A^c] \nonumber \\
                              &= 0.99\dotproduct 0.02 + 0.01 \dotproduct 0.098 = 0.0296 \cong 0.03  \nonumber       
                 \end{align}
 
-                Ricordiamo che $P[A^c] = 1-P[A]$, nel nostro caso il problema si risolve facilmente applicando il Th della probabilitá totale su due set disgiunti 
-                $A$ e $A^c$. Possiamo quindi calcolare la probabilitá condizionata:
+                Ricordiamo che $P[A^c] = 1-P[A]$, nel nostro caso il problema si risolve facilmente applicando il Th della probabilità totale su due set disgiunti 
+                $A$ e $A^c$. Possiamo quindi calcolare la probabilità condizionata:
                 \[
                     P[A|B] = \frac{P[A]P[B|A]}{P[B]} = \frac{0.02 \dotproduct 0.99}{0.03} = 0.66    
                 \]
 
             \paragraph{Communication Problem:} In un sistema di comunicazione ho:
                 \begin{itemize}
-                    \item {$1$ é trasmesso con probabilitá $P[1] = 0.3$ e $0$ con probabilitá $P[0] = 1-P[1] = 0.7$}
-                    \item {la probabilitá di errore é $P_e = 0.01$}
+                    \item {$1$ è trasmesso con probabilità $P[1] = 0.3$ e $0$ con probabilità $P[0] = 1-P[1] = 0.7$}
+                    \item {la probabilità di errore è $P_e = 0.01$}
                 \end{itemize}
-                Richiesta: assumendo che venga ricevuto $0$, calcolare la probabilitá che questo sia stato effettivamente trasmesso.
+                Richiesta: assumendo che venga ricevuto $0$, calcolare la probabilità che questo sia stato effettivamente trasmesso.
                 Soluzione: Definiamo i set di interesse:
                 \begin{itemize}
-                    \item {$A = \{0\text{ é stato trasmesso}\},\ A^c = \{1 \text{ é stato trasmesso}\}$}
-                    \item {$B = \{0\text{ é stato ricevuto}\},\ B^c = \{1 \text{ é stato ricevuto}\}$}
+                    \item {$A = \{0\text{ è stato trasmesso}\},\ A^c = \{1 \text{ è stato trasmesso}\}$}
+                    \item {$B = \{0\text{ è stato ricevuto}\},\ B^c = \{1 \text{ è stato ricevuto}\}$}
                 \end{itemize}
                 \[
                     \overset{\ref{Regola di Bayes}}{\Rightarrow} P[A|B] = \frac{P[A]P[B|A]}{P[B]}    
                 \]                           
-                $P[B|A]$ non é altro che la probabilitá di corretta ricezione ($P[c]$), posso calcolarla dalla probabilitá di errore:
+                $P[B|A]$ non è altro che la probabilità di corretta ricezione ($P[c]$), posso calcolarla dalla probabilità di errore:
                 \begin{gather}
-                    P[e] = P[B^c|A] = P[B|A^c] = 0.01, \text{ probabilitá di errore} \nonumber \\
-                    P[c] = P[B|A] = P[B^c|A^c] = 1-P[e]= 0.99, \text{ probabilitá di corretta ricezione}\nonumber 
+                    P[e] = P[B^c|A] = P[B|A^c] = 0.01, \text{ probabilità di errore} \nonumber \\
+                    P[c] = P[B|A] = P[B^c|A^c] = 1-P[e]= 0.99, \text{ probabilità di corretta ricezione}\nonumber 
                 \end{gather}
                 Calcoliamo $P[B]$:
                 \begin{align}
-                    \overset{\ref{Legge della probabilitá totale}}{\Rightarrow} P[B] &= \sum_{n=1}^{2} P[B\cap A_n] = \sum_{n=1}^{2} P[B|A_n] P[A_n] \nonumber \\
+                    \overset{\ref{Legge della probabilità totale}}{\Rightarrow} P[B] &= \sum_{n=1}^{2} P[B\cap A_n] = \sum_{n=1}^{2} P[B|A_n] P[A_n] \nonumber \\
                     P[B] &= P[B|A]P[A] + P[B|A^c]P[A^c] \nonumber \\
                          &= 0.99\dotproduct 0.7 + 0.01 \dotproduct 0.3 = 0.696 \nonumber       
                 \end{align}
-                Possiamo quindi calcolare la probabilitá condizionata:
+                Possiamo quindi calcolare la probabilità condizionata:
                 \[
                     P[A|B] = \frac{P[A]P[B|A]}{P[B]} = \frac{0.7 \dotproduct 0.99}{0.696} = 0.995    
                 \]
             \paragraph{Esempio palline:}
                 Eventi: Pesco una pallina dall'urna \emph{pippo} e la metto nell'urna \emph{pluto}, infine pesco una pallina dall'urna \emph{pluto}.
-                Calcolare la probabilitá di pescare una pallina bianca dall'urna \emph{pluto} ($P[\text{pesco 1 bianca da \emph{pluto}}] = P[A]$).  
+                Calcolare la probabilità di pescare una pallina bianca dall'urna \emph{pluto} ($P[\text{pesco 1 bianca da \emph{pluto}}] = P[A]$).  
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width = 4cm]{media/uwu.png}
@@ -367,7 +367,7 @@
                 \end{itemize}
                 Calcoliamo $P[A]$:
                 \begin{align}
-                    \overset{\ref{Legge della probabilitá totale}}{\Rightarrow} P[A] &= \sum_{n=1}^{2} P[A\cap B_n] = \sum_{n=1}^{2} P[A|B_n] P[B_n] \nonumber \\
+                    \overset{\ref{Legge della probabilità totale}}{\Rightarrow} P[A] &= \sum_{n=1}^{2} P[A\cap B_n] = \sum_{n=1}^{2} P[A|B_n] P[B_n] \nonumber \\
                     P[A] &= P[A|B]P[B] + P[A|C]P[C] \nonumber \\
                          &= \frac{3}{4}\frac{2}{3} + \frac{2}{4}\frac{1}{3} = \frac{2}{3}  \nonumber       
                 \end{align}
@@ -376,44 +376,44 @@
                     \item {$P[A|C]$: pesco bianco da \emph{pluto} avendo inserito una nera da \emph{pippo}}
                 \end{itemize}
 
-                \subparagraph{Aggiungiamo due palline da \emph{pippo} in \emph{pluto}:} Cambia il Th della probabilitá totale:
+                \subparagraph{Aggiungiamo due palline da \emph{pippo} in \emph{pluto}:} Cambia il Th della probabilità totale:
                     \begin{itemize}
                         \item {$P[B]$: pesco due bianche da \emph{pippo} $= \frac{2}{3}\dotproduct \frac{1}{2} $}
                         \item {$P[A|B]$: pesco due bianche da \emph{pluto} avendo inserito due bianche da \emph{pippo}$= \frac{4}{5} $}
                         \item {$P[C]$: pesco una bianca e una nera da \emph{pippo} $= \frac{2}{3}\dotproduct \frac{1}{2} $}
                         \item {$P[A|C]$: pesco bianco da \emph{pluto} avendo inserito una bianca e una nera da \emph{pippo} $= \frac{3}{5} $}
-                        \item {$P[D]$: pesco due nere da \emph{pippo}, é un evento impossibile $P[D] = 0$}
+                        \item {$P[D]$: pesco due nere da \emph{pippo}, è un evento impossibile $P[D] = 0$}
                         \item {$P[A|D]$: pesco bianco da \emph{pluto} avendo inserito due nere da \emph{pippo} $P[D] = 0$}
                         \item {$P[E]$: una nera e una bianca da \emph{pippo}$= \frac{1}{3}\dotproduct 1 $}
                         \item {$P[A|E]$: pesco bianco da \emph{pluto} avendo inserito una nera e una bianca da \emph{pippo} $= \frac{3}{5} $}
                     \end{itemize}
                     \begin{align}
-                        \overset{\ref{Legge della probabilitá totale}}{\Rightarrow} P[A] &= \sum_{n=1}^{4} P[A\cap B_n] = \sum_{n=1}^{4} P[A|B_n] P[B_n] \nonumber \\
+                        \overset{\ref{Legge della probabilità totale}}{\Rightarrow} P[A] &= \sum_{n=1}^{4} P[A\cap B_n] = \sum_{n=1}^{4} P[A|B_n] P[B_n] \nonumber \\
                         P[A] &= P[A|B]P[B] + P[A|C]P[C]+ P[A|D]P[D]+ P[A|E]P[E] \nonumber \\
                         &= \frac{4}{5}\frac{1}{3} + \frac{3}{5}\frac{1}{3} + 0 + \frac{3}{5}\frac{1}{3} = \frac{10}{15}  \nonumber       
                     \end{align}
         \subsubsection{Coefficiente binomiale}\label{Coefficiente binomiale}
-            Il coefficiente binomiale $\binom{n}{k}$ é un numero intero non negativo che fornisce le combiazioni semplici di $n$ elementi di classe $k$,
+            Il coefficiente binomiale $\binom{n}{k}$ è un numero intero non negativo che fornisce le combinazioni semplici di $n$ elementi di classe $k$,
             definito da:
             \[
                 \binom{n}{k} = C(n;k) = \frac{n!}{k!\dotproduct n-k!}
             \]
-            Possiamo usarli per calcolare la probabilitá di errore su eventi ripetuti inunione con la distribuzione di bernulli \ref{Probabilita di errore BSC}.
+            Possiamo usarli per calcolare la probabilità di errore su eventi ripetuti in unione con la distribuzione di Bernoulli \ref{Probabilita di errore BSC}.
             \paragraph{Esempio su sistema di comunicazione binario:}
                 Prendiamo in esempio un trasmettitore di codice binario a ripetizione con $R = \frac{1}{3}
                 \begin{cases}
                     0 = [000]\nonumber \\
                     1 = [111]\nonumber    
-                \end{cases}$. Calcolare la probabilitá di errore del sistema, $P[E]$, sapendo che la probabilitá di errore sul
-                bit é $P[e] = 0.01$.
+                \end{cases}$. Calcolare la probabilità di errore del sistema, $P[E]$, sapendo che la probabilità di errore sul
+                bit è $P[e] = 0.01$.
                 Soluzione:
                 Scelgo la mia regola di decisione per la decodifica dei bit, a maggioranza:
                 \begin{gather}
                     1 \rightarrow \text{Se ho la maggioranza di uno nel codice, nel nostro caso 2 su 3} \nonumber \\
                     0 \rightarrow \text{Se ho la maggioranza di zero nel codice, nel nostro caso 2 su 3} \nonumber
                 \end{gather}
-                sbaglio il codice in trasmissione se ho sbagliato tre o due bit. Calcoliamo la probabilitá del canale,
-                $P[E] \overset{\ref{Legge della probabilitá totale}}{=} P[E|0]P[0] + P[E|1]P[1]$:
+                sbaglio il codice in trasmissione se ho sbagliato tre o due bit. Calcoliamo la probabilità del canale,
+                $P[E] \overset{\ref{Legge della probabilità totale}}{=} P[E|0]P[0] + P[E|1]P[1]$:
                 \begin{itemize}
                     \item {$P[E|0]$: Osserviamo tutti i casi possibili di trasmissione del codice di $0 = [000]$
                         \begin{table}[H]
@@ -430,7 +430,7 @@
                             {[}111{]} &    $E_4$
                             \end{tabular}
                         \end{table}
-                        Applichiamo la legge della probabilitá totale (\ref{Legge della probabilitá totale}):
+                        Applichiamo la legge della probabilità totale (\ref{Legge della probabilità totale}):
                         \[
                             P[E|0] = \sum_{n=1}^{4}P[E_n|0] = P[E_1|0] +P[E_2|0]+P[E_3|0]+P[E_4|0] 
                         \]
@@ -443,7 +443,7 @@
                                    &= 3P^2[e] -2P^3[e] \cong 3P^2[e]\nonumber
                         \end{align}
                     }
-                    \item {$P[E|1]$: Usiamo la probabilitá di erore sul canale \ref{Probabilita di errore BSC}
+                    \item {$P[E|1]$: Usiamo la probabilità di errore sul canale \ref{Probabilita di errore BSC}
                         \[
                             P[E|1] = \binom{3}{3}P^3[e] +\binom{3}{2}P^2[e] (1-P[e]) \cong 3 P^2[e]
                         \]
@@ -458,7 +458,7 @@
                         P[E] &= \sum_{n=3}^{5}\binom{5}{n}P^n[e](1-P[e])^{5-n} \nonumber \\
                              &= \binom{5}{3}P^3[e](1-P[e])^{2}+\binom{5}{4}P^4[e](1-P[e])^{1}+\binom{5}{5}P^5[e](1-P[e])^{0}\nonumber
                     \end{align}
-            \paragraph{Esempio prove ripetute:} Abbiamo 2 monete, una regolare ($r$) e una truccata ($t$) con le seguenti probabilitá:
+            \paragraph{Esempio prove ripetute:} Abbiamo 2 monete, una regolare ($r$) e una truccata ($t$) con le seguenti probabilità:
             \[
                 \begin{cases}
                     P_r[T] = \frac{1}{2}\nonumber \\
@@ -469,9 +469,9 @@
                     P_t[C] = \frac{2}{10}\nonumber
                 \end{cases}
             \]
-            Calcolare la probabilitá di aver scelto la moneta regolare se: scelgo a caso una monetina tra le due e la lancio $10$ volte
+            Calcolare la probabilità di aver scelto la moneta regolare se: scelgo a caso una monetina tra le due e la lancio $10$ volte
             osservando che esce 5 volte croce e 5 volte testa.
-            Soluzione: la probabilitá da calcolare é 
+            Soluzione: la probabilità da calcolare è 
             \[
                 P[A|B] = ? \Rightarrow \begin{cases}
                     A = \text{ho scelto la moneta regolare}\nonumber \\
@@ -483,44 +483,44 @@
                 \overset{\ref{Regola di Bayes}}{\Rightarrow} P[A|B] = \frac{P[A]P[B|A]}{P[B]},\ P[B|A] = ?\ e\ P[B] = ?\nonumber \\
             \]
             \begin{align}
-                P[B] &\overset{\ref{Legge della probabilitá totale}}{ = } P[B|A]P[A] + P[B|C]P[C] \nonumber \\
+                P[B] &\overset{\ref{Legge della probabilità totale}}{ = } P[B|A]P[A] + P[B|C]P[C] \nonumber \\
                 P[B|A] & = \binom{10}{5} P_r[T]^5P_r[C]^5 = \binom{10}{5} \left(\frac{1}{2}\right)^{10}\nonumber \\
                 P[B|C] & = \binom{10}{5} P_r[T]^5P_r[C]^5 = \binom{10}{5} \left(\frac{8}{10}\right)^5\left(\frac{2}{10}\right)^5\nonumber
             \end{align}
-            inserendo dentro bayes il risultato dovrebeb essere $0.9$.
+            inserendo dentro Bayes il risultato dovrebbe essere $0.9$.
     \subsection{Variabili Aleatorie - Random Variables}
-        Una \emph{variabile aleatoria} $X$ é una funzione il cui dominio é un insieme, di numeri reali, dello spazio degli esiti di un esperimento. ogni spazio degli esiti
-        ha la sua probabilitá associata. 
+        Una \emph{variabile aleatoria} $X$ è una funzione il cui dominio è un insieme, di numeri reali, dello spazio degli esiti di un esperimento. ogni spazio degli esiti
+        ha la sua probabilità associata. 
         \begin{figure}[H]
             \centering
             \includegraphics[width = 5cm]{media/insieme variabili aleatorie.png}
-            \caption{Esperimento $\rightarrow$ Intervallo $\rightarrow$ Probabilitá dell'Intervallo}
+            \caption{Esperimento $\rightarrow$ Intervallo $\rightarrow$ Probabilità dell'Intervallo}
         \end{figure}
-        Una variabile aleatoria puó essere continua o discreta. Le variabili aleatorie si indicano con le lettere
+        Una variabile aleatoria può essere continua o discreta. Le variabili aleatorie si indicano con le lettere
         maiuscole
         \subsubsection{Funzioni di Distribuzione - Distribution Functions}
-            Considera la variabile aleatoria $X$ e la probabilitá dell'evento $X\leq x$, per convenzione si indica con $P[X\leq x]$,
-            che puó essere scritto come:
+            Considera la variabile aleatoria $X$ e la probabilità dell'evento $X\leq x$, per convenzione si indica con $P[X\leq x]$,
+            che può essere scritto come:
             \[
                 F_{X(x)} \triangleq P[X\leq x]\ \forall x    
             \]
-            La funzione $F_{X(x)}$ é chiamata la \emph{funzione distribuzione} della variabile $X$, si puó notare che é funizone di $x$ non di 
+            La funzione $F_{X(x)}$ è chiamata la \emph{funzione distribuzione} della variabile $X$, si può notare che è funzione di $x$ non di 
             $X$.
-            \paragraph{Propietá:}
+            \paragraph{Proprietà:}
                 \begin{itemize}
-                    \item {Limitata - Boundeness: é limitata tra zero e uno, essendo una probabilitá.}
-                    \item {Monotona - Monotonicity: la funzione é una funzione monotona \emph{non decrescente} (puó rimanere costante) di $x$.}
+                    \item {Limitata - Boundeness: è limitata tra zero e uno, essendo una probabilità.}
+                    \item {Monotona - Monotonicity: la funzione è una funzione monotona \emph{non decrescente} (può rimanere costante) di $x$.}
                 \end{itemize}
-        \subsubsection{Funzione Densitá di Probabilitá - Probability Density Function (pdf)}
-            La variabile aleatoria $X$ é continua se la funzione distribuzione $F_{X(x)}$ é differenziabile:
+        \subsubsection{Funzione Densità di Probabilità - Probability Density Function (pdf)}
+            La variabile aleatoria $X$ è continua se la funzione distribuzione $F_{X(x)}$ è differenziabile:
             \[
                 f_{X(x)} = \derivative{}{x}F_{X(x)}\ \forall x    
             \]
-            $f_{X(x)}$ é detta \emph{funzione di densitá di probabilitá} (pdf).
-            \paragraph{Propietá:}
+            $f_{X(x)}$ è detta \emph{funzione di densità di probabilità} (pdf).
+            \paragraph{Proprietà:}
                 \begin{itemize}
                     \item {Non negativa}
-                    \item {Normalization: l'area totale della $pdf$ é unitaria.}
+                    \item {Normalization: l'area totale della $pdf$ è unitaria.}
                     \item {
                         \begin{align}
                             P[x_1<X<x_2] &= P[X\leq x_2]  - P[X\leq x_1] = F_{X(x_2)} - F_{X(x_1)}  \nonumber \\
@@ -534,7 +534,7 @@
                     }
                 \end{itemize}
             \paragraph{Esempio - Distribuzione Uniforme:} 
-                Proviamo le propietá della funzione distribuzione $F_{X(x)}$ e la funzione densitá di probabilitá $f_{X(x)}$ per una variabile aleatoria
+                Proviamo le proprietà della funzione distribuzione $F_{X(x)}$ e la funzione densità di probabilità $f_{X(x)}$ per una variabile aleatoria
                 continua:
                 \[
                     f_{X(x)} = 
@@ -626,23 +626,23 @@
                     \caption{Distribuzione Uniforme}
                     \label{Distribuzione Uniforme}
                 \end{figure}
-        \subsubsection{Funzione Probabilitá di massa - Probability Mass Function (pmf)}
-            Consideriamo il caso di una variabile aleatoria discreta $X$, la quale puó assumere un numero finito o infinito di valori. La funzione 
-            distribuzione $F_{X(x)}$ si applica anche alle variabili discrete, ma non é differenziabile per come l'abbiamo definita. Definiamo 
-            la funzione probabilitá di massa $p_{X(x)}$:
+        \subsubsection{Funzione Probabilità di massa - Probability Mass Function (pmf)}
+            Consideriamo il caso di una variabile aleatoria discreta $X$, la quale può assumere un numero finito o infinito di valori. La funzione 
+            distribuzione $F_{X(x)}$ si applica anche alle variabili discrete, ma non è differenziabile per come l'abbiamo definita. Definiamo 
+            la funzione probabilità di massa $p_{X(x)}$:
             \[
                 p_{X(x)} \triangleq P[X = x]    
             \]
-            é la probabilitá di un evento $X=x$, che consiste in tutti i possibili risultati di un esperimento i quali hanno un valore di 
+            è la probabilità di un evento $X=x$, che consiste in tutti i possibili risultati di un esperimento i quali hanno un valore di 
             $X$ uguale a $x$.
 
-            \paragraph{Esempio di Bernulli}
+            \paragraph{Esempio di Bernoulli}
                 Consideriamo l'esperimento probabilistico che assume uno di due valori:
                 \begin{itemize}
-                    \item {il valore 1 con probabilitá $p$}
-                    \item {il valore 0 con probabilitá $1-p$}
+                    \item {il valore 1 con probabilità $p$}
+                    \item {il valore 0 con probabilità $1-p$}
                 \end{itemize}
-                Tale variabile aleatoria é chiamata \emph{variabile aleatoria di Bernulli}:
+                Tale variabile aleatoria è chiamata \emph{variabile aleatoria di Bernoulli}:
                 \begin{figure}[H]
                     \centering
                     \begin{tikzpicture}
@@ -676,36 +676,36 @@
             Consideriamo due variabili aleatorie $X$ e $Y$:
             \begin{itemize}
                 \item {
-                    La funzione distribuzione $F_{X,Y (x,y)}$ é la probabilitá che $X$ sia minore o uguale a un valore specifico $x$ e che $Y$
+                    La funzione distribuzione $F_{X,Y (x,y)}$ è la probabilità che $X$ sia minore o uguale a un valore specifico $x$ e che $Y$
                     sia minore o uguale a un'altro valore specifico $y$:
                     \[
                         F_{X,Y (x,y)} = P[X\leq x,Y\leq y]    
                     \]
                 }
                 \item {
-                    La funzione densitá di probabilitá $f_{X,Y (x,y)}$ contiene tutto quello che ci serve per fare una completa analisi della probabilitá
-                    di piú variabili aleatorie:
+                    La funzione densità di probabilità $f_{X,Y (x,y)}$ contiene tutto quello che ci serve per fare una completa analisi della probabilità
+                    di più variabili aleatorie:
                     \[
                         f_{X,Y (x,y)} = \frac{d^2 F_{X,Y (x,y)}}{dxdy}     
                     \]
 
                 }
             \end{itemize}
-        \subsubsection{Funzione Densitá di Probabilitá Condizionata - Conditional Probability Density Function}
-            Supponendo che $X$ e $Y$ siano due variabili aleatorie continue con $f_{X,Y (x,y)}$, la funzione densitá di probabilitá condizionata di $Y$ con $X=x$,
-            é definita da:
+        \subsubsection{Funzione Densità di Probabilità Condizionata - Conditional Probability Density Function}
+            Supponendo che $X$ e $Y$ siano due variabili aleatorie continue con $f_{X,Y (x,y)}$, la funzione densità di probabilità condizionata di $Y$ con $X=x$,
+            è definita da:
             \[
                 f_{Y (y|x)} = \frac{f_{X,Y (x,y)}}{f_{X(x)}}     
             \]
-            Supponendo che le due variabili siano indipendenti: allora $f_{Y (y|x)}$ si riduce alla densitá marginale $f_{Y (y)}$ e la funzione densitá di
-            probabilitá diventa $f_{X (x)}f_{Y (y)}$, se cosí fosse le due variabili si dicono \emph{statisticamente indipendenti}\index{Statisticamente Indipendenti}.
+            Supponendo che le due variabili siano indipendenti: allora $f_{Y (y|x)}$ si riduce alla densità marginale $f_{Y (y)}$ e la funzione densità di
+            probabilità diventa $f_{X (x)}f_{Y (y)}$, se così fosse le due variabili si dicono \emph{statisticamente indipendenti}\index{Statisticamente Indipendenti}.
         \subsubsection{Somma di Variabili Aleatorie Indipendenti}
-            Consideriamo due variabili aleatorie $X$ e $Y$ statisticamente indipendenti e continue con funzioni di densitá di probabilitá $f_{X (x)}$ e $f_{Y (y)}$ si 
+            Consideriamo due variabili aleatorie $X$ e $Y$ statisticamente indipendenti e continue con funzioni di densità di probabilità $f_{X (x)}$ e $f_{Y (y)}$ si 
             definisce $Z = X+Y$ la cui $pdf$ $f_{Z (z)}$ é:
             \[
                 f_{Z (z)} = \int_{-\infty}^{\infty}f_{X (x)}f_{Y (z-x)} dx =  f_{X (x)} \otimes f_{Y (y)}
             \]
-            La somma di due variabili aleatorie indipendenti e continue é la convoluzione delle funzioni di densitá di probabilitá.    
+            La somma di due variabili aleatorie indipendenti e continue è la convoluzione delle funzioni di densità di probabilità.    
             Dimostrazione: (To DO: sul libro)
             \begin{figure}[H]
                 \centering
@@ -791,7 +791,7 @@
                 \label{Somma di Variabili Aleatorie}
             \end{figure}
         \subsubsection{Valore medio delle Variabili Aleatorie - Mean Value of Random Variables (Expectation)}\label{Expectation}\index{Expectation}
-            L'expectation o il valore medio di ua variabile aleatoria continua $X$ é formalemnte definito da:
+            L'expectation o il valore medio di una variabile aleatoria continua $X$ è formalmente definito da:
             \begin{itemize}
                 \item {Caso Continuo:
                     \[
@@ -804,10 +804,10 @@
                     \]
                 }
             \end{itemize}
-            é la media pesata delle variabili aleatorie, puó anche essere un valore che non gli appartiene.
-            \paragraph{Propietá}
+            è la media pesata delle variabili aleatorie, può anche essere un valore che non gli appartiene.
+            \paragraph{Proprietà}
                 \begin{itemize}
-                    \item {\label{linearita expectation} Linearitá - Linearity: $\mathbb{E}[Z] = \mathbb{E}[X+Y]  = \mathbb{E}[X] +\mathbb{E}[Y]$.}
+                    \item {\label{linearita expectation} Linearità - Linearity: $\mathbb{E}[Z] = \mathbb{E}[X+Y]  = \mathbb{E}[X] +\mathbb{E}[Y]$.}
                     \item {\label{Indipendenza statistica}Indipendenza Statistica - Statistical Indipendence:$\mathbb{E}[Z] = \mathbb{E}[XY] = \mathbb{E}[X] \mathbb{E}[Y]$ 
                     se $X$ e $Y$ sono statisticamente indipendenti.\\
                     Dimostrazione:
@@ -865,7 +865,7 @@
                     }
                 \end{enumerate}
         \subsubsection{Varianza - Variance}
-            La varianza $\sigma^2_x$ di una variabile aleatoria $X$ é definita:
+            La varianza $\sigma^2_x$ di una variabile aleatoria $X$ è definita:
             \[
                 var[X] = \mathbb{E}[(X-\mu_X)^2] = \int_{-\infty}^{\infty} (X-\mu_X)^2f_{X(x)}dx
             \]  
@@ -873,8 +873,8 @@
                 var[X] &= \sigma^2_x \overset{\ref{linearita expectation}}{=} \mathbb{E}[X^2-2\mu_XX+\mu_X^2] = \mathbb{E}[X^2]-2\mu_X\mathbb{E}[X]+\mu_X^2 \nonumber \\
                            &= \mathbb{E}[X^2]-\mu_X^2 \nonumber 
             \end{align}\index{Valore quadratico medio}
-            $\mathbb{E}[X] = \int_{-\infty}^{\infty} xf_{X(x)}dx$ mentre $\mathbb{E}[X^2] = \int_{-\infty}^{\infty} x^2f_{X(x)}dx$, l'expectation é il peso che diamo alla funzione $f_{X(x)}$.  
-            Misura la "randomicitá" di una variabile aleatoria, meno é randomica piú sono vicino al mio valor medio.
+            $\mathbb{E}[X] = \int_{-\infty}^{\infty} xf_{X(x)}dx$ mentre $\mathbb{E}[X^2] = \int_{-\infty}^{\infty} x^2f_{X(x)}dx$, l'expectation è il peso che diamo alla funzione $f_{X(x)}$.  
+            Misura la "randomicità" di una variabile aleatoria, meno è randomica più sono vicino al mio valor medio.
             \[
                 P[|X-\mu_X|\geq \mathcal{E}]\leq \frac{\sigma^2_X}{\mathcal{E}^2}
             \]
@@ -892,7 +892,7 @@
             misura la somiglianza tra $X$ e $Y$. Le due variabili si dicono:
             \begin{itemize}
                 \item {
-                    Incorrelate: se la $cov[XY] =0$, ció non implica l'indipendenza delle variabili.
+                    Incorrelate: se la $cov[XY] =0$, ciò non implica l'indipendenza delle variabili.
                 }
                 \item {
                     Ortogonali: se $\mathbb{E}[XY] = 0$
@@ -922,15 +922,15 @@
                     \end{tikzpicture}
                 \caption{Gaussiana}
             \end{figure}               
-            Una variabile aleatoria $X$ é detta Gaussiana se la funzione distribuzione di probabilitá ,$pdf$, ha la forma:
+            Una variabile aleatoria $X$ è detta Gaussiana se la funzione distribuzione di probabilità ,$pdf$, ha la forma:
             \[
                 f_{X(x)} = \frac{1}{\sqrt{2\pi}\sigma_X}e^{\left[\displaystyle -\frac{(x-\mu_X)^2}{2\sigma^2_X}\right]}  
             \]
-            \paragraph{Propietá:}\label{propieta distr gaussiana}
+            \paragraph{Proprietà:}\label{proprietà distr gaussiana}
             \begin{itemize}
                 \item {Definita unicamente dal valore medio di $X$ e la varianza $\mathcal{N}(\mu_X,\sigma_X^2)$.}
                 \item {\begin{sloppypar}
-                    La propietá di Gaussianitá é preservata dalle trasformazioni lineari. ${X \sim \mathcal{N}(\mu_X,\sigma_X^2): Y = \alpha X+\beta}$, calcoliamo come variano 
+                    La proprietà di Gaussianità è preservata dalle trasformazioni lineari. ${X \sim \mathcal{N}(\mu_X,\sigma_X^2): Y = \alpha X+\beta}$, calcoliamo come variano 
                     valor medio e varianza:
                 \end{sloppypar}
                     \begin{itemize}
@@ -950,7 +950,7 @@
                             la costante $\beta$ non influisce la varianza.  
                         }
                     \end{itemize}}
-                \item {La somma $Z = X+Y$ di variabili aleatorie Gaussiane indipendenti é anche essa una variabile aleatoria
+                \item {La somma $Z = X+Y$ di variabili aleatorie Gaussiane indipendenti è anche essa una variabile aleatoria
                     Gaussiana, con:
                         \begin{itemize}
                             \item {$\mathbb{E}[Z] = \mathbb{E}[X] +\mathbb{E}[Y] $}
@@ -1006,16 +1006,16 @@
                     \item {$\sigma_Y^2 = \sigma_X^2 \sigma_Y^2 $}
                 \end{itemize}
         \subsubsection{Funzione $Q_{(x)}$}
-            Per calacolare la funzione distribuzione di probabilitá ($F_{X(x)}$) non calcoliamo l'integrale della funzione distribuzione di probabilitá, 
-            ma utilizziamo la funzione $Q_{(x)}$ cosí definita:
+            Per calcolare la funzione distribuzione di probabilità ($F_{X(x)}$) non calcoliamo l'integrale della funzione distribuzione di probabilità, 
+            ma utilizziamo la funzione $Q_{(x)}$ così definita:
             \[
                 Q_{(x)} = 1-F_{X(x)} = P[X\geq x]  
             \]
-            formalmente é cosi definita:
+            formalmente è cosi definita:
             \[
                 Q_{(x)} = 1-F_{X(x)} = 1 - \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x}e^{\left(-\frac{t^2}{2}dt\right)} = \frac{1}{\sqrt{2\pi}} \int_{x}^{\infty}e^{\left(-\frac{t^2}{2}dt\right)}  
             \]
-            é l'area sottesa dalla funzione di distribuzione Gaussiana da $x$ all'infinito
+            è l'area sottesa dalla funzione di distribuzione Gaussiana da $x$ all'infinito
 
             \begin{figure}[H]
                 \centering
@@ -1047,7 +1047,7 @@
                 }
                 \caption{\color{red}$Q_{(x)}$}
             \end{figure}
-            \paragraph{Propietá:}
+            \paragraph{Proprietà:}
             \begin{itemize}
                 \item {$Q_{(x)} = 1-Q_{(-x)}$
 
@@ -1103,11 +1103,11 @@
             \[
                 F_{Y(y)} =P[Y\leq y] = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{y}e^{\left(-\frac{x^2}{2}\right)}dx    
             \]
-        \subsubsection{Calcolo probabilitá di errore di un sistema} 
-            Dato un sistema binario di comunicazione ($S\in\{0,1\}$), dopo il campionamento ho: $Y = \sqrt{p}S+n$. $p$ é la potenza e $n$ é il rumore
-            gaussiano $n \sim \mathcal{N}(0,\sigma_n^2)$. Voglio calcolarne la probabilitá di errore:
+        \subsubsection{Calcolo probabilità di errore di un sistema} 
+            Dato un sistema binario di comunicazione ($S\in\{0,1\}$), dopo il campionamento ho: $Y = \sqrt{p}S+n$. $p$ è la potenza e $n$ è il rumore
+            gaussiano $n \sim \mathcal{N}(0,\sigma_n^2)$. Voglio calcolarne la probabilità di errore:
             \[
-                P_e \overset{\ref{Legge della probabilitá totale}}{=} P_r(\hat{S}=1|S=-1)P(S=-1)+ P_r(\hat{S}=-1|S=1)P(S=1)   
+                P_e \overset{\ref{Legge della probabilità totale}}{=} P_r(\hat{S}=1|S=-1)P(S=-1)+ P_r(\hat{S}=-1|S=1)P(S=1)   
             \] 
             \begin{sloppypar}
                 \noindent analizziamo il caso generico in cui ${P(S=1) = q, P(S=-1)=1-q}$, nel caso equiprobabile sarebbero $\frac{1}{2}$: dobbiamo calcolare 
@@ -1146,7 +1146,7 @@
                             \end{tikzpicture}
                         \caption{{\color{red}$P[Y\geq 0|S=-1]$}}
                     \end{figure}                    
-                    posso basare la decisione di errore se ricevo qualcosa di positivo quando il simbolo inviato é negativo, $P[Y\geq 0|S=-1]$.
+                    posso basare la decisione di errore se ricevo qualcosa di positivo quando il simbolo inviato è negativo, $P[Y\geq 0|S=-1]$.
                     
                     \paragraph{Calcolo errore di un sistema:} Posso generalizzare la mia soglia di decisione su di un valore $\lambda$ 
                     \begin{figure}[H]
@@ -1176,14 +1176,14 @@
                             \end{tikzpicture}
                         \caption{{\color{red}$P[Y\geq \lambda|S=-1]$}}
                     \end{figure}               
-                    di conseguenza la probabilitá viene descritta come:
+                    di conseguenza la probabilità viene descritta come:
                     \[
                         P_r[\hat{S} = 1|S=-1] = P_r[Y> \lambda|S=-1] = P_r[-\sqrt{p}+n > \lambda] =P_r[n > \lambda+\sqrt{p}]
                     \]
                     posso calcolare la $P_r[-\sqrt{p}+n > \lambda]$ oppure $P_r[n > \lambda+\sqrt{p}]$, calcoliamo $P_r[n > \lambda+\sqrt{p}]$:
                     \begin{align}
                         Q_{(x)} &= \int_{x}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}}dt\nonumber \\
-                                &= \int_{\lambda+\sqrt{p}}^{\infty}f_{N(n)}dn\text{ senza sapere se é gaussiana o meno}\nonumber \\
+                                &= \int_{\lambda+\sqrt{p}}^{\infty}f_{N(n)}dn\text{ senza sapere se è gaussiana o meno}\nonumber \\
                                 &\overset{\text{é Gaussiana}}{=} \int_{\lambda+\sqrt{p}}^{\infty}\frac{1}{\sqrt{2\pi}\sigma_n}e^{-\frac{n^2}{2\sigma_n^2}}dn \overunderset{t = \frac{n}{\sigma_n}}{dt = \frac{dn}{\sigma_n}}{=} \int_{\frac{\lambda+\sqrt{p}}{\sigma_n}}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt\nonumber \\
                                 &= Q_{\left(\frac{\lambda +\sqrt{p}}{\sigma_n}\right)} = P_r[n>\lambda + \sqrt{p}]\nonumber 
                     \end{align}
@@ -1196,12 +1196,12 @@
                     \[
                         S=1\Rightarrow Y = \sqrt{p}+n\sim\mathcal{N}(\sqrt{p},\sigma_n^2)  
                     \]
-                    calcolando la probabilitá:
+                    calcolando la probabilità:
                     \begin{align}
                         P_r[\hat{S}=-1|S=1] &= 1-P_r[\hat{S}=1|S=-1] = 1- Q_{\displaystyle\left(\frac{\lambda -\mu_Y}{\sigma_Y}\right)}  \nonumber \\
                                             &= 1- Q_{\displaystyle\left(\frac{\lambda -\sqrt{p}}{\sigma_n}\right)}\nonumber
                     \end{align}
-                    sottraggo a $1$ la probabilitá per la definizione della $Q_{(x)}$ é l'integrale della zona a dx e a me interessa l'area a sinistra:
+                    sottraggo a $1$ la probabilità per la definizione della $Q_{(x)}$ è l'integrale della zona a dx e a me interessa l'area a sinistra:
                     \begin{figure}[H]
                         \centering
                             \begin{tikzpicture}
@@ -1231,7 +1231,7 @@
                     \end{figure}               
                 }
             \end{itemize}
-            La probabilitá totale di errore del sistema é:
+            La probabilità totale di errore del sistema é:
             \begin{align}
                 P_e &= Q_{\displaystyle\left(\frac{\lambda +\sqrt{p}}{\sigma_n}\right)} P[S=-1]+\left(1- Q_{\displaystyle\left(\frac{\lambda -\sqrt{p}}{\sigma_n}\right)}\right)P[S=1]\nonumber \\
                     &= Q_{\displaystyle\left(\frac{\lambda +\sqrt{p}}{\sigma_n}\right)} (1-q)+\left(1- Q_{\displaystyle\left(\frac{\lambda -\sqrt{p}}{\sigma_n}\right)}\right)q = g_{(\lambda)}\nonumber \\
@@ -1242,11 +1242,11 @@
                     P_e &= \frac{1}{2}Q_{\left(\frac{\sqrt{p}}{\sigma_n}\right)}+ \frac{1}{2}\left(1-Q_{\left(\frac{\sqrt{p}}{\sigma_n}\right)}\right)\nonumber \\
                         &\overset{Q_{x} = 1-Q_{(-x)}}{=} Q_{\left(\frac{\sqrt{p}}{\sigma_n}\right)} = Q_{(\sqrt{SNR})}\nonumber  
                 \end{align}
-                si definisce $SNR\ =\ Signal\ To\ Noise\ Ratio =\frac{\mu^2}{\sigma_n^2}$ é il rapporto tra potenza e varianza, in generale caloclo:
+                si definisce $SNR\ =\ Signal\ To\ Noise\ Ratio =\frac{\mu^2}{\sigma_n^2}$ è il rapporto tra potenza e varianza, in generale calcolo:
                 \[
                     Z = \frac{Y}{\sqrt{p}} = S+\frac{n}{\sqrt{p}} \sim \mathcal{N}(\pm 1,\frac{\sigma_n^2}{p})   
                 \] 
-                da cui calcolandone la probabilitá di errore:
+                da cui calcolandone la probabilità di errore:
                 \[
                     P_e = Q_{\left(\frac{1}{\sigma_n}\right)} = Q_{\left(\sqrt{\frac{p}{\sigma_n^2}}\right)}
                 \]
@@ -1271,7 +1271,7 @@
                 \[
                     var[n] = \mathbb{E}[|n|^2]-\mu_n^2 = var[n_{Re}]+ var[n_{Im}] = \frac{\sigma_n^2}{2} + \frac{\sigma_n^2}{2} = \sigma_n^2
                 \]
-                il procedimento  é uguale escludiamo la parte immaginaria del rumore e prendiamo solo quella reale (cambia solo il valore della varianza),
+                il procedimento  è uguale escludiamo la parte immaginaria del rumore e prendiamo solo quella reale (cambia solo il valore della varianza),
                 poiché il simbolo ha solo parti reali:
                 \[
                     Y \in \mathbb{C} 
@@ -1292,7 +1292,7 @@
                         -1 &Re\{Y\} <0\nonumber    
                     \end{cases}    
                 \]
-                calcoliamo la probabilitá di errore:
+                calcoliamo la probabilità di errore:
                 \begin{align}
                     Z_r &= \frac{Y_{Re}}{\sqrt{p}} = S+ \frac{n}{\sqrt{p}} \sim \mathcal{N}(0,\sigma^2):\ \sigma^2 = \frac{\sigma^2_n}{2p}\nonumber \\
                     P_e &= Q_{\displaystyle\left(\frac{1}{\sigma}\right)} = Q_{\displaystyle\left(\sqrt{\frac{2p}{\sigma_n^2}}\right)} = Q_{\sqrt{2SNR}}\nonumber
@@ -1306,7 +1306,7 @@
                 \[
                     SNR = 8\overset{db}{\Rightarrow}{SNR}_{db}=9,03db    
                 \]
-                Nel caso del rumore complesso ho solo metá del distudbo dovuto ad esso poiché il simbolo non dipende dalla parte immaginaria.
+                Nel caso del rumore complesso ho solo metà del disturbo dovuto ad esso poiché il simbolo non dipende dalla parte immaginaria.
             \paragraph{Caso con rumore e simboli complessi:} $Y = \sqrt{p}S + n \sim \mathcal{N}(0,\sigma_n^2)$:
                 \[
                     Y \in \mathbb{C} 
@@ -1347,17 +1347,17 @@
                         \end{tikzpicture}
                     \caption{Simboli complessi}
                 \end{figure}
-                basiamo la decisione del simbolo ricevuto rispetto al quadrante in cui cade, la probabilitá di errore del 
-                sistema $P_e$ é costituita dalla probabilitá di scegliere un quadrante del simbolo diverso da quello inviato:
+                basiamo la decisione del simbolo ricevuto rispetto al quadrante in cui cade, la probabilità di errore del 
+                sistema $P_e$ è costituita dalla probabilità di scegliere un quadrante del simbolo diverso da quello inviato:
                 \[
                     P_e = \sum_{k=1}^{4} P_r[\hat{S} \neq S_k | S_k]P[S_k]
                 \]
-                si noti come la probabilitá che il simbolo ricada in un quadrante diverso da quello inviato é identica per tutti i casi, 
+                si noti come la probabilità che il simbolo ricada in un quadrante diverso da quello inviato è identica per tutti i casi, 
                 quindi basta calcolarne solo una: 
                 \[
                     P_e = P_r[\hat{S} \neq S_1 | S=S_1]\sum_{k=1}^{4} P[S_k] = P_r[\hat{S} \neq S_1 | S=S_1]
                 \]
-                la somma delle probabilitá di trasmissione dei simboli é $1$, diventa praticamente la probabilitá di aver trasmesso un simbolo e quello lo faccio sempre.
+                la somma delle probabilità di trasmissione dei simboli è $1$, diventa praticamente la probabilità di aver trasmesso un simbolo e quello lo faccio sempre.
                 Calcoliamo $P_r[\hat{S} \neq S_1 | S=S_1]$:
                 \[
                     P_r[\hat{S} \neq S_1 | S=S_1] \overset{P[corr. ricezione]}{=} 1-P_r[\hat{S} = S_1 | S=S_1] = 1-P_r[Y_{Re},Y_{Im} \in I^o ] 
@@ -1366,16 +1366,16 @@
                 \[
                     P_r[Y_{Re},Y_{Im} \in I^o ] = P_r[Y_{Re}>0]P_r[Y_{Im}>0] 
                 \]
-                dall'esercizio sopra con rumore e simboli reali sappiamo che la probabilitá di corretta ricezione é $1-Q_{(\sqrt{2SNR})}$:
+                dall'esercizio sopra con rumore e simboli reali sappiamo che la probabilità di corretta ricezione è $1-Q_{(\sqrt{2SNR})}$:
                 \[
                     P_r[Y_{Re},Y_{Im} \in I^o ] = P_r[Y_{Re}>0]P_r[Y_{Im}>0] = \left(1-Q_{(\sqrt{2SNR})}\right)^2
                 \]
-                possiamo calcolare adesso la probabilitá del sistema:
+                possiamo calcolare adesso la probabilità del sistema:
                 \begin{gather}
                     P_e = 1-\left(1-Q_{(\sqrt{2SNR})}\right)^2 =1-\left(1-2Q_{(\sqrt{2SNR})}+Q^2_{(\sqrt{2SNR})}\right)^2  \nonumber\\
                         = 2Q_{(\sqrt{2SNR})}-Q^2_{(\sqrt{2SNR})} \backsimeq 2Q_{(\sqrt{2SNR})}\nonumber
                 \end{gather}
-                il risultato é l'applicazione del secondo assioma in caso di eventi non disgiunti (\ref{Ass. Prob. 2}):
+                il risultato è l'applicazione del secondo assioma in caso di eventi non disgiunti (\ref{Ass. Prob. 2}):
                 \[    
                     \underset{P[A\cap B]}{\underbrace{P_e }}=\underset{P[A]+P[B]}{\underbrace{2Q_{(\sqrt{2SNR})}}}-\underset{-P[A\cup B]}{\underbrace{Q^2_{(\sqrt{2SNR})}}} 
                 \]
